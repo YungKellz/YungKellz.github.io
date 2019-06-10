@@ -371,7 +371,7 @@ textarea {
 .footer-email {
   text-align: right;
 }
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
   .section-1 {
     background-image: none;
   }
