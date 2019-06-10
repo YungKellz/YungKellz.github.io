@@ -1,0 +1,26 @@
+browser-sync start --server --files "*.html, css/*.css"
+
+
+jQuery CDN http://code.jquery.com
+
+	jquery 1.12.4
+	http://code.jquery.com/jquery-1.12.4.min.js
+
+	jquery 2.2.4
+	http://code.jquery.com/jquery-2.2.4.min.js
+
+	jquery 3.3.1
+	http://code.jquery.com/jquery-3.3.1.min.js
+
+Bootstrap CDN https://www.bootstrapcdn.com/
+
+	CSS
+	https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css
+
+	JS
+	https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js
+
+Атрибуты 
+	Слайдер SlickSlider
+	http://kenwheeler.github.io/slick/
+
