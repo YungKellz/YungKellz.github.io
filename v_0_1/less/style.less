@@ -16,6 +16,9 @@
 .s{
 	border: 1px solid red;
 }
+.sc{
+	background-color: red;
+}
 
 /////////////////////////////////////////////////
 
@@ -72,7 +75,7 @@ h4{
 	background-image: url(../img/bg_for_main.png) ;
 	background-position: top left;
 	background-repeat: no-repeat;
-	animation-delay: 1s;
+	animation-delay: 0.6s;
 }
 
 .main-text{
@@ -103,13 +106,11 @@ h4{
 }
 
 .divider1{
+	z-index: 200;
 	width: 100%;
 	height: 10px;
 	background-color: @blue;
-	box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.35);
-	&-1{
-		animation-delay: 0.9s;
-	}
+	
 }
 .head{
 	&-1{
@@ -208,6 +209,7 @@ h4{
 
 	}
 	&-box{
+		position: relative;
 		width: 400px;
 		min-height: 550px;
 		border: 1px solid @blue;
@@ -243,7 +245,7 @@ h4{
 			width: 300px;
 			height: 1px;
 			background-color: @blue;
-			margin: 19px 0;
+			margin: 20px 0;
 		}
 		&-btn{
 			display: inline-block;
@@ -378,8 +380,6 @@ textarea{
 ::-webkit-inner-spin-button { display: none; }
 
 
-
-
 .footer{
 	padding: 30px;
 	background-color: @blue;
@@ -400,11 +400,116 @@ textarea{
 	}
 }
 
+//////////////////////////////////ПОРТФОЛИО
 
+.portfolio{
+	padding-top: 155px;
+	animation-delay: 0.6s;
+	&-slicks{
+		padding-bottom: 20px;
+	}
+}
 
+.h1-portfolio-section{
+	padding-left: 10px;
+	margin-bottom: 0px;
+}
 
-//медиа запросы
-@media (max-width: 767px){
+.divider-2{
+	height: 1px;
+	width:100%;
+	background-color: @blue;
+	margin-bottom: 40px;
+}
+.h2-portfolio-section{
+	margin-top: 40px;
+}
+h2 .a1{
+		text-decoration: none;
+		color: @blue;
+		&:hover{
+			color: @blue;
+		}
+}
+/////////////////////////////////УСЛУГИ
+
+.all-services{
+	animation-delay: 0.6s;
+}
+.body-services{
+	padding-top: 70px;
+}
+
+.service{
+	&-btn{
+		margin-top: 15px;
+	}
+	&-block{
+		min-height: 400px;
+	}
+	&-picblock{
+		&:before{
+			content: "";
+			position: absolute;
+			left: 116px;
+			width: 110px;
+			border-top: 400px solid @white;
+			border-right: 75px solid transparent;
+			transition-duration: 1.3s;
+		}
+		&:after{
+			content: "";
+			position: absolute;
+			right: 116px;
+			width: 110px;
+			border-bottom: 400px solid @white;
+			border-left: 75px solid transparent;
+			transition-duration: 1.3s;
+		}
+	}
+	&-pic{
+		height: 400px;
+		//background-image: url(../img/examples/5.jpg);
+	}
+}
+.service-block:hover{
+	& .service-btn{
+		width: 300px;
+		color: @white;
+		background-color: @blue;
+	}
+	& .service-picblock{
+		&:after{
+			transition-duration: 1s;
+			width: 0px;
+		}
+		&:before{
+			transition-duration: 1s;
+			width: 0px;
+		}
+		& .white-square{
+			transition-duration: 0.1s;
+			background-color: rgba(255,255,255,0);
+		}
+
+	}
+}
+.white-square{
+	position: absolute;
+	height: 400px;
+	width: 500px;
+	top: center;
+	background-color: rgba(255,255,255,0.3);
+	transition-duration: 1.3s;
+}
+.h3-services{
+	color: @black-dark;
+}
+.p-services{
+	color: @black-light;
+}
+/////////////////////////////////////////медиа запросы
+@media (max-width: 1100px){
 	.section-1{
 		background-image: none;
 	}
@@ -485,13 +590,7 @@ textarea{
 		padding: 0 20px;
 	}
 }
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////before after
 .container .inner {
   position: relative;
   width: 100%;
