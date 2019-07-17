@@ -33,146 +33,221 @@
 		</div>
 	</nav>
 	
+
 	<div class="section portfolio animated fadeIn">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<h3 class="h1-portfolio-section">Портретная съемка</h3>
+					<!-- названия вкладок -->
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<!-- вкладка 1 -->
+			  			<li class="nav-item">
+			    			<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Индивидуальная съемка</a>
+			  			</li>
+			  			<!-- вкладка 2 -->
+			  			<li class="nav-item">
+			    			<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Лавстори съемка</a>
+			  			</li>
+			  			<!-- вкладка 3 -->
+			  			<li class="nav-item">
+			    			<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Семейная фотоссесия</a>
+			  			</li>
+					</ul>
+					<!-- конец названий вкладок -->
+					<!-- содержание вкладок -->
+					<div class="tab-content" id="myTabContent">
+						<!-- вкладка 1 -->
+			  			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+							<div class="flex-container_portfolio">
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_1" style="background-image:url(../img/examples/icons_for_prof/individ_1.png);">
+									+
+								</button>
+							
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_2" style="background-image:url(../img/examples/icons_for_prof/individ_2.png);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_3" style="background-image:url(../img/examples/icons_for_prof/individ_3.png);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_4" style="background-image:url(../img/examples/icons_for_prof/individ_4.png);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_5" style="background-image:url(../img/examples/icons_for_prof/individ_5.png);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_1" style="background-image:url(../img/examples/icons_for_prof/individ_1.png);">
+								  	+
+								</button>
+							</div>
+			  			</div>
+			  			<!-- вкладка 2 -->
+			  			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+			  				
+			  			</div>
+			  			<!-- вкладка 3 -->
+			  			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+							
+			  			</div>
+					</div>
+					<!-- конец содержания вкладок -->
 				</div>
 			</div>
+			<!-- ///////////////////////////////////////////////////////////// -->
+			<!-- Button trigger modal -->
+			
 
-			<div class="work-examples portfolio-slicks"><!-- Слайды примеров портретной съемки-->
-				
-				<div class="example-pic">
-					<img src="img/examples/1.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/2.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/3.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/4.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/5.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/6.jpg" class="stat-icon" alt="">
-				</div>
-				<!-- Конец слайдов -->
+			
+
+			<!-- Modal 1-->
+			<div class="modal fade" id="exampleModal_1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  	<div class="modal-dialog modal-dialog-centered" role="document">
+			    	<div class="modal-content">
+			      		<div class="modal-body">
+			        		<div class="flex-container-pic-of-serias">
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/1.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/1.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/1.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/1.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/1.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/1.jpg" alt="">
+			        			</div>
+			        		</div>
+			  			</div>
+			    	</div>
+			  	</div>
 			</div>
-
-			<div class="row"> <!-- divider -->
-				<div class="col-12">
-					<div class="divider-2"></div>
-				</div>
+			<!-- Modal 2-->
+			<div class="modal fade" id="exampleModal_2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  	<div class="modal-dialog modal-dialog-centered" role="document">
+			    	<div class="modal-content">
+			      		<div class="modal-body">
+			        		<div class="flex-container-pic-of-serias">
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/2.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/2.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/2.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/2.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/2.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/2.jpg" alt="">
+			        			</div>
+			        		</div>
+			  			</div>
+			    	</div>
+			  	</div>
 			</div>
-
-			<div class="row">
-				<div class="col-12">
-					<h3 class="h1-portfolio-section">Лавстори съемка</h3>
-				</div>
+			<!-- Modal 3-->
+			<div class="modal fade" id="exampleModal_3" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  	<div class="modal-dialog modal-dialog-centered" role="document">
+			    	<div class="modal-content">
+			      		<div class="modal-body">
+			        		<div class="flex-container-pic-of-serias">
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/3.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/3.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/3.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/3.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/3.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/3.jpg" alt="">
+			        			</div>
+			        		</div>
+			  			</div>
+			    	</div>
+			  	</div>
 			</div>
-
-			<div class="work-examples portfolio-slicks "><!-- Слайды примеров лавстори съемки-->
-				
-				<div class="example-pic">
-					<img src="img/examples/1.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/2.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/3.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/4.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/5.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/6.jpg" class="stat-icon" alt="">
-				</div>
-				<!-- Конец слайдов -->
+			<!-- Modal 4-->
+			<div class="modal fade" id="exampleModal_4" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  	<div class="modal-dialog modal-dialog-centered" role="document">
+			    	<div class="modal-content">
+			      		<div class="modal-body">
+			        		<div class="flex-container-pic-of-serias">
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/4.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/4.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/4.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/4.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/4.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/4.jpg" alt="">
+			        			</div>
+			        		</div>
+			  			</div>
+			    	</div>
+			  	</div>
 			</div>
-
-			<div class="row"> <!-- divider -->
-				<div class="col-12">
-					<div class="divider-2"></div>
-				</div>
+			<!-- Modal 5-->
+			<div class="modal fade" id="exampleModal_5" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  	<div class="modal-dialog modal-dialog-centered" role="document">
+			    	<div class="modal-content">
+			      		<div class="modal-body">
+			        		<div class="flex-container-pic-of-serias">
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/5.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/5.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/5.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/5.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/5.jpg" alt="">
+			        			</div>
+			        			<div class="flex-item-pic-of-serias">
+			        				<img class="img-of-serias" src="img/examples/5.jpg" alt="">
+			        			</div>
+			        		</div>
+			  			</div>
+			    	</div>
+			  	</div>
 			</div>
-
-			<div class="row">
-				<div class="col-12">
-					<h3 class="h1-portfolio-section">Репортажная съемка</h3>
-				</div>
-			</div>
-
-			<div class="work-examples portfolio-slicks"><!-- Слайды примеров репортажной съемки-->
-				
-				<div class="example-pic">
-					<img src="img/examples/1.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/2.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/3.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/4.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/5.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/6.jpg" class="stat-icon" alt="">
-				</div>
-				<!-- Конец слайдов -->
-			</div>
-
-			<div class="row"> <!-- divider -->
-				<div class="col-12">
-					<div class="divider-2"></div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-12">
-					<h3 class="h1-portfolio-section">Свадебная съемка</h3>
-				</div>
-			</div>
-
-
-
-			<div class="work-examples portfolio-slicks"><!-- Слайды примеров Свадебной съемки-->
-				
-				<div class="example-pic">
-					<img src="img/examples/1.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/2.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/3.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/4.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/5.jpg" class="stat-icon" alt="">
-				</div>
-				<div class="example-pic">
-					<img src="img/examples/6.jpg" class="stat-icon" alt="">
-				</div>
-				<!-- Конец слайдов -->
-			</div>
+			<!-- ///////////////////////////////////////////////////////////// -->
 			<div class="row examples h2-portfolio-section">
 				<div class="col-12">
-					<h2>Так же Вы можете посмотреть еще больше работ в моем Инстаграме <a href="https://instagram.com/kost.tina" target="_blank" class="a1">@kost.tina</a></h2>
+					<h2>Ещё больше работ в моем Инстаграме <a href="https://instagram.com/kost.tina" target="_blank" class="a1">@kost.tina</a></h2>
 				</div>
 			</div>
 		</div>
@@ -192,10 +267,11 @@
 		</div>
 	</div>
 	<!-- Скрипты -->
-
+	<!-- /////////////////////////////////////////////////////////////////////////////////////////////// -->
 	<!-- Скрипты -->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<!-- WOW анимайшон -->
 	
 	<!-- Слик слайдер -->
@@ -313,6 +389,33 @@
 				
 				});
 		}
+	</script>
+	<!-- Для работы слайдеров -->
+	<script>	
+		$(function() {
+		  	$('.js-tabs-item:not(:first)').hide();
+			$('.btn-img-series').on('click', function (e) {
+				$('.work-examples').slick("reinit");
+			});
+		});
+	</script>
+
+	<script>	
+		$(function() {
+		  	$('.js-tabs-item:not(:first)').hide();
+			$('.js-tabs-link').on('click', function (e) {
+				e.preventDefault();
+				var tabLink = $(this);
+				var target = $(this.hash);
+				$('.js-tabs-text').removeClass('m-active');
+				$('.js-tabs-item:visible').fadeOut("200", function () {
+					tabLink.children().addClass('m-active');
+					target.fadeIn("200", function() {
+				        $('.js-photo').slick("reinit"); // Add reinit method
+				    });
+				});
+			});
+		});
 	</script>
 </body>
 </html>
