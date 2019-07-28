@@ -7,6 +7,9 @@
 	font-family: 'Montserrat', sans-serif;
 	font-size: @size;
 }
+.mont(){
+	font-family: 'Montserrat', sans-serif;
+}
 .mont-alt(@size){
 	font-family: 'Montserrat Alternates', sans-serif;
 	font-size: @size;
@@ -16,17 +19,69 @@
 .s{
 	border: 1px solid red;
 }
-.sc{
+.s-bg{
 	background-color: red;
 }
 
 /////////////////////////////////////////////////
-
+.preloader{
+	position: fixed;
+	left: 0;
+	top : 0;
+	width :100%;
+	height:100%;
+	background: white;
+	z-index: 1;
+	transition: 1s all;
+	opacity: 1;
+	visibility: visible;
+	.loader{
+		width: 500px;
+		height: 175px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: url(../img/logo_bg.png) center no-repeat;
+		transition: 1s all;
+		opacity: 1;
+		visibility: visible;
+		&:before{
+		    overflow: hidden;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 200px;
+			width: 20px;
+			background-color:rgba(255,255,255, 0.6);
+			transform: translateX(-500px) skewX(-45deg);
+			animation: loading 2s infinite ease-in-out;
+		}
+		&.loading_done1{
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+	&.loading_done2{
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+@keyframes loading{
+	from{
+		transform: translateX(-500px) skewX(-45deg);
+	}
+	to{
+		transform: translateX(1500px) skewX(-45deg);
+	}
+}
 .nav-bar{
 	border-bottom: 2px solid @blue;
 	background-color: @white;
 	padding: 20px 0;
 	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+	transition: 2s all;
 }
 
 .menu{
@@ -282,12 +337,16 @@ h4{
 
 form{
 	margin-top: 20px;
+	//
 }
 input{
 	padding: 10px 10px;
 	.mont(14px);
 	border: 1px solid #9b9b9b;
 	color: #9b9b9b;
+	&:hover{
+		border-color: @blue;
+	}
 }
 
 textarea{
@@ -295,6 +354,9 @@ textarea{
 	.mont(14px);
 	border: 1px solid #9b9b9b;
 	color: #9b9b9b;
+	&:hover{
+		border-color: @blue;
+	}
 }
 .link{
 	&_vk_btn{
@@ -408,19 +470,17 @@ textarea{
 	}
 }
 .modal-{
-	&dialog{
+	&dialog-portfolio{
 		min-width: 20%;
 	}
-	&content{
+	&content-portfolio{
 		padding-top: 13px;
 		padding-bottom: 10px;
-	}
-	&header{
-		border-bottom: none;
 	}
 }
 .serias{
 	padding:15px;
+	//
 }
 .btn-img-series{
 	background-blend-mode: overlay;
@@ -465,7 +525,7 @@ textarea{
 }
 .img-of-serias{
 	width: inherit;
-	height: inherit;
+	//
 }
 
 .portfolio{
@@ -506,10 +566,50 @@ h2 .a1{
 .body-services{
 	padding-top: 70px;
 }
-
+.h3-services{
+	color:lighten(@black-dark, 40%);
+	transition-duration: 0.5s;
+}
+.h2-services{
+	color:lighten(@black-dark, 40%);
+	transition-duration: 0.5s;
+}
+.p-services{
+	color:lighten(@black-light, 40%);
+	transition-duration: 0.5s;
+	margin-top: 20px;
+}
+@keyframes move-light{
+	from{
+		transform: translateX(-60px) skewX(-45deg)
+	}
+	to{
+		transform: translateX(460px) skewX(-45deg);
+	}
+}
 .service{
 	&-btn{
 		margin-top: 15px;
+		position: relative;
+		overflow: hidden;
+		&:before{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 110%;
+			width: 20px;
+			background-color:rgba(255,255,255, 0.6);
+			transform: translateX(-60px) skewX(-45deg);
+			transition-duration: 0.5s;
+		}
+		&:hover{
+			border: none;
+			&:before{
+				animation: move-light 0.5s;
+			}
+		}
+
 	}
 	&-block{
 		min-height: 400px;
@@ -526,7 +626,6 @@ h2 .a1{
 		
 		background-position: left -30px;
 		background-size: 101%;
-		//transform: scaleX(100%);
 		transition: 0.4s;
 		&:before{
 			content: "";
@@ -535,7 +634,7 @@ h2 .a1{
 			position: absolute;
 			left: 75px;
 			background-color: transparent;
-			transition-duration: 1s;
+			transition-duration: 0.5s;
 			transition-timing-function: ease;
 			border-top: 400px solid white;
 			border-right: 75px solid transparent;
@@ -548,26 +647,22 @@ h2 .a1{
 			right: 75px;
 			background-color: transparent;
 			transition-timing-function: ease;
-			transition-duration: 1s;
+			transition-duration: 0.5s;
 			border-bottom: 400px solid white;
 			border-left: 75px solid transparent;
 		}
 	}
 }
-
-#pic_services-port{
-	background-image: url(../img/services-cover/portrait.png);
-}
-#pic_services-love{
-	background-image: url(../img/services-cover/portrait.png);
-}
-#pic_services-report{
-	background-image: url(../img/services-cover/portrait.png);
-}
-#pic_services-wed{
-	background-image: url(../img/services-cover/portrait.png);
-}
 .service-block:hover{
+	& .h3-services{
+		color: @black-dark;
+	}
+	& .h2-services {
+		color: @black-dark;
+	}
+	& .p-services{
+		color: @black-light;
+	}
 	& .service-btn{
 		width: 300px;
 		color: @white;
@@ -580,17 +675,19 @@ h2 .a1{
 		}
 	& .service-pic{
 		background-size: 100%;
-		//transform: scaleX(115%);
 		&:before{
 			transition-timing-function: ease;
-			transition-duration: 1s;
+			transition-duration: 0.5s;
 			width: 100px;
 		}
 		&:after{
 			transition-timing-function: ease;
-			transition-duration: 1s;
+			transition-duration: 0.5s;
 			width: 100px;
 		}
+	}
+	& .gift-card-img{
+			transform: rotateY(8deg);
 	}
 }
 .white-square{
@@ -602,12 +699,105 @@ h2 .a1{
 	transition-timing-function: ease;
 	transition-duration: 1.3s;
 }
-.h3-services{
-	color: @black-dark;
+.gift-card{
+	width: 400px;
+	height: 400px;
+	line-height: 400px;
+	display: block;
+	margin: 0 auto;
+	perspective: 1000px;
+	perspective-origin: left 30%;
+	text-align: center;
+	&-img{
+		width: 400px;
+		vertical-align: middle;
+		transform: rotateY(-13deg);
+		box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+		transition-duration: 0.3s;
+	}
 }
-.p-services{
-	color: @black-light;
+
+.modal-body-services{
+	border-bottom: 1px solid #dee2e6;
 }
+.p-services-modal{
+	margin-bottom: 0;
+}
+.flex-con-for-buttons-services{
+	display: flex;
+	justify-content: space-around;
+}
+.btn-services-modal{
+	background-color: @blue;
+	position: relative;
+	overflow: hidden;
+	border: none;
+	color: white;
+	width: 30%;
+	height: 40px;
+	&:before{
+	    overflow: hidden;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100px;
+		width: 20px;
+		background-color:rgba(255,255,255, 0.6);
+		transform: translateX(-160px) skewX(-45deg);
+		transition-duration: 0.5s;
+	}
+	&:hover{
+		border: none;
+		&:before{
+			animation: move-light 0.5s;
+		}
+	}
+}
+.ready-text-block{
+	margin: 10px 0 15px 0;
+	width: 100%;
+	border: 1px solid #dee2e6;
+	border-radius: 5px;
+	padding: 10px 15px;
+	color: lighten(@black-light, 40%);
+}
+#btn-send-mssg-wu{
+	width: 250px;
+}
+.checkbox{
+	&-field{
+		
+	}
+	&-services{
+	font-size: 15px;
+	}
+}
+.form{
+	&_name-services{
+		width: 250px;
+		margin-bottom: 0;
+	}
+	&_date-services{
+		width: 140px;
+	}
+}
+
+.hidePoints{
+	display: none;
+}
+
+#my-alert{
+	position: fixed;
+	bottom: 0px;
+	right: 50%;
+	transform: translateX(50%);
+	z-index: 1500;
+	width: 200px;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+	padding: 12px 20px;
+}
+
 /////////////////////////////////////////медиа запросы
 @media (max-width: 1100px){
 	.section-1{

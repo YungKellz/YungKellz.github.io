@@ -8,12 +8,13 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/BeerSlider.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates&amp;subset=cyrillic" rel="stylesheet">
 	
+	
 </head>
 <body class="body-services">
+
 	<nav class="fixed-top nav-bar">	
 		<div class="container">
 			<div class="row align-items-center">	
@@ -26,23 +27,23 @@
 					<a href="contacts.html" class="menu-txt">контакты</a>
 				</div>
 			</div>
-		</div>
-	</nav>
+		</div></nav>
 	
 	<div class="all-services animated fadeIn">
-		<div class="service-block">
+		<div class="service-block" id="individ_serv">
 			<div class="container"><!--Блок услуги портретная-->
 				<div class="row examples service-block align-items-center"> 
 					<div class="col-6"><!-- БЛЛОК С ТЕКСТОМ УСЛУГИ-->
-						<h3 class="h3-services">Портретная съемка</h3><h2>1 час / 3000р</h2>
-						<p class="p-services">Портретная съемка включает в себя 1 час съемки на локации. Локацией может быть как какое-нибудь место на улице, так и профессиональная студия для съемки. Стоимость услуги 3000 рублей, не включая оплату аренды помещения.</p>
-						<button onclick="location.href='portfolio.html'" class="btn btn_long text-uppercase service-btn">Заказать услугу</button>
+						<h3 class="h3-services" id="individ-h">Индивидуальная съемка</h3><h2 class="h2-services">1 час / 3000р</h2>
+						<p class="p-services" id="individ-p">Портретная съемка включает в себя 1 час съемки на локации. Локацией может быть как какое-нибудь место на улице, так и профессиональная студия для съемки. Стоимость услуги 3000 рублей, не включая оплату аренды помещения. Обработка фотографий займет около 2-2,5 недели.</p>
+						<button class="btn btn_long text-uppercase service-btn" data-toggle="modal" data-target="#exampleModal_8" id="btn-service-individ">Заказать услугу</button>
+
 					</div>
 			
 					<div class="col-6"><!-- БЛЛОК С КАРТИНКОЙ УСЛУГИ-->
 						<div class="service-picblock">
 							<div class="white-square"></div>
-							<div class="service-pic" id="pic_services-port"></div>
+							<div class="service-pic" style="background-image: url(img/services-cover/portrait.png); overflow: hidden;"></div>
 						</div>
 					</div>
 					
@@ -51,74 +52,160 @@
 			</div><!--конец блок услуги портретная-->
 			<div class="divider1"></div><!------------------------------ -->
 		</div>
-		<div class="service-block">
+		<div class="service-block" id="lovestory_serv">
 			<div class="container"><!--Блок услуги лавстори-->
 				<div class="row examples service-block align-items-center"> 
 					<div class="col-6"><!-- БЛЛОК С КАРТИНКОЙ УСЛУГИ-->
 						<div class="service-picblock">
 							<div class="white-square"></div>
-							<div class="service-pic" id="pic_services-love"></div>
+							<div class="service-pic" style="background-image: url(img/examples/2.jpg);"></div>
 						</div>
 					</div>
 			
 					<div class="col-6"><!-- БЛЛОК С ТЕКСТОМ УСЛУГИ-->
-						<h3 class="h3-services">Лавстори съемка</h3><h2>1 час / 4000р</h2>
-						<p class="p-services">Лавстори съемка включает в себя 1 час съемки на локации. Локацией может быть как какое-нибудь место на улице, так и профессиональная студия для съемки. Стоимость услуги 4000 рублей, не включая оплату аренды помещения.</p>
-						<button onclick="location.href='portfolio.html'" class="btn btn_long text-uppercase service-btn">Заказать услугу</button>
+						<h3 class="h3-services" id="lovestory-h">Лавстори съемка</h3><h2 class="h2-services">1 час / 4000р</h2>
+						<p class="p-services" id="lovestory-p">Лавстори съемка включает в себя 1 час съемки на локации. Локацией может быть как какое-нибудь место на улице, так и профессиональная студия для съемки. Стоимость услуги 4000 рублей, не включая оплату аренды помещения.</p>
+						<button id="family_serv" class="btn btn_long text-uppercase service-btn" data-toggle="modal" data-target="#exampleModal_8">Заказать услугу</button>
+
 					</div>
 				</div>
 
 			</div><!--конец блок лавстори-->
+			<div class="divider1"></div><!------------------------------ -->
 		</div>
-		<div class="divider1"></div><!------------------------------ -->
-	</div>
-	<div class="service-block">
-		<div class="container"><!--Блок услуги портретная-->
+		<div class="service-block">
+			<div class="container"><!--Блок услуги cемейная-->
 				<div class="row examples service-block align-items-center"> 
 					<div class="col-6"><!-- БЛЛОК С ТЕКСТОМ УСЛУГИ-->
-						<h3 class="h3-services">Портретная съемка</h3><h2>1 час / 3000р</h2>
-						<p class="p-services">Портретная съемка включает в себя 1 час съемки на локации. Локацией может быть как какое-нибудь место на улице, так и профессиональная студия для съемки. Стоимость услуги 3000 рублей, не включая оплату аренды помещения.</p>
-						<button onclick="location.href='portfolio.html'" class="btn btn_long text-uppercase service-btn">Заказать услугу</button>
+						<h3 class="h3-services" id="family-h">Семейная съемка</h3><h2 class="h2-services">1 час / 3000р</h2>
+						<p class="p-services" id="family-p">Семейная съемка это жуткий кошмамар на протяжении 1 часа съемок на локации. Локацией может быть как какое-нибудь место на улице, так и профессиональная студия для съемки. Стоимость услуги 3000 рублей, не включая оплату аренды помещения.</p>
+						<button id="express_serv" class="btn btn_long text-uppercase service-btn" data-toggle="modal" data-target="#exampleModal_8">Заказать услугу</button>
 					</div>
 			
 					<div class="col-6"><!-- БЛЛОК С КАРТИНКОЙ УСЛУГИ-->
 						<div class="service-picblock">
 							<div class="white-square"></div>
-							<div class="service-pic" id="pic_services-report"></div>
+							<div class="service-pic" style="background-image: url(img/examples/3.jpg);"></div>
 						</div>
 					</div>
 					
 				</div>
 
-			</div><!--конец блок услуги портретная-->
+			</div><!--конец блок услуги семейная-->
 			<div class="divider1"></div><!---------------------------->
 		</div>
 		<div class="service-block">
-			<div class="container"><!--Блок услуги лавстори-->
+			<div class="container"><!--Блок услуги экспресс-->
 				<div class="row examples service-block align-items-center"> 
 					<div class="col-6"><!-- БЛЛОК С КАРТИНКОЙ УСЛУГИ-->
 						<div class="service-picblock">
 							<div class="white-square"></div>
-							<div id="pic_services-wed" class="service-pic"></div>
+							<div class="service-pic" style="background-image: url(img/examples/1.jpg);"></div>
 						</div>
 					</div>
 			
 					<div class="col-6"><!-- БЛЛОК С ТЕКСТОМ УСЛУГИ-->
-						<h3 class="h3-services">Лавстори съемка</h3><h2>1 час / 4000р</h2>
-						<p class="p-services">Лавстори съемка включает в себя 1 час съемки на локации. Локацией может быть как какое-нибудь место на улице, так и профессиональная студия для съемки. Стоимость услуги 4000 рублей, не включая оплату аренды помещения.</p>
-						<button onclick="location.href='portfolio.html'" class="btn btn_long text-uppercase service-btn">Заказать услугу</button>
+						<h3 class="h3-services" id="express-h">Экспресс съемка</h3><h2 class="h2-services">1 час / 4000р</h2>
+						<p class="p-services" id="express-p">Экспресс съемка как экспресс кофе, только лучше. Локацией может быть как какое-нибудь место на улице, так и профессиональная студия для съемки. Стоимость услуги 4000 рублей, не включая оплату аренды помещения.</p>
+						<button id="btn-express" class="btn btn_long text-uppercase service-btn" data-toggle="modal" data-target="#exampleModal_8">Заказать услугу</button>
 					</div>
 				</div>
-			</div><!--конец блок лавстори-->
+			</div><!--конец блок экспресс-->
+			<div class="divider1"></div><!---------------------------->
+		</div>
+		<div class="service-block">
+			<div class="container"><!--Блок поадрочный-->
+				<div class="row examples service-block align-items-center"> 
+					<div class="col-6"><!-- БЛЛОК С ТЕКСТОМ УСЛУГИ-->
+						<h3 class="h3-services" id="gift-card-h">Подарочный сертификат</h3>
+						<p class="p-services" id="gift-card-p">Подарочная картка может делать все на 1 час съемки на локации. Локацией может быть как какое-нибудь место на улице, так и профессиональная студия для съемки. Стоимость услуги 3000 рублей, не включая оплату аренды помещения.</p>
+						<button id="btn-buy-gift-card" data-toggle="modal" data-target="#exampleModal_8" class="btn btn_long text-uppercase service-btn">Купить</button>
+					</div>
+			
+					<div class="col-6"><!-- БЛЛОК С КАРТИНКОЙ УСЛУГИ-->
+						<div class="service-picblock">
+							<div class="gift-card">
+									<img class="gift-card-img" src="img/gift-card.png" alt="gift-card image">
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div><!--конец блок подарок-->
 		</div>
 	</div>
+	<!-- ////////////////////////////////////MODALS///////////////////// -->
+	<!-- Modal 1-->
+	<div class="modal fade" id="exampleModal_8" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+			        <h5 class="modal-title"  id="service-title-modal">Индивидуальная съемка</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          	<span aria-hidden="true">&times;</span>
+			        </button>
+		      	</div>
+		      	<div class="modal-body modal-body-services">
+		        	<p class="p-services-modal" id="service-description-modal">Портретная съемка включает в себя 1 час съемки на локации. Локацией может быть как какое-нибудь место на улице, так и профессиональная студия для съемки. Стоимость услуги 3000 рублей, не включая оплату аренды помещения. Срок обработки фотографий 2-2,5 недели.</p>
+		      	</div>
+		      	<div class="modal-body modal-body-services">
+		        	<p class="p-services-modal">Заказ осуществляется через социальные сети напрямую со мной. Вы можете написать сами, перейдя по ссылкам ниже, или же воспользоваться конструктором готового сообщения для WhatsApp. Также вы можете скопировать текст готового сообщения нажав соответствующую кнопку.</p>
+		      	</div>
+		      	<div class="modal-body modal-body-services">
+		      		<div class="flex-con-for-buttons-services">
+			      		<button class="btn btn-services-modal" onclick="javascript:window.open('https://vk.me/kosttina')">ВКонтакте</button>
+			      		<button class="btn btn-services-modal" onclick="javascript:window.open('https://instagram.com/kost.tina')">Instagram</button>
+			      		<button class="btn btn-services-modal" onclick="javascript:window.open('https://api.whatsapp.com/send?phone=79998649126')">WhatsApp</button>
+		      		</div>
+		      	</div>
+		      	<div class="modal-body">
+		        	<p class="p-services-modal">Текст готового сообщения</p>
+		        	<div class="ready-text-block">
+		        		<p  class="p-services-modal" id="ready_text">Здравствуйте, меня зовут Ахалай Махалай, я хотела бы заказать Индивидуальную съемку, ориентировочно на 20.12.2019. Плюс короткое видео для Инстаграмма.</p>
+		        	</div>
+		        	<div class="flex-con-for-buttons-services">
+			      		<button class="btn btn-services-modal" id="btn-send-mssg-wu">Отправить по WhatsApp</button>
+			      		<button class="btn btn-services-modal " onclick="copytext('#ready_text')" id="btn_for_copy">Копировать</button>
+						
+		      		</div>
+		      		<form>
+		      			<div class="flex-con-for-buttons-services" style="margin-bottom: 15px;">
 
+							<input class="form_name form_name-services" type="text" required name="Name" placeholder="Ваше имя" id="input_name">
+
+							<input class="form_date form_date-services" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="Date" placeholder="Дата" id="input_date">
+
+		      			</div>
+		      		</form>
+		      		<p id="choose-studio">Студия:  Не выбрана  <a href="">Выбрать</a></p>
+		      		<div class="checkbox-services" id="checkbox-points">
+						<input id="check1" type="checkbox" name="check_for_instastories" value="check1" class="checkbox-field">
+						<label for="check1">Короткие видео 15-30с для Инстаграма (+500р)</label>  <a href="">Подробнее</a>
+						<br>
+						<input id="check2" type="checkbox" name="check_for_prohibition" value="check2" class="checkbox-field">
+						<label for="check2">Запретить использовать фотографии в соц. сетях фотографа</label>
+					</div>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- Modal 2-->
+	
+	<!-- Алерт с сообщением скопировано -->
+	<div id="my-alert" class="alert alert-success alert-dismissible fade hide" align="center" role="alert">
+	    Cкопировано
+	</div>
+
+	
+	
+	<!-- /////////////////////////////////////FOOTER//////////////////// -->
 	<div class="footer">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-2">
 					<a href="https://vk.com/kosttina"  target="_blank"><img class="footer-link-pic-vk" src="img/link_vk.png"></a>
-					<a href="https://instagram.com/kost.tina"  target="_blank"><img class="footer-link-pic-inst" src="img/link_inst.png"></a></div>
+					<a href="https://instagram.com/kost.tina"  target="_blank"><img class="footer-link-pic-inst" src="img/link_inst.png"></a>
+				</div>
 
 				<div class="col-md-4 offset-md-2 footer-main-text">Дарья Костина © 2019 І Все права защищены</div>
 
@@ -126,133 +213,43 @@
 			</div>
 		</div>
 	</div>
-
+	<!-- ////////////////////////////////////SCRIPTS///////////////////////// -->
 
 
 	<!-- Скрипты -->
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- Popper -->
+	<script src="https://unpkg.com/popper.js"></script>
+	<!-- Бутстрап JS -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<!-- WOW анимайшон -->
 	<script src="js/wow.min.js"></script>
 	<script>
 		var wow = new WOW;
 		wow.init();
 	</script>
-	<!-- Слик слайдер -->
-	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<!-- Кнопка копирования текста и всплывающий алерт-->
 	<script>
-		$(document).ready(function(){
-		  	$('.work-examples').slick({
-		  		infinite: true,
-				slidesToShow: 3,
-				slidesToScroll: 3,
-				responsive: [
-				    {
-				      breakpoint: 992,
-				      settings: {
-				        slidesToShow: 2,
-				        slidesToScroll: 2,
-				        infinite: true,
-				      }
-				    },
-				    {
-				      breakpoint: 721,
-				      settings: {
-				        slidesToShow: 1,
-				        slidesToScroll: 1
-				      }
-				    }
-				  ]
-		  	});
-		});
-	</script>
-	<!-- Before After slider -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			if ($(".comparison-slider")[0]) {
-			let compSlider = $(".comparison-slider");
-		
-			//let's loop through the sliders and initialise each of them
-			compSlider.each(function() {
-				let compSliderWidth = $(this).width() + "px";
-				$(this).find(".resize img").css({ width: compSliderWidth });
-				drags($(this).find(".divider"), $(this).find(".resize"), $(this));
-			});
-
-			//if the user resizes the windows lets update our variables and resize our images
-			$(window).on("resize", function() {
-				let compSliderWidth = compSlider.width() + "px";
-				compSlider.find(".resize img").css({ width: compSliderWidth });
-			});
-			}
-		});
-
-		function drags(dragElement, resizeElement, container) {
-			
-			// This creates a variable that detects if the user is using touch input insted of the mouse.
-			let touched = false;
-			window.addEventListener('touchstart', function() {
-				touched = true;
-			});
-			window.addEventListener('touchend', function() {
-				touched = false;
-			});
-			
-			// clicp the image and move the slider on interaction with the mouse or the touch input
-			dragElement.on("mousedown touchstart", function(e) {
-					
-					//add classes to the emelents - good for css animations if you need it to
-					dragElement.addClass("draggablee");
-					resizeElement.addClass("resizablee");
-					//create vars
-					let startX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
-					let dragWidth = dragElement.outerWidth();
-					let posX = dragElement.offset().left + dragWidth - startX;
-					let containerOffset = container.offset().left;
-					let containerWidth = container.outerWidth();
-					let minLeft = containerOffset + 10;
-					let maxLeft = containerOffset + containerWidth - dragWidth - 10;
-					
-					//add event listner on the divider emelent
-					dragElement.parents().on("mousemove touchmove", function(e) {
-						
-						// if the user is not using touch input let do preventDefault to prevent the user from slecting the images as he moves the silder arround.
-						if ( touched === false ) {
-							e.preventDefault();
-						}
-						
-						let moveX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
-						let leftValue = moveX + posX - dragWidth;
-
-						// stop the divider from going over the limits of the container
-						if (leftValue < minLeft) {
-							leftValue = minLeft;
-						} else if (leftValue > maxLeft) {
-							leftValue = maxLeft;
-						}
-
-						let widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + "%";
-
-						$(".draggablee").css("left", widthValue).on("mouseup touchend touchcancel", function() {
-							$(this).removeClass("draggablee");
-							resizeElement.removeClass("resizablee");
-						});
-						
-						$(".resizablee").css("width", widthValue);
-						
-					}).on("mouseup touchend touchcancel", function() {
-						dragElement.removeClass("draggablee");
-						resizeElement.removeClass("resizablee");
-						
-					});
-				
-				}).on("mouseup touchend touchcancel", function(e) {
-					// stop clicping the image and move the slider
-					dragElement.removeClass("draggablee");
-					resizeElement.removeClass("resizablee");
-				
-				});
+		function copytext(el) { 
+			  var $tmp = $("<input>"); 
+			  $("body").append($tmp); 
+			  $tmp.val($(el).text()).select(); 
+			  document.execCommand("copy"); 
+			  $tmp.remove(); 
 		}
+	    function hiding(){
+	        window.setTimeout(function(){
+	            $('#my-alert').toggleClass('show hide');
+	        },1250);
+	    }
+		function toggleAlert(){
+		    $(".alert").toggleClass('show hide'); 
+		    hiding();
+		    return false; // Keep close.bs.alert event from removing from DOM
+		}
+		$("#btn_for_copy").on("click", toggleAlert);
+		$('#bsalert').on('close.bs.alert', toggleAlert);
 	</script>
+	<script src="js/readyMssg.js"></script>
 </body>
 </html>
