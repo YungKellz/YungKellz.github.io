@@ -80,7 +80,6 @@
   -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
           box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
   -webkit-transition: 2s all;
-  transition: 2s all;
 }
 .menu-line a {
   text-decoration: none;
