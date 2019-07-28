@@ -54,12 +54,15 @@ buttonBuyCard = document.getElementById('btn-buy-gift-card');
 
 buttonIndivid.onclick = function(){
 	changeModalInfo(1);
+	showPoints();
 };
 buttonLovestory.onclick = function(){
 	changeModalInfo(2);
+	showPoints();
 };
 buttonFamily.onclick = function(){
 	changeModalInfo(3);
+	showPoints();
 };
 buttonExpress.onclick = function(){
 	changeModalInfo(4);
