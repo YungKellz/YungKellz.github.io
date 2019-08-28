@@ -814,20 +814,18 @@ span#btn-open-std-list:hover {
   cursor: pointer;
   text-decoration: underline;
 }
-@media (min-width: 1520px) {
+@media only screen and (min-width: 1520px) {
   /*760 и больше*/
   .footer-main-text br {
     display: none;
   }
 }
-@media (max-width: 1520px) {
+@media only screen and (max-width: 1520px) {
   /*760 и меньше*/
   .footer-main-text span {
     display: none;
   }
-  .open-line {
-    display: none;
-  }
+  .open-line,
   .logo-pic {
     display: none;
   }
@@ -863,9 +861,23 @@ span#btn-open-std-list:hover {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
   }
+  .body-services {
+    padding-top: 60px;
+  }
+  .white-square {
+    display: none;
+  }
+  .service-pic:before,
+  .service-pic:after,
+  .service-pic {
+    display: none;
+  }
+  .gift-card {
+    display: none;
+  }
 }
 /*старое*/
-@media (max-width: 1520px) {
+@media only screen and (max-width: 1520px) {
   .section-1 {
     background-image: none;
   }
