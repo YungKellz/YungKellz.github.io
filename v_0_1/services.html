@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
 	<title>Дарья Костина - фотограф</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
@@ -19,13 +19,12 @@
 	<nav class="fixed-top nav-bar">	
 		<div class="container">
 			<div class="row align-items-center">	
-				<div class="col-md-6 col-xs-12 logo-pic"><a href="index.html" class=""><img src="img/logo.png" alt="logo"></a></div>
-				<div class="col-md-6 text-uppercase menu-line">
+				<div class="col-lg-6 col-12 logo-pic"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+				<div class="col-lg-6 text-uppercase menu-line">
 					<a href="index.html" class="menu-txt">главная</a>
 					<a href="portfolio.html" class="menu-txt">портфолио</a>
 					<a href="services.html" class="menu-txt active-page">услуги</a>
 					<a href="about.html" class="menu-txt">обо мне</a>
-					<a href="contacts.html" class="menu-txt">контакты</a>
 				</div>
 			</div>
 		</div></nav>
@@ -141,13 +140,15 @@
 	  	<div class="modal-dialog modal-dialog-centered" role="document">
 	    	<div class="modal-content">
 	      		<div class="modal-header">
-			        <h5 class="modal-title"  id="service-title-modal">Индивидуальная съемка</h5>
+			        <h5 class="modal-title"  id="service-title-modal">
+			        	Здесь будет название услуги</h5>
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			          	<span aria-hidden="true">&times;</span>
 			        </button>
 		      	</div>
 		      	<div class="modal-body modal-body-services">
-		        	<p class="p-services-modal" id="service-description-modal">Портретная съемка включает в себя 1 час съемки на локации. Локацией может быть как какое-нибудь место на улице, так и профессиональная студия для съемки. Стоимость услуги 3000 рублей, не включая оплату аренды помещения. Срок обработки фотографий 2-2,5 недели.</p>
+		        	<p class="p-services-modal" id="service-description-modal">
+		        		Здесь будет описание услуги</p>
 		      	</div>
 		      	<div class="modal-body modal-body-services">
 		        	<p class="p-services-modal">Заказ осуществляется через социальные сети напрямую со мной. Вы можете написать сами, перейдя по ссылкам ниже, или же воспользоваться конструктором готового сообщения для WhatsApp. Также вы можете скопировать текст готового сообщения нажав соответствующую кнопку.</p>
@@ -160,29 +161,40 @@
 		      		</div>
 		      	</div>
 		      	<div class="modal-body">
-		        	<p class="p-services-modal">Текст готового сообщения</p>
+		        	<p class="p-services-modal">Конструктор готового сообщения</p>
 		        	<div class="ready-text-block">
-		        		<p  class="p-services-modal" id="ready_text">Здравствуйте, меня зовут Ахалай Махалай, я хотела бы заказать Индивидуальную съемку, ориентировочно на 20.12.2019. Плюс короткое видео для Инстаграмма.</p>
+		        		<p  class="p-services-modal" id="ready_text">
+		        		Здесь будет текст готового сообщения</p>
 		        	</div>
 		        	<div class="flex-con-for-buttons-services">
 			      		<button class="btn btn-services-modal" id="btn-send-mssg-wu">Отправить по WhatsApp</button>
 			      		<button class="btn btn-services-modal " onclick="copytext('#ready_text')" id="btn_for_copy">Копировать</button>
 						
 		      		</div>
-		      		<form>
+		      		<form> <!-- Поля имени и даты -->
 		      			<div class="flex-con-for-buttons-services" style="margin-bottom: 15px;">
 
-							<input class="form_name form_name-services" type="text" required name="Name" placeholder="Ваше имя" id="input_name">
+							<input class="form_name form_name-services" type="text" required name="Name" placeholder="Ваше имя" id="input_name" style="width: 250px;">
 
-							<input class="form_date form_date-services" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="Date" placeholder="Дата" id="input_date">
+							<input class="form_date form_date-services" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="Date" placeholder="Дата" id="input_date" style="width: 30%;">
 
 		      			</div>
 		      		</form>
-		      		<p id="choose-studio">Студия:  Не выбрана  <a href="">Выбрать</a></p>
+	      			<!-- <div class="block-choose-studio">
+	      				<p id="choose-studio">Студия: <span id="studio-chosen">Не выбрана </span><span id="btn-open-std-list">Выбрать</span> <span id="btn-delete-std-chosen" class="hidePoints">Отменить</span></p>
+
+	      				<div id="example-of-studio"class="ready-text-block  hidePoints">
+	      					...
+	      				</div>
+	      			</div> -->
 		      		<div class="checkbox-services" id="checkbox-points">
 						<input id="check1" type="checkbox" name="check_for_instastories" value="check1" class="checkbox-field">
-						<label for="check1">Короткие видео 15-30с для Инстаграма (+500р)</label>  <a href="">Подробнее</a>
-						<br>
+						<label for="check1">Короткие видео 15-30с для Инстаграма (+500р)</label>  <span id="btn-open-std-list">Подробнее</span>
+						<div class="block-choose-studio">
+		      				<div id="example-of-studio"class="ready-text-block  hidePoints">
+		      					Описание этой микроуслуги, если конечно оно нужно, можно тут даже видео вставить, но это перебор будет конешн
+		      				</div>
+		      			</div>
 						<input id="check2" type="checkbox" name="check_for_prohibition" value="check2" class="checkbox-field">
 						<label for="check2">Запретить использовать фотографии в соц. сетях фотографа</label>
 					</div>
@@ -196,21 +208,19 @@
 	<div id="my-alert" class="alert alert-success alert-dismissible fade hide" align="center" role="alert">
 	    Cкопировано
 	</div>
-
-	
-	
 	<!-- /////////////////////////////////////FOOTER//////////////////// -->
 	<div class="footer">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-md-2">
-					<a href="https://vk.com/kosttina"  target="_blank"><img class="footer-link-pic-vk" src="img/link_vk.png"></a>
-					<a href="https://instagram.com/kost.tina"  target="_blank"><img class="footer-link-pic-inst" src="img/link_inst.png"></a>
+				<div class="col-4 col-lg-2">
+					<a href="https://vk.com/kosttina"  target="_blank"><img class="footer-link-pic-vk" src="img/logo_vk_min.png"></a>
+					<a href="https://instagram.com/kost.tina"  target="_blank"><img class="footer-link-pic-inst" style="margin-right: 20px;" src="img/logo_inst_min.png"></a>
+					<a href="https://api.whatsapp.com/send?phone=79998649126"  target="_blank"><img class="footer-link-pic-inst" src="img/logo_wa_min.png"></a>
 				</div>
 
-				<div class="col-md-4 offset-md-2 footer-main-text">Дарья Костина © 2019 І Все права защищены</div>
+				<div class="col-4 offset-lg-2 footer-main-text">Дарья Костина © 2019<br><span> І </span>Все права защищены</div>
 
-				<div class="col-md-2 offset-md-2 footer-email">kost.tina@gmail.com</div>
+				<div class="col-3 offset-1 col-lg-2 offset-lg-2 footer-email">kost.tina@gmail.com</div>
 			</div>
 		</div>
 	</div>
@@ -229,28 +239,7 @@
 		var wow = new WOW;
 		wow.init();
 	</script>
-	<!-- Кнопка копирования текста и всплывающий алерт-->
-	<script>
-		function copytext(el) { 
-			  var $tmp = $("<input>"); 
-			  $("body").append($tmp); 
-			  $tmp.val($(el).text()).select(); 
-			  document.execCommand("copy"); 
-			  $tmp.remove(); 
-		}
-	    function hiding(){
-	        window.setTimeout(function(){
-	            $('#my-alert').toggleClass('show hide');
-	        },1250);
-	    }
-		function toggleAlert(){
-		    $(".alert").toggleClass('show hide'); 
-		    hiding();
-		    return false; // Keep close.bs.alert event from removing from DOM
-		}
-		$("#btn_for_copy").on("click", toggleAlert);
-		$('#bsalert').on('close.bs.alert', toggleAlert);
-	</script>
-	<script src="js/readyMssg.js"></script>
+	<!-- Мой скрипт -->
+	<script src="js/my-services.js"></script>
 </body>
 </html>

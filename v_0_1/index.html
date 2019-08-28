@@ -2,13 +2,14 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
 	<title>Дарья Костина - фотограф</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/BeerSlider.css">
+	<link rel="stylesheet" type="text/css" href="css/beforeAfterSlider.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates&amp;subset=cyrillic" rel="stylesheet">
 	<script src="js/wow.min.js"></script>
@@ -16,19 +17,21 @@
 		var wow = new WOW;
 		wow.init();
 	</script>
+
 </head>
 <body>
 	<!-- ////////////////////////////////NAV/////////////////////////////////// -->
 	<nav class="fixed-top nav-bar">	
 		<div class="container">
 			<div class="row align-items-center">	
-				<div class="col-md-6 col-xs-12 logo-pic"><a href="index.html" class=""><img src="img/logo.png" alt="logo"></a></div>
-				<div class="col-md-6 text-uppercase menu-line">
-					<a href="index.html" class="menu-txt active-page">главная</a>
-					<a href="portfolio.html" class="menu-txt">портфолио</a>
-					<a href="services.html" class="menu-txt">услуги</a>
-					<a href="about.html" class="menu-txt">обо мне</a>
-					<a href="contacts.html" class="menu-txt">контакты</a>
+				<div class="col-lg-6 logo-pic"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+				<div class="col-12 col-lg-6 text-uppercase menu-line">
+					<div class="block-of-menu-links">
+						<a href="index.html" class="menu-txt active-page">главная</a>
+						<a href="portfolio.html" class="menu-txt">портфолио</a>
+						<a href="services.html" class="menu-txt">услуги</a>
+						<a href="about.html" class="menu-txt">обо мне</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -37,7 +40,7 @@
 	<main class="section-1 animated fadeIn">
 		<div class="container">
 			<div class="row align-items-center main-text-row">
-				<div class="col-md-5 offset-md-7 main-text-block">
+				<div class="col-12 col-lg-5 offset-lg-7 main-text-block">
 					<h1>Дарья Костина</h1>
 					<br>
 					<h2 class="stick_1">Фотограф<br>Москва</h2>
@@ -166,9 +169,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="divider1 wow slideInLeft"></div>
+	<!-- <div class="divider1 wow slideInLeft"></div> -->
 	<!-- /////////////////////////////////////////CONTACTS////////////////////// -->
-	<div class="section contacts">
+	<!-- <div class="section contacts">
 		<div class="container">
 			<div class="row open-line_predok">
 				<div class="open-line_contacts wow slideInRight"></div>
@@ -217,23 +220,25 @@
 						</div>
 					</form>
 				</div>
-				<div class="col-md-5 picture_for_contacts wow">
+				<div class="col-md-5 <p></p>icture_for_contacts wow">
 					<img src="img/pic_for_contacts.png" alt="">
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- ///////////////////////////////////////////FOOTER//////////////// -->
 	<div class="footer">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-md-2">
-					<a href="https://vk.com/kosttina"  target="_blank"><img class="footer-link-pic-vk" src="img/link_vk.png"></a>
-					<a href="https://instagram.com/kost.tina"  target="_blank"><img class="footer-link-pic-inst" src="img/link_inst.png"></a></div>
+				<div class="col-4 col-lg-2">
+					<a href="https://vk.com/kosttina"  target="_blank"><img class="footer-link-pic-vk" src="img/logo_vk_min.png"></a>
+					<a href="https://instagram.com/kost.tina"  target="_blank"><img class="footer-link-pic-inst" style="margin-right: 20px;" src="img/logo_inst_min.png"></a>
+					<a href="https://api.whatsapp.com/send?phone=79998649126"  target="_blank"><img class="footer-link-pic-inst" src="img/logo_wa_min.png"></a>
+				</div>
 
-				<div class="col-md-4 offset-md-2 footer-main-text">Дарья Костина © 2019 І Все права защищены</div>
+				<div class="col-4 offset-lg-2 footer-main-text">Дарья Костина © 2019<br><span> І </span>Все права защищены</div>
 
-				<div class="col-md-2 offset-md-2 footer-email">kost.tina@gmail.com</div>
+				<div class="col-3 offset-1 col-lg-2 offset-lg-2 footer-email">kost.tina@gmail.com</div>
 			</div>
 		</div>
 	</div>

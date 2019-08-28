@@ -6,7 +6,7 @@ document.body.onload = function (){
 		{
 			preloader.classList.add('loading_done2');
 		}
-	}, 2000); 
+	}, 1700); 
 	setTimeout(function() {
 		var loader = document.getElementById("loader");
 		if (!loader.classList.contains('loading_done1'))
