@@ -825,6 +825,10 @@ span#btn-open-std-list:hover {
   .footer-main-text span {
     display: none;
   }
+  .menu-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+  }
   .open-line,
   .logo-pic {
     display: none;
