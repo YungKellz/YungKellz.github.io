@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
+	<title>Дарья Костина - фотограф</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="css/BeerSlider.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates&amp;subset=cyrillic" rel="stylesheet">
+</head>
+<body>
+	<div class="preloader" id="preloader">
+		<div class="loader" id="loader">
+		</div>
+	</div>
+
+	<nav class="fixed-top nav-bar">	
+		<div class="container">
+			<div class="row align-items-center">	
+				<div class="col-lg-6 logo-pic"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+				<div class="col-12 col-lg-6 text-uppercase menu-line">
+					<div class="block-of-menu-links">
+						<a href="index.html" class="menu-txt">главная</a>
+						<a href="portfolio.html" class="menu-txt active-page">портфолио</a>
+						<a href="services.html" class="menu-txt">услуги</a>
+						<a href="about.html" class="menu-txt">обо мне</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="section portfolio animated fadeIn">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<!-- названия вкладок -->
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<!-- вкладка 1 -->
+			  			<li class="nav-item">
+			    			<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Индивидуальная съемка</a>
+			  			</li>
+			  			<!-- вкладка 2 -->
+			  			<li class="nav-item">
+			    			<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Лавстори съемка</a>
+			  			</li>
+			  			<!-- вкладка 3 -->
+			  			<!-- <li class="nav-item">
+			    			<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Семейная фотоссесия</a>
+			  			</li> -->
+					</ul>
+					<!-- конец названий вкладок -->
+					<!-- содержание вкладок -->
+					<div class="tab-content" id="myTabContent">
+						<!-- вкладка 1 -->
+			  			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+							<div class="flex-container_portfolio">
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_1" style="background-image:url(img/portfolio/covers/individ/1.jpg);">
+									+
+								</button>
+							
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_2" style="background-image:url(img/portfolio/covers/individ/2.jpg);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_3" style="background-image:url(img/portfolio/covers/individ/3.jpg);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_4" style="background-image:url(img/portfolio/covers/individ/4.jpg);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_5" style="background-image:url(img/portfolio/covers/individ/5.jpg);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_6" style="background-image:url(img/portfolio/covers/individ/6.jpg);">
+								  	+
+								</button>
+							</div>
+			  			</div>
+			  			<!-- вкладка 2 -->
+			  			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+			  				<div class="flex-container_portfolio">
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#portfolioModal_love_1" style="background-image:url(img/portfolio/covers/lovestory/1.jpg);">
+									+
+								</button>
+							
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#portfolioModal_love_2" style="background-image:url(img/portfolio/covers/lovestory/2.jpg);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#portfolioModal_love_3" style="background-image:url(img/portfolio/covers/lovestory/3.jpg);">
+								  	+
+								</button>
+							</div>
+			  			</div>
+			  			<!-- вкладка 3 -->
+			  			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+							<div class="flex-container_portfolio">
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_1" style="background-image:url(img/portfolio/covers/family/1.png);">
+									+
+								</button>
+							
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_2" style="background-image:url(img/portfolio/covers/family/2.png);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_3" style="background-image:url(img/portfolio/covers/family/3.png);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_4" style="background-image:url(img/portfolio/covers/family/4.png);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_5" style="background-image:url(img/portfolio/covers/family/5.png);">
+								  	+
+								</button>
+								<button type="button" class="btn btn-img-series" data-toggle="modal" data-target="#exampleModal_6" style="background-image:url(img/portfolio/covers/family/6.png);">
+								  	+
+								</button>
+							</div>
+			  			</div>
+					</div>
+					<!-- конец содержания вкладок -->
+				</div>
+			</div>
+			
+			<div class="row examples h2-portfolio-section">
+				<div class="col-12">
+					<h2>Ещё больше работ в моем Инстаграме <a href="https://instagram.com/kost.tina" target="_blank" class="a1">@kost.tina</a></h2>
+				</div>
+			</div>
+		</div> 
+	</div>	
+	<!-- ///////////////////////////////////////////////////////////// -->
+
+	<!-- Modal individ set 1-->
+	<div class="modal fade" id="exampleModal_1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-portfolio modal-dialog-centered" role="document">
+	    	<div class="modal-content content-portfolio">
+	      		<div class="modal-body">
+	        		<div class="flex-container-pic-of-serias">
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_1/1.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_1/2.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_1/3.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_1/4.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_1/5.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_1/6.jpg" alt="">
+	        			</div>
+	        		</div>
+	  			</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- Modal individ set 2-->
+	<div class="modal fade" id="exampleModal_2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	        		<div class="flex-container-pic-of-serias">
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_2/1.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_2/2.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_2/3.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_2/4.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_2/5.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_2/6.jpg" alt="">
+	        			</div>
+	        		</div>
+	  			</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- Modal individ set 3-->
+	<div class="modal fade" id="exampleModal_3" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	        		<div class="flex-container-pic-of-serias">
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_3/1.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_3/2.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_3/3.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_3/4.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_3/5.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_3/6.jpg" alt="">
+	        			</div>
+	        		</div>
+	  			</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- Modal individ set 4-->
+	<div class="modal fade" id="exampleModal_4" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	        		<div class="flex-container-pic-of-serias">
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_4/1.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_4/2.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_4/3.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_4/4.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_4/5.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_4/6.jpg" alt="">
+	        			</div>
+	        		</div>
+	  			</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- Modal individ set 5-->
+	<div class="modal fade" id="exampleModal_5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	        		<div class="flex-container-pic-of-serias">
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_5/1.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_5/2.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_5/3.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_5/4.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_5/5.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_5/6.jpg" alt="">
+	        			</div>
+	        		</div>
+	  			</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- Modal individ set 6-->
+	<div class="modal fade" id="exampleModal_6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	        		<div class="flex-container-pic-of-serias">
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_6/1.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_6/2.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_6/3.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_6/4.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_6/5.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/individ/set_6/6.jpg" alt="">
+	        			</div>
+	        		</div>
+	  			</div>
+	    	</div>
+	  	</div>
+	</div>
+	
+
+	<!-- Modal love set 1-->
+	<div class="modal fade" id="portfolioModal_love_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	        		<div class="flex-container-pic-of-serias">
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_1/1.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_1/2.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_1/3.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_1/4.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_1/5.jpg" alt="">
+	        			</div>
+	        		</div>
+	  			</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- Modal love set 2 -->
+	<div class="modal fade" id="portfolioModal_love_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	        		<div class="flex-container-pic-of-serias">
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_2/1.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_2/2.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_2/3.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_2/4.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_2/5.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_2/6.jpg" alt="">
+	        			</div>
+	        		</div>
+	  			</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- Modal love set 3 -->
+	<div class="modal fade" id="portfolioModal_love_3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	        		<div class="flex-container-pic-of-serias">
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_3/1.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_3/2.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_3/3.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_3/4.jpg" alt="">
+	        			</div>
+	        			<div class="flex-item-pic-of-serias">
+	        				<img class="img-of-serias" src="img/portfolio/lovestory/set_3/5.jpg" alt="">
+	        			</div>
+	        		</div>
+	  			</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- ///////////////////////////////////////////////////////////// -->
+	<div class="footer">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-4 col-lg-2">
+					<a href="https://vk.com/kosttina"  target="_blank"><img class="footer-link-pic-vk" src="img/logo_vk_min.png"></a>
+					<a href="https://instagram.com/kost.tina"  target="_blank"><img class="footer-link-pic-inst" style="margin-right: 20px;" src="img/logo_inst_min.png"></a>
+					<a href="https://api.whatsapp.com/send?phone=79998649126"  target="_blank"><img class="footer-link-pic-inst" src="img/logo_wa_min.png"></a>
+				</div>
+
+				<div class="col-4 offset-lg-2 footer-main-text">Дарья Костина © 2019<br><span> І </span>Все права защищены</div>
+
+				<div class="col-3 offset-1 col-lg-2 offset-lg-2 footer-email">kost.tina@gmail.com</div>
+			</div>
+		</div>
+	</div>
+	<!-- Скрипты -->
+	<!-- /////////////////////////////////////////////////////////////////////////////////////////////// -->
+	<!-- Скрипты -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- Бутстрап JS -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- Скрипт для работы прелоадера -->
+	<script src="js/loading_screen.js"></script>
+</body>
+</html>
