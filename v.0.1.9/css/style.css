@@ -666,7 +666,7 @@ h2 .a1:hover {
   color: #3a3a3a;
 }
 .service-block:hover .service-btn {
-  width: 300px;
+  width: 250px;
   color: #ffffff;
   background-color: #0099ff;
 }
@@ -814,10 +814,25 @@ span#btn-open-std-list:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+.service-pic {
+  overflow: hidden;
+}
 .info-about-order {
   color: #878787;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
+}
+#service-cover-pic-1 {
+  background-image: url(../img/portfolio/covers/services/individ.png);
+}
+#service-cover-pic-2 {
+  background-image: url(../img/portfolio/covers/services/lovestory.png);
+}
+#service-cover-pic-3 {
+  background-image: url(../img/portfolio/covers/services/family.png);
+}
+#service-cover-pic-4 {
+  background-image: url(../img/portfolio/covers/services/express.png);
 }
 @media only screen and (min-width: 1520px) {
   /*760 и больше*/
@@ -877,12 +892,14 @@ span#btn-open-std-list:hover {
     display: none;
   }
   .service-pic:before,
-  .service-pic:after,
-  .service-pic {
+  .service-pic:after {
     display: none;
   }
   .gift-card {
-    display: none;
+    width: 200px;
+  }
+  .gift-card-img {
+    width: 185px;
   }
   .h3-services {
     color: #1c1c1c;
@@ -892,6 +909,52 @@ span#btn-open-std-list:hover {
   }
   .p-services {
     color: #3a3a3a;
+  }
+  .service-perspectiv {
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+    -webkit-perspective-origin: left 30%;
+            perspective-origin: left 30%;
+  }
+  .service-picblock {
+    overflow: hidden;
+    position: absolute;
+    width: 200px;
+    height: 275px;
+  }
+  .service-picblock.service-picblock-r {
+    top: -150px;
+    border: solid 20px #fcfcfc;
+    -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+    -webkit-transform: rotateY(-13deg);
+            transform: rotateY(-13deg);
+  }
+  .service-picblock.service-picblock-l {
+    top: -150px;
+    border: solid 20px #fcfcfc;
+    -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+    -webkit-transform: rotateY(13deg);
+            transform: rotateY(13deg);
+  }
+  .service-picblock.service-picblock-g {
+    top: -200px;
+  }
+  .service-pic {
+    width: 175px;
+  }
+  #service-cover-pic-1 {
+    background-image: url(../img/portfolio/covers/services/individsmall.png);
+  }
+  #service-cover-pic-2 {
+    background-image: url(../img/portfolio/covers/services/lovestorysmall.png);
+  }
+  #service-cover-pic-3 {
+    background-image: url(../img/portfolio/covers/services/familysmall.png);
+  }
+  #service-cover-pic-4 {
+    background-image: url(../img/portfolio/covers/services/expresssmall.png);
   }
 }
 /*старое*/
