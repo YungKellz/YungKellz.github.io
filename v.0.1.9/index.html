@@ -13,24 +13,18 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates&amp;subset=cyrillic" rel="stylesheet">
 	<script src="js/wow.min.js"></script>
-	<script>
-		var wow = new WOW;
-		wow.init();
-	</script>
-
 </head>
 <body>
 	<!-- ////////////////////////////////NAV/////////////////////////////////// -->
 	<nav class="fixed-top nav-bar">	
 		<div class="container">
 			<div class="row align-items-center">	
-				<div class="col-lg-6 logo-pic"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
-				<div class="col-12 col-lg-6 text-uppercase menu-line">
+				<div class="col-lg-8 logo-pic"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+				<div class="col-12 col-lg-4 text-uppercase menu-line">
 					<div class="block-of-menu-links">
 						<a href="index.html" class="menu-txt active-page">главная</a>
 						<a href="portfolio.html" class="menu-txt">портфолио</a>
 						<a href="services.html" class="menu-txt">услуги</a>
-						<a href="about.html" class="menu-txt">обо мне</a>
 					</div>
 				</div>
 			</div>
@@ -44,7 +38,7 @@
 					<h1>Дарья Костина</h1>
 					<br>
 					<h2 class="stick_1">Фотограф<br>Москва</h2>
-					<p>Привет, я профессионально занимаюсь фотографией уже больше года и еще пара интересных фактов</p>
+					<p>Привет, я профессионально занимаюсь фотографией уже больше года блблблб</p>
 					<p class="stick_2">Здесь Вы можете ознакомиться с моими работами, а также найти всю необходимую	информацию для связи</p>
 				</div>
 			</div>
@@ -250,5 +244,12 @@
 	<script src="js/slickForIndex.js"></script>
 	<!-- Before After slider -->
 	<script src="js/beforeAfterSlider.js"></script>
+	<!-- Отключение wow -->
+	<script>
+		if ($(window).width() > 1520){ 
+		    var wow = new WOW;
+			wow.init();
+		}
+	</script>
 </body>
 </html>

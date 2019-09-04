@@ -19,13 +19,12 @@
 	<nav class="fixed-top nav-bar">	
 		<div class="container">
 			<div class="row align-items-center">	
-				<div class="col-lg-6 logo-pic"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
-				<div class="col-12 col-lg-6 text-uppercase menu-line">
+				<div class="col-lg-8 logo-pic"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
+				<div class="col-12 col-lg-4 text-uppercase menu-line">
 					<div class="block-of-menu-links">
 						<a href="index.html" class="menu-txt">главная</a>
 						<a href="portfolio.html" class="menu-txt">портфолио</a>
 						<a href="services.html" class="menu-txt active-page">услуги</a>
-						<a href="about.html" class="menu-txt">обо мне</a>
 					</div>
 				</div>
 			</div>
@@ -154,7 +153,7 @@
 		        		Здесь будет описание услуги</p>
 		      	</div>
 		      	<div class="modal-body modal-body-services">
-		        	<p class="p-services-modal">Заказ осуществляется через социальные сети напрямую со мной. Вы можете написать сами, перейдя по ссылкам ниже, или же воспользоваться конструктором готового сообщения для WhatsApp. Также вы можете скопировать текст готового сообщения нажав соответствующую кнопку.</p>
+		        	<p class="p-services-modal info-about-order">Заказ осуществляется через социальные сети напрямую со мной. Вы можете написать сами, перейдя по ссылкам ниже, или же воспользоваться конструктором готового сообщения для WhatsApp. Также вы можете скопировать текст готового сообщения нажав соответствующую кнопку.</p>
 		      	</div>
 		      	<div class="modal-body modal-body-services">
 		      		<div class="flex-con-for-buttons-services">
@@ -174,22 +173,14 @@
 			      		<button class="btn btn-services-modal " onclick="copytext('#ready_text')" id="btn_for_copy">Копировать</button>
 						
 		      		</div>
-		      		<form> <!-- Поля имени и даты -->
-		      			<div class="flex-con-for-buttons-services" style="margin-bottom: 15px;">
+		      		<!-- Поля имени и даты -->
+		      			<div class="flex-con-for-buttons-services" style="margin: 15px 0;">
 
 							<input class="form_name form_name-services" type="text" required name="Name" placeholder="Ваше имя" id="input_name" style="width: 250px;">
 
-							<input class="form_date form_date-services" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="Date" placeholder="Дата" id="input_date" style="width: 30%;">
+							<input class="form_date form_date-services" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="Date" placeholder="Дата" id="input_date" style="width: 139px;">
 
 		      			</div>
-		      		</form>
-	      			<!-- <div class="block-choose-studio">
-	      				<p id="choose-studio">Студия: <span id="studio-chosen">Не выбрана </span><span id="btn-open-std-list">Выбрать</span> <span id="btn-delete-std-chosen" class="hidePoints">Отменить</span></p>
-
-	      				<div id="example-of-studio"class="ready-text-block  hidePoints">
-	      					...
-	      				</div>
-	      			</div> -->
 		      		<div class="checkbox-services" id="checkbox-points">
 						<input id="check1" type="checkbox" name="check_for_instastories" value="check1" class="checkbox-field">
 						<label for="check1">Короткие видео 15-30с для Инстаграма (+500р)</label>  <span id="btn-open-std-list">Подробнее</span>
