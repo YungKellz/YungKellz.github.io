@@ -76,12 +76,10 @@ function changeModalInfo(a){
 
 	if (a != 5){
 		document.getElementById('checkbox-points').classList.remove('hidePoints');
-		document.getElementById('choose-studio').classList.remove('hidePoints');
 		document.getElementById('input_date').classList.remove('hidePoints');
 	}
 	else{
 		document.getElementById('checkbox-points').classList.add('hidePoints');
-		document.getElementById('choose-studio').classList.add('hidePoints');
 		document.getElementById('input_date').classList.add('hidePoints');
 	}
 }
@@ -108,3 +106,12 @@ function toggleAlert(){
 $("#btn_for_copy").on("click", toggleAlert);
 $('#bsalert').on('close.bs.alert', toggleAlert);
 
+/*Кнопка подробнее для услуги историй*/
+
+Podrobnee = document.getElementById('btn-open-std-list');
+Podrobnee.onclick = function(){openCloseDiscriptionOfInstaStory();}
+function openCloseDiscriptionOfInstaStory(){
+	document.getElementById('example-of-studio').classList.toggle('hidePoints');
+	if(Podrobnee.innerHTML == "Подробнее"){Podrobnee.innerHTML="Скрыть"}
+	else{Podrobnee.innerHTML="Подробнее"};
+}
