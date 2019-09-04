@@ -277,16 +277,16 @@ h4 {
   margin-bottom: 25px;
 }
 .service-box-pic-1 {
-  background-image: url(../img/examples/3.jpg);
+  background-image: url(../img/portfolio/covers/services/individ.png);
 }
 .service-box-pic-2 {
-  background-image: url(../img/examples/4.jpg);
+  background-image: url(../img/portfolio/covers/services/lovestory.png);
 }
 .service-box-pic-3 {
-  background-image: url(../img/examples/5.jpg);
+  background-image: url(../img/portfolio/covers/services/family.png);
 }
 .service-box-pic-4 {
-  background-image: url(../img/examples/6.jpg);
+  background-image: url(../img/portfolio/covers/services/express.png);
 }
 .service-box-name {
   text-align: center;
