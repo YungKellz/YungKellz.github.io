@@ -814,6 +814,11 @@ span#btn-open-std-list:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+.info-about-order {
+  color: #878787;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
 @media only screen and (min-width: 1520px) {
   /*760 и больше*/
   .footer-main-text br {
@@ -878,6 +883,15 @@ span#btn-open-std-list:hover {
   }
   .gift-card {
     display: none;
+  }
+  .h3-services {
+    color: #1c1c1c;
+  }
+  .h2-services {
+    color: #1c1c1c;
+  }
+  .p-services {
+    color: #3a3a3a;
   }
 }
 /*старое*/
