@@ -101,7 +101,7 @@
   color: #66c2ff;
 }
 .active-page {
-  color: #0099ff;
+  color: #0099ff !important;
 }
 h1 {
   font-family: 'Montserrat Alternates', sans-serif;
