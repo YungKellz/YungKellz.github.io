@@ -415,5 +415,13 @@
 	<script src="js/bootstrap.min.js" ></script>
 	<!-- Скрипт для работы прелоадера -->
 	<script src="js/loading_screen.js"></script>
+	<script>
+		$(".menu-txt").click(function() {
+	        $("#preloader").removeClass('loading_done');
+	        var href = $(this).attr('href');
+	        setTimeout(function() {window.location = href}, 100);
+	        return false;
+	    });
+	</script>
 </body>
 </html>

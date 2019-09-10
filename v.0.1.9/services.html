@@ -247,14 +247,21 @@
 	<!-- Скрипт для работы прелоадера -->
 	<script>
 		document.body.onload = function (){
-	console.log("beach");
-	setTimeout(function() {
-		var preloader = document.getElementById("preloader");
-		if (!preloader.classList.contains('loading_done'))
-		{
-			preloader.classList.add('loading_done');
-		}
-	}, 200); }
+			console.log("beach");
+			setTimeout(function() {
+				var preloader = document.getElementById("preloader");
+				if (!preloader.classList.contains('loading_done'))
+				{
+					preloader.classList.add('loading_done');
+				}
+			}, 200); 
+		}			
+		$(".menu-txt").click(function() {
+	        $("#preloader").removeClass('loading_done');
+	        var href = $(this).attr('href');
+	        setTimeout(function() {window.location = href}, 100);
+	        return false;
+	    });
 	</script>
 </body>
 </html>
