@@ -1,3 +1,4 @@
+/* 0099FF */
 .s {
   border: 1px solid red;
 }
@@ -29,6 +30,7 @@
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background: url(../img/logo_bg.png) center no-repeat;
+  text-align: center;
   -webkit-transition: 1s all;
   transition: 1s all;
   opacity: 1;
@@ -48,11 +50,14 @@
   -webkit-animation: loading 2s infinite ease-in-out;
           animation: loading 2s infinite ease-in-out;
 }
-.preloader .loader.loading_done1 {
-  opacity: 0;
-  visibility: hidden;
+.preloader .loader.loader_procents {
+  top: 70%;
+  background: none;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
 }
-.preloader.loading_done2 {
+.loading_done {
   opacity: 0;
   visibility: hidden;
 }
@@ -955,6 +960,9 @@ span#btn-open-std-list:hover {
   }
   #service-cover-pic-4 {
     background-image: url(../img/portfolio/covers/services/expresssmall.png);
+  }
+  .loader_procents {
+    top: 50%;
   }
 }
 /*старое*/
