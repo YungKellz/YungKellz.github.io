@@ -18,6 +18,10 @@ function image_loaded(){
 	perc_display.innerHTML = ((( 100 / images_total_count ) * images_loaded_count ) << 0 ) + '%'; 
 }
 
+setTimeout(function(){
+	perc_display.classList.remove('hidePoints');
+}, 4000);
+
 document.body.onload = function (){
 	console.log("beach");
 	setTimeout(function() {
@@ -35,7 +39,5 @@ document.body.onload = function (){
 			document.getElementById('loader_procents').classList.add('loading_done');
 		}
 	}, 1000); 
-	setTimeout(function(){
-		
-	}, 4000);
+	
 }
