@@ -4,7 +4,7 @@ var
 	images_total_count = images.length,
 	images_loaded_count = 0;
 	perc_display = document.getElementById('loader_procents');
-	//perc_display.classList.add('loading_done');
+	loaded = 0;
 for (var i = 0; i < images_total_count;i++)
 {
 	image_clone = new Image();
@@ -19,8 +19,10 @@ function image_loaded(){
 }
 
 setTimeout(function(){
-	perc_display.classList.remove('hidePoints');
-}, 4000);
+	if(loaded == 0){
+		perc_display.classList.remove('loading_done');
+	}
+}, 2500);
 
 document.body.onload = function (){
 	console.log("beach");
@@ -37,6 +39,7 @@ document.body.onload = function (){
 		{
 			loader.classList.add('loading_done');
 			document.getElementById('loader_procents').classList.add('loading_done');
+			loaded = 1;
 		}
 	}, 1000); 
 	
