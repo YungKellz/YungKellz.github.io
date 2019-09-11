@@ -280,18 +280,20 @@ h4 {
   border: 1px solid #7f7f7f;
   margin: 0 auto;
   margin-bottom: 25px;
+  background-position: center;
+  background-size: 102%;
 }
 .service-box-pic-1 {
-  background-image: url(../img/portfolio/covers/services/individ.png);
+  background-image: url(../img/portfolio/individ/set_6/1.jpg);
 }
 .service-box-pic-2 {
-  background-image: url(../img/portfolio/covers/services/lovestory.png);
+  background-image: url(../img/portfolio/lovestory/set_1/1.jpg);
 }
 .service-box-pic-3 {
-  background-image: url(../img/portfolio/covers/services/family.png);
+  background-image: url(../img/portfolio/lovestory/set_2/2.jpg);
 }
 .service-box-pic-4 {
-  background-image: url(../img/portfolio/covers/services/express.png);
+  background-image: url(../img/portfolio/individ/set_1/3.jpg);
 }
 .service-box-name {
   text-align: center;
@@ -453,6 +455,31 @@ textarea:hover {
 .footer-email {
   text-align: right;
 }
+.portfolio_set {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 7px;
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+.portfolio_set_mobile {
+  opacity: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  height: 60px;
+  line-height: 55px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-top: 5px solid rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
 .nav-link {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
@@ -474,7 +501,7 @@ textarea:hover {
 .btn-img-series {
   background-blend-mode: overlay;
   font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
+  font-size: 60px;
   width: 300px;
   height: 450px;
   color: transparent;
@@ -483,9 +510,8 @@ textarea:hover {
   transition: 0.5s;
   border: none;
   border-radius: 7px;
-  margin: 0 auto;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  background-position: center;
+  background-size: 102%;
 }
 .btn-img-series:hover {
   color: white;
@@ -497,12 +523,14 @@ textarea:hover {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   border-bottom: 1px solid #dee2e6;
   border-left: 1px solid #dee2e6;
   border-right: 1px solid #dee2e6;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  padding: 0 15px 0 15px;
+  padding: 0 15px 35px 15px;
 }
 .flex-container-pic-of-serias {
   display: -webkit-box;
@@ -628,7 +656,7 @@ h2 .a1:hover {
   background-color: white;
   display: block;
   margin: 0 auto;
-  background-position: left -30px;
+  background-position: center;
   background-size: 101%;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -661,45 +689,45 @@ h2 .a1:hover {
   border-bottom: 400px solid white;
   border-left: 75px solid transparent;
 }
-.service-block:hover .h3-services {
+.service-block-hovered .h3-services {
   color: #1c1c1c;
 }
-.service-block:hover .h2-services {
+.service-block-hovered .h2-services {
   color: #1c1c1c;
 }
-.service-block:hover .p-services {
+.service-block-hovered .p-services {
   color: #3a3a3a;
 }
-.service-block:hover .service-btn {
+.service-block-hovered .service-btn {
   width: 250px;
   color: #ffffff;
   background-color: #0099ff;
 }
-.service-block:hover .white-square {
+.service-block-hovered .white-square {
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
   -webkit-transition-duration: 0.6s;
           transition-duration: 0.6s;
   background-color: rgba(255, 255, 255, 0);
 }
-.service-block:hover .service-pic {
-  background-size: 100%;
+.service-block-hovered .service-pic {
+  background-size: 101%;
 }
-.service-block:hover .service-pic:before {
+.service-block-hovered .service-pic:before {
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   width: 100px;
 }
-.service-block:hover .service-pic:after {
+.service-block-hovered .service-pic:after {
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   width: 100px;
 }
-.service-block:hover .gift-card-img {
+.service-block-hovered .gift-card-img {
   -webkit-transform: rotateY(8deg);
           transform: rotateY(8deg);
 }
@@ -828,16 +856,16 @@ span#btn-open-std-list:hover {
   font-size: 14px;
 }
 #service-cover-pic-1 {
-  background-image: url(../img/portfolio/covers/services/individ.png);
+  background-image: url(../img/portfolio/individ/set_6/2.jpg);
 }
 #service-cover-pic-2 {
-  background-image: url(../img/portfolio/covers/services/lovestory.png);
+  background-image: url(../img/portfolio/lovestory/set_1/5.jpg);
 }
 #service-cover-pic-3 {
-  background-image: url(../img/portfolio/covers/services/family.png);
+  background-image: url(../img/portfolio/lovestory/set_2/1.jpg);
 }
 #service-cover-pic-4 {
-  background-image: url(../img/portfolio/covers/services/express.png);
+  background-image: url(../img/portfolio/individ/set_1/5.jpg);
 }
 @media only screen and (min-width: 1520px) {
   /*760 и больше*/
@@ -947,22 +975,18 @@ span#btn-open-std-list:hover {
     top: -200px;
   }
   .service-pic {
-    width: 175px;
-  }
-  #service-cover-pic-1 {
-    background-image: url(../img/portfolio/covers/services/individsmall.png);
-  }
-  #service-cover-pic-2 {
-    background-image: url(../img/portfolio/covers/services/lovestorysmall.png);
-  }
-  #service-cover-pic-3 {
-    background-image: url(../img/portfolio/covers/services/familysmall.png);
-  }
-  #service-cover-pic-4 {
-    background-image: url(../img/portfolio/covers/services/expresssmall.png);
+    width: 170px;
+    height: 240px;
   }
   .loader_procents {
     top: 50%;
+  }
+  .btn-img-series {
+    width: 200px;
+    height: 300px;
+  }
+  .portfolio_set_mobile {
+    opacity: 1;
   }
 }
 /*старое*/
