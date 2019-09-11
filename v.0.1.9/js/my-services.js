@@ -115,3 +115,104 @@ function openCloseDiscriptionOfInstaStory(){
 	if(Podrobnee.innerHTML == "Подробнее"){Podrobnee.innerHTML="Скрыть"}
 	else{Podrobnee.innerHTML="Подробнее"};
 }
+
+/*Хрень для выбора активной шторки*/
+O();
+function O(){
+	if ($(window).width() > 1520){ 
+		var
+			ActiveBlockID = 1,
+			BlockIndividService = document.getElementById('individ_serv');
+			BlockLovestoryService = document.getElementById('lovestory_serv');
+			BlockFamilyService = document.getElementById('family_serv_block');
+			BlockExpressService = document.getElementById('express_serv_block');
+			BlockGiftService = document.getElementById('gift_serv_block');
+		IO(2,ActiveBlockID);
+
+		BlockIndividService.addEventListener("mouseover", setActive1);
+		BlockLovestoryService.addEventListener("mouseover", setActive2);
+		BlockFamilyService.addEventListener("mouseover", setActive3);
+		BlockExpressService.addEventListener("mouseover", setActive4);
+		BlockGiftService.addEventListener("mouseover", setActive5);
+
+		function setActive1(e){
+			if(e.type==="mouseover")
+			{
+				IO(ActiveBlockID, 1);
+				ActiveBlockID = 1;
+			}
+		}
+		function setActive2(e){
+			if(e.type==="mouseover")
+			{
+				IO(ActiveBlockID, 2);
+				ActiveBlockID = 2;
+			}
+		}
+		function setActive3(e){
+			if(e.type==="mouseover")
+			{
+				IO(ActiveBlockID, 3);
+				ActiveBlockID = 3;
+			}
+		}
+		function setActive4(e){
+			if(e.type==="mouseover")
+			{
+				IO(ActiveBlockID, 4);
+				ActiveBlockID = 4;
+			}
+		}
+		function setActive5(e){
+			if(e.type==="mouseover")
+			{
+				IO(ActiveBlockID, 5);
+				ActiveBlockID = 5;
+			}
+		}
+
+		refreshActiveServiceBlock = window.setInterval(IO, 10);
+
+		function IO(a,b){
+			console.log('asd');
+			switch (a){
+				case 1: 
+					BlockIndividService.classList.remove('service-block-hovered');
+					break;
+				case 2: 
+					BlockLovestoryService.classList.remove('service-block-hovered');
+					break;
+				case 3: 
+					BlockFamilyService.classList.remove('service-block-hovered');
+					break;
+				case 4: 
+					BlockExpressService.classList.remove('service-block-hovered');
+					break;
+				case 5: 
+					BlockGiftService.classList.remove('service-block-hovered');
+					break;
+				default:
+					break;
+			}
+			switch (b){
+				case 1: 
+					BlockIndividService.classList.add('service-block-hovered');
+					break;
+				case 2: 
+					BlockLovestoryService.classList.add('service-block-hovered');
+					break;
+				case 3: 
+					BlockFamilyService.classList.add('service-block-hovered');
+					break;
+				case 4: 
+					BlockExpressService.classList.add('service-block-hovered');
+					break;
+				case 5: 
+					BlockGiftService.classList.add('service-block-hovered');
+					break;
+				default:
+					break;
+			}
+		}
+	}
+}
