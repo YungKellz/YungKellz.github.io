@@ -1,0 +1,144 @@
+.mont(@size){
+	font-family: 'Montserrat', sans-serif;
+  	font-size: @size;
+}
+.mont-alt(@size){
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-size: @size;
+}
+
+main{
+	padding:50px 0;
+	a{
+		cursor: default;
+		color: #2B2B2B;
+		&:hover{
+			color: #2B2B2B;
+		}
+	}
+	.flex-con{
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	h2{
+			.mont-alt(18px);
+			font-weight: 600;
+			margin-bottom:3px;
+		}
+		h3{
+			.mont(16px);
+			margin-bottom:22px;
+			font-weight: 600;
+
+		}
+		h4{
+			.mont(14px);
+		}
+}
+
+.person-block{
+	position: relative;
+	height: 150px;
+	width:  530px;
+	border-radius: 150px;
+	margin: 60px auto;
+
+	img{
+		position:absolute;
+		top:0;
+		left:0;
+		opacity:1 !important;
+		border-radius: 150px;
+		transition:all 0.5s;
+		height:150px;
+		width:150px;
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+	}
+	&:hover {
+		cursor: pointer;
+		img{
+			transform: scale(1.1);
+			box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.55);
+		}
+		.gradient{
+			opacity: 0.25;
+			background: linear-gradient(60deg, rgba(255, 0, 255, 1) 0%, rgba(0, 0, 255, 1) 100%);
+			cursor: pointer;
+		}
+		.addgradient1{
+			opacity: 0.55;
+		}
+		.addgradient2{
+			opacity: 0;
+		}
+	}
+	.gradient{
+		position:absolute;
+		top: 0;
+		z-index:-1;
+		width: inherit;
+		height: inherit;
+		border-radius: 150px;
+		opacity: 0.08;
+		transition:all 0.7s ease-in-out;
+		background: linear-gradient(30deg, rgba(255, 0, 255, 1) 0%, rgba(0, 0, 255, 1) 100%);
+	}
+	.addgradient1{
+		position:absolute;
+		top: 0;
+		z-index:-1;
+		width: inherit;
+		height: inherit;
+		border-radius: 150px;
+		opacity: 0.01;
+		transition:all 0.7s ease-in-out;
+		background: linear-gradient(200deg, rgba(255, 0, 255, 1) 20%, rgba(0, 0, 255, 1) 100%);
+		
+	}
+	.addgradient2{
+		position:absolute;
+		top: 0;
+		z-index:-1;
+		width: inherit;
+		height: inherit;
+		border-radius: 150px;
+		opacity: 0.45;
+		transition:all 0.7s ease-in-out;
+		background: linear-gradient(60deg, rgba(255, 0, 255, 1) 0%, rgba(0, 0, 255, 1) 100%);
+		
+	}
+	
+	.text{
+		width: 300px;
+		height:150px;
+		padding:35px 0;
+		margin-left: 180px;
+		
+	}
+	.add{
+		color: white;
+		position:relative;
+		&plus{
+			color: white;
+			position:absolute;
+			height:150px;
+			width:150px;
+			line-height:150px;
+			display:inline-block;
+			text-align:center;
+			.mont(100px);
+		}
+		height:150px;
+		width:530px;
+		text-align:center;
+		display:inline-block;
+		h3{
+			.mont(25px);	
+			line-height:150px;
+		}
+	}
+}
+
+
+
