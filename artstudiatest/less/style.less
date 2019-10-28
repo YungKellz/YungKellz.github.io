@@ -24,7 +24,7 @@ h2{
 /*COLORS*/
 @white: rgba(255,255,255,1);
 @white15: rgba(255,255,255,0.15);
-@white75: rgba(255,255,255,0.9);
+@white95: rgba(255,255,255,0.9);
 @black-light:#3a3a3a;
 @black-dark:#1c1c1c;
 @grey:#e6e6e6;
@@ -64,7 +64,9 @@ nav/*NAVBAR*/{
 		a{
 			color:@white;
 		}
-		background-color: @white15;
+		&:before{
+    		width:47px;
+    	}
 	}
  	ul {
         .mont(0px);
@@ -77,10 +79,10 @@ nav/*NAVBAR*/{
 	        height: 70px;
 	        line-height: 70px;
 	        font-size: 14px;
-	        color: @white75 !important;
+	        color: @white95 !important;
 	        border-left: 1px solid @white;
 	        text-align: center;
-
+			position:relative;
 	        .point {
 	        	border-top:0;
 	        	border-bottom: 1px solid @grey;
@@ -96,10 +98,23 @@ nav/*NAVBAR*/{
 	    	&:last-child {
 	    		border-right: 1px solid @white;
 	    	}
+	    	&:before{
+	    		content:"";
+	    		position:absolute;
+	    		width:0px;
+	    		height:1px;
+	    		background-color:@white95;
+	    		top:47px;
+	    		transform: translateX(-50%);
+	    		transition:all 0.2s ease-in-out;
+	    	}
+	    	&:hover:before{
+	    		width:47px;
+	    	}
 	    }
 	}
 	a{
-		color:@white75;
+		color:@white95;
 		&:hover{
 			color:@white;
 		}
@@ -112,8 +127,6 @@ nav/*NAVBAR*/{
 			    display: block;
 			    opacity: 1;
 		    	visibility: visible;
-		    }
-		    &:before{
 		    }
 		}
 		&:before{

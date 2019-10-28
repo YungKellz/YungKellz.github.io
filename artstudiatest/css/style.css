@@ -34,11 +34,11 @@ nav .nav-bar {
   -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.35);
           box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.35);
 }
-nav .active-page {
-  background-color: rgba(255, 255, 255, 0.15);
-}
 nav .active-page a {
   color: #ffffff;
+}
+nav .active-page:before {
+  width: 47px;
 }
 nav ul {
   font-family: 'Montserrat', sans-serif;
@@ -56,6 +56,7 @@ nav ul li {
   color: rgba(255, 255, 255, 0.9) !important;
   border-left: 1px solid #ffffff;
   text-align: center;
+  position: relative;
 }
 nav ul li .point {
   border-top: 0;
@@ -73,6 +74,21 @@ nav ul li .point-f {
 }
 nav ul li:last-child {
   border-right: 1px solid #ffffff;
+}
+nav ul li:before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.9);
+  top: 47px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+nav ul li:hover:before {
+  width: 47px;
 }
 nav a {
   color: rgba(255, 255, 255, 0.9);
