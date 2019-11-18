@@ -1,0 +1,78 @@
+.mont(@size){
+	font-family: 'Montserrat', sans-serif;
+  	font-size: @size;
+}
+.mont-alt(@size){
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-size: @size;
+}
+
+@maincolor:#2B2B2B;
+
+
+main{
+	margin-top: 140px;
+	margin-bottom:70px;
+	.gallery{
+		display:flex;
+		flex-wrap: wrap;
+		img{
+			cursor: pointer;
+			transition: all 0.2s ease-in-out;
+			&:hover{
+				box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.35);
+				transform: scale(1.02);
+			}
+		}
+		button{
+			border:none;
+			
+		}
+	}
+	img{
+		display: inline-block;
+		margin: 0 auto;
+		height:300px;
+		margin:25px auto;
+	}
+}
+
+
+.back_to_portfolio{
+	position: fixed;
+	z-index:20;
+	left:0px;
+	bottom:53px;
+	height:50px;
+	width:150px;
+	.mont-alt(18px);
+	border:none;
+	border-radius: 30px;
+	color:white;
+	transition: all 0.5s;
+	background: linear-gradient(30deg, #E100FF 0%, #7F00FF 100%);
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.35);
+	opacity:0;
+	&:hover{
+		transform: scale(1.01);
+	}
+	span:before{
+		position:absolute;
+		content:"◀";
+		left:15px;
+	}
+}
+
+.modal{
+	text-align: center;
+	img{
+		width:100%;
+	}
+	.modal-dialog-portfolio{
+		min-width: 50%;
+	}
+	h3{
+		.mont(18px);
+		margin: 30px 0 1rem 0;
+	}
+}
