@@ -1,9 +1,7 @@
 var gr1 = document.getElementById("gradientfornav1"),
 	gr2 = document.getElementById("gradientfornav2");
 
-
-
-
+	
 intervalId = window.setInterval(changeGradient1, 12000);
 window.setTimeout(function(){
 	intervalId = window.setInterval(changeGradient2, 12000);
@@ -15,11 +13,11 @@ function getRandomInRange(min, max) {
 
 function getRandomInRangePRO(min, max, n) {
 	var a = getRandomInRange(min, max);
-	if (a>70 && a <110){
+	if (a>50 && a <140){
 		getRandomInRangePRO(min, max, n);
 	}
 	else{
-		if (a>70 && a <110){
+		if (a>230 && a <300){
 			getRandomInRangePRO(min, max, n);
 		}
 		else{

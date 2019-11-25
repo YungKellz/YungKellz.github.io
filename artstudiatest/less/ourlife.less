@@ -1,57 +1,87 @@
 main{
 	margin-top:70px;
 	margin-bottom:70px;
+	.event-block{
+		width: 90%;
+		min-height: 300px;
+		margin: 50px auto;
+		padding: 40px;
+		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.35);
+		img{
+			width: 100%;
+		}
+		table.text  {
+		    width:  100%; /* Ширина таблицы */
+		    border-spacing: 0; /* Расстояние между ячейками */
+		    font-size: 18px;
+		    font-weight: 300;
+			font-family: 'Montserrat', sans-serif;
+			margin-top: 40px;
+		}
+		table.text td {
+			width: 80%; /* Ширина ячеек */
+			vertical-align: top; /* Выравнивание по верхнему краю */
+		}
+		td.rightcol { /* Правая ячейка */ 
+			text-align: right; /* Выравнивание по правому краю */
+		}
+	}
 }
 h1{
 	font-weight:600;
+	font-size: 26px;
+}
+h2{
+	font-size: 24px;
+	font-weight:400;
 }
 
-.year{
-	margin-top: 70px;
-	text-align:center;
-	.work-examples{
-		width:100%;
-		margin-bottom:80px;position:relative;
-		margin-top:50px;
-		&:before{
-			content: "";
-			position: absolute;
-			width:200px;
-			height:500px;
-			left:0;
-			z-index:15;
-			background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 25%,rgba(255,255,255,0) 100%); 
-		}
-		&:after{
-			content: "";
-			position: absolute;
-			width:200px;
-			height:500px;
-			right:0;
-			top:0;
-			z-index:15;
-			background: linear-gradient(-90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 25%,rgba(255,255,255,0) 100%); 
-		}
-		.slick-dots {
-			bottom: -40px;
-			li {
-				margin: 0 20px 0 20px;
-			}
-		}
+// .year{
+// 	margin-top: 70px;
+// 	text-align:center;
+// 	.work-examples{
+// 		width:100%;
+// 		margin-bottom:80px;position:relative;
+// 		margin-top:50px;
+// 		&:before{
+// 			content: "";
+// 			position: absolute;
+// 			width:200px;
+// 			height:500px;
+// 			left:0;
+// 			z-index:15;
+// 			background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 25%,rgba(255,255,255,0) 100%); 
+// 		}
+// 		&:after{
+// 			content: "";
+// 			position: absolute;
+// 			width:200px;
+// 			height:500px;
+// 			right:0;
+// 			top:0;
+// 			z-index:15;
+// 			background: linear-gradient(-90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 25%,rgba(255,255,255,0) 100%); 
+// 		}
+// 		.slick-dots {
+// 			bottom: -40px;
+// 			li {
+// 				margin: 0 20px 0 20px;
+// 			}
+// 		}
 
-	}
-	img{
-		height:400px;
+// 	}
+// 	img{
+// 		height:400px;
 		
-		margin: 0 60px;
-	}
+// 		margin: 0 60px;
+// 	}
 
-	.slick-prev:before, .slick-next:before {
-		display:hidden;
-	    color: white;
-	}
-	h3{
-		font-weight:300;
-		font-size: 20px;
-	}
-}
+// 	.slick-prev:before, .slick-next:before {
+// 		display:hidden;
+// 	    color: white;
+// 	}
+// 	h3{
+// 		font-weight:300;
+// 		font-size: 20px;
+// 	}
+// }
