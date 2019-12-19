@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Лабораторная по инф безопастности номер 1</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates&amp;subset=cyrillic" rel="stylesheet">
+</head>
+<body>
+	<!-- //////////////////////NAV///////////////////////// -->
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-12"><h4>БПИ-17-1 Назаренко Андрей, Пацукова Милена</h4></div><br><br>
+			<div class="col-md-12"><h1>Лабораторная Работа №1</h1></div>
+			<div class="col-md-12"><h2>Шифр Цезаря и XOR шифрование в одном</h2></div>
+
+		</div>
+		<input type="text" name="Name" placeholder="Ваш текст для шифрования" id="input_text" style="width: 100%;">
+
+		<input type="number" name="Name" placeholder="На сколько сдвинуть" id="input_length" style="width: 200px;">
+
+		<input type="text" name="Name" placeholder="Ключ" id="input_key" style="width: 200px;">
+		<br>
+		<p  class="p" id="ready_text">Здесь будет текст зашифрованного сообщения</p>
+		<button onclick="copytext('#ready_text')">Копировать</button>
+	
+		<input type="text" name="Name" placeholder="Ваш зашифрованный текст" id="input_text_2" style="width: 100%;">
+
+		<input type="number" placeholder="На сколько сдвинуть" id="input_length_2" style="width: 200px;">
+
+		<input type="text" name="Name" placeholder="Ключ" id="input_key_2" style="width: 200px;">
+		<br>
+		<p  class="p" id="ready_text_2">Здесь будет текст расшифрованного сообщения</p> <button onclick="copytext('#ready_text_2')">Копировать</button>
+	</div>
+
+	<div class="container">
+		<div class="row justify-content-center">
+			
+			<div class="col-md-12"><h1>Лабораторная Работа №2</h1></div>
+			<div class="col-md-12"><h2>Стеганография</h2></div>
+
+		</div>
+		<label>Введите сообщение которое хотите зашифровать:</label><br/>
+		<input style="width: 100%"type="text" id="message" placeholder="Введите текст здесь"></br>
+		
+
+		<label>Загрузите картинку для шифровки (ТОЛЬКО ПОСЛЕ ВВЕДЕНОГО ТЕКСТА, ШИФРОВАНИЕ ПРОИЗВОДИТСЯ АВТОМАТИЧЕСКИ):</label>
+
+		<input type="file" id="imageLoader_1" name="imageLoader"/><br>
+		<!-- Оригинальное изображение -->
+		<canvas id="imageCanvas1">
+            Ваш браузер не поддерживает Canvas
+        </canvas>
+        Оригинал <br>
+		<!-- Зашифрованное изображение -->
+        <canvas id="imageCanvas2">
+            Ваш браузер не поддерживает Canvas
+        </canvas>
+        Зашифрованная
+		<div class="row justify-content-center" style="padding: 15px;">
+			
+			
+			<label>Дешифровка картинки. Загрузите картинку для дешифровки:</label>
+			
+			<input type="file" id="imageLoader_2" name="imageLoader"/>
+			<br>
+			<canvas id="imageCanvas3">
+			            Ваш браузер не поддерживает Canvas
+			        </canvas>
+	        Ваше зашифрованное изображение
+	        <br>Текст, который был зашифрован в картинке
+	        <p class="p"id="unShifr_pic">*расшифрованный текст*</p>
+		</div>
+
+	</div>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/shifr.js"></script>
+	<script>
+		function copytext(el) { 
+			var $tmp = $("<input>"); 
+			$("body").append($tmp); 
+			$tmp.val($(el).text()).select(); 
+			document.execCommand("copy"); 
+			$tmp.remove(); 
+			alert("Скопировано");
+		}
+	</script>
+</body>
+</html>

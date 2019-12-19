@@ -1,0 +1,36 @@
+body{
+	padding-top: 100px;
+}
+input{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-right:15px;
+	padding: 3px;
+}
+.p{
+	display: inline-block;
+	border-radius: 5px;
+	margin: 20px;
+	padding: 10px;
+	border: 2px solid rgba(255,255, 255, 1);
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+.container{
+	margin-bottom: 50px;
+	border-bottom: 5px solid grey;
+}
+canvas{
+	background-color: #eee;
+	
+}
+#imageCanvas1{
+	position:relative;
+	&:before{
+		position: absolute;
+		content:"Оригинальное изображение";
+		top: -50px;
+		width: 100%;
+		height:50px;
+		background-color: red;
+	}
+}
