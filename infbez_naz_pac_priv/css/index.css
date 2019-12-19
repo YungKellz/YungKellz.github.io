@@ -45,3 +45,13 @@ p {
 .section-1 {
   margin-top: 60px;
 }
+@media (max-width: 720px) {
+  /*760 и меньше*/
+  nav ul li {
+    width: 100px;
+    font-size: 10px;
+  }
+  .logo-pic {
+    display: none;
+  }
+}
