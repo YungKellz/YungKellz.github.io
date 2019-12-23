@@ -8,39 +8,34 @@ function Shifr(){
 		key = document.getElementById('input_key').value,
 		abc = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя",
 		outputText = "",
-		txtLen = inputText.length,
-		keyLen = key.length;
+		txtLen = inputText.length;
 
-		
+	/*CESAR&XOR*/	
 	if (inputLenght != "" && inputText != "" && key != ""){
-		/*CESAR*/
+
+		while (key.length < txtLen) {
+			key = key + key;
+    	}
+
 		for (let i = 0; i < txtLen; i++) 
 		{
 			c = inputText[i]; /*c это i-тый символ*/
 			p = abc.indexOf(c); /*р это индекс символа в алфавите, если не буква то p=-1*/
 			if(p != -1){
 				a = p + parseInt(inputLenght); /*а это индекс зашифрованного символа*/
-
 				while(a >= abc.length) a-=abc.length; /*проверка что а не вышел за границы алфавита*/
-		  		outputText += abc[a];
+		  		var c1 = abc[a].charCodeAt(0),
+		        	c2 = key[i].charCodeAt(0),
+		        	xorC = c1 ^ c2 + 60;
+		        outputText += String.fromCharCode(xorC);
 			}
 			else{
-				outputText += c;/*здесь прибавляются точки, запятые, пробелы*/
+				var c1 = c.charCodeAt(0),
+		        	c2 = key[i].charCodeAt(0),
+		        	xorC = c1 ^ c2 + 60;
+		        outputText += String.fromCharCode(xorC);/*здесь прибавляются точки, запятые, пробелы*/
 			}
 		}
-		inputText = outputText;
-		outputText = "";
-		console.log(inputText);
-		/*XOR*/
-		while (key.length < txtLen) {
-			key = key + key;
-    	}
-    	for(var i = 0; i < txtLen; i++) {
-	        var c1 = inputText[i].charCodeAt(0);
-	        var c2 = key[i].charCodeAt(0);
-	        var xorC = c1 ^ c2 + 60;
-	        outputText += String.fromCharCode(xorC);
-	    }
 		document.getElementById('ready_text').innerHTML = outputText;
 	}
 	else document.getElementById('ready_text').innerHTML = "Здесь будет текст зашифрованного сообщения";
@@ -104,15 +99,13 @@ var canvas1 = document.getElementById('imageCanvas1'), /* Первый канв�
 	canvasOut1 = document.getElementById('imageCanvas2');/* Второй канвас Зашифрованный*/
 var ctx = canvas1.getContext('2d'),
 	ctx2 = canvasOut1.getContext('2d');
-
+	
 function handleImage(e){
 	var inputText = document.getElementById('message').value,
 	messageLength = inputText.length,
 	messageLengthByte = messageLength.toString('2'), 
 	messageASCII = "", messageByte;
 	while (messageLengthByte.length < 16) messageLengthByte = "0" + messageLengthByte;
-
-
     var reader = new FileReader();
     reader.onload = function(event){
         var img = new Image();
@@ -123,7 +116,6 @@ function handleImage(e){
 	        canvasOut1.height = img.height;
 	        ctx.drawImage(img,0,0);
 	        ctx2.drawImage(img,0,0);
-
 	        var imageData = ctx2.getImageData(0, 0, 2, 1); /*Выцепили первые два пикселя которые будут сообщать длину сообщения*/
 	        var byte;
 	        for (var i = 0; i < 8; i++) {
@@ -146,17 +138,14 @@ function handleImage(e){
             		c = c.toString('2');
             		while (c.length < 12) c = "0" + c;
             		/*c - string 12 цифр двоичнoe представление символа для закладки в пиксель*/
-            		
             		/*Вставляем в пиксель символ. делим симовл на 4 части и вставляем в последние три бита каждого компонента пикселя*/
             		for (var j = 0; j < 4; j++){
             			byte = imageData.data[i*4 + j];
 	            		byte = byte.toString('2');
 	            		byte = byte.substr(0,byte.length-3 ) + c.substr(j*3, 3);
 	            		byte = parseInt(byte, 2);
-
 	            		imageData.data[i*4 + j] = byte;
             		}
-            		
             }
             ctx2.putImageData(imageData, 0, 1);/*засунули текст в пиксели а пиксели в картинку начиная со второй строки*/
         }
