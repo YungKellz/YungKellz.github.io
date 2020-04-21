@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>ДизайнСтудия МИСиС</title>
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../css/game1.css">
+</head>
+<body>
+	<!-- //////////////////////NAV///////////////////////// -->
+	<div id="nav_dropdown_white_bg"></div>
+	<nav>	
+		<div id="nav_gradient"></div>
+		<div id="nav_white"></div>
+		<div id="nav_logo"><img src='../../img/logo.svg'/></div>
+		<div id="nav_menu">
+			<a href="../../index.html">главная</a>
+			<div id="nav_menu_works">
+				<a href="#" id="nav_menu_works_head">работы</a>
+				<ul>
+					<a href="../../html/works/design.html"><li>дизайн</li></a>
+					<a href="../../html/works/grafika.html"><li>графика</li></a>
+					<a href="../../html/works/zhivopis.html"><li>живопись</li></a>
+					<a href="../../html/works/photografika.html"><li>фотографика</li></a>
+					<a href="../../html/works/modeling.html"><li>моделирование</li></a>
+				</ul>
+				
+			</div>
+			<a href="../../ourlive.html">наша жизнь</a>
+			<a href="../../portfolio.html" >портфолио</a>
+			<a href="../../games.html"  class="active_page">тренажеры</a>
+		</div>
+	</nav>
+	<!-- //////////////////////MAIN///////////////////////// -->
+	<main>
+        <div class="container">
+			<h2>оттенки</h2>
+			<!-- <p>Тренажер позволяющий прокачать свой скилл в распозновании оттенков, вам придется находить плашки с цветом отличным от остальных</p> -->
+			<div id="settings">
+				<div id="easy"class="settings active">легко</div>
+				<div id="normal" class="settings">средне</div>
+				<div id="hard" class="settings">сложно</div>
+			</div>
+			<div id="button_start"> начать</div>
+			<div id="timer">осталось секунд<br>
+				<span>
+					<div id="time">30</div>
+					<div id="plustwo">+2</div>
+					<div id="minustwo">−2</div>
+				</span>
+				<div id="button_stop">закончить</div>
+			</div>
+            <div id="counter_right"></div>
+            <div id="counter_wrong"></div>
+			
+            <div id="game_field">
+				<div id="white_cover">
+					<div id="sumTab">
+						<h1>
+							ИТОГО
+						</h1> 
+						<table class="text">
+							<tr>
+								<td>затрачено времени</td>
+								<td class="rightcol" id="sumTime"></td>
+							</tr>
+							<tr>
+								<td>пройдено уровней</td>
+								<td class="rightcol" id="sumLevels"></td>
+							</tr>
+							<tr>
+								<td>допущено ошибок</td>
+								<td class="rightcol" id="sumMistakes"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+            
+        </div>
+    </main>
+	
+	<!-- ///////////////////////FOOTER//////////////// -->
+	
+	<!-- //////////////////Скрипты////////////// -->
+    <!--ДжС для игры-->
+    <script src="../../js/games/game1.js"></script>
+</body>
+</html>

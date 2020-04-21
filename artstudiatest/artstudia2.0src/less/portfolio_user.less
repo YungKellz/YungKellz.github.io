@@ -1,0 +1,90 @@
+main{
+    padding-top: 70px;
+    color: #2B2B2B;
+    h1{
+        color: black;
+    }
+    h2{
+        font-family: "Montserrat", sans-serif; 
+    } 
+    
+    .head{
+        margin-bottom: 60px;
+        .ava{
+            display: flex;
+        }
+        #ava_pic{
+            display: inline-block;
+            width: 250px;
+            height: 250px;
+            border-radius: 250px;
+            margin: auto;
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+        }
+        .info{
+            margin: auto;
+            img{
+                height: 30px;
+                margin-right: 10px;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    .blocks_sphere{
+         h2{
+            position: relative;
+            margin-bottom: 60px;
+            &:after{
+                content: "";
+                position: absolute;
+                left:50%;
+                z-index: -1;
+                width:50%;
+                height: 5px;
+                top:50%;
+                transform: translateY(-50%);
+                background-color: red;
+            }
+        }
+        .gallery{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            img{
+                cursor: pointer;
+                box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+            }
+            &_draw img{
+                height: 200px;
+                margin-bottom: 70px;
+            }
+            &_logo img{
+                height: 300px;
+                margin: 0 auto 70px auto;
+                box-shadow: none;
+            }
+            &_web img{
+                height: 420px;
+                margin: 0 auto 70px auto;
+            }
+        }
+    }
+   
+    
+}
+
+.modal{
+	text-align: center;
+	img{
+		width:100%;
+	}
+	.modal-dialog-portfolio{
+		min-width: 50%;
+	}
+	h3{
+		margin: 30px 0 1rem 0;
+	}
+}
+

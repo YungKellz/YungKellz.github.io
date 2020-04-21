@@ -1,0 +1,77 @@
+main {
+  padding-top: 50px;
+}
+main .flex-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+main .person-block {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 530px;
+  height: 150px;
+  border-radius: 100px;
+}
+main .person-block a {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+main .person-block a:hover .gradient {
+  cursor: pointer;
+}
+main .person-block a:hover .gradient:before {
+  opacity: 0.2;
+}
+main .person-block a:hover .gradient img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.35);
+}
+main .person-block a:hover .gradient .text {
+  color: black;
+}
+main .person-block a .gradient {
+  position: relative;
+  width: 530px;
+  height: 150px;
+  border-radius: 150px;
+}
+main .person-block a .gradient:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0.08;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #ff0000 9%, #ffc800 100%);
+}
+main .person-block a .gradient img {
+  position: absolute;
+  width: 150px;
+  border-radius: 100px;
+  display: inline-block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.35);
+}
+main .person-block a .gradient .text {
+  color: #2B2B2B;
+  margin-left: 180px;
+  height: 150px;
+  width: 300px;
+  padding: 35px 0;
+}
