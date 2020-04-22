@@ -1,0 +1,174 @@
+main{
+    margin-top: 60px;
+    text-align: center;
+    min-height: 900px;
+    
+    h2{
+        margin-bottom: 30px;
+        font-family: 'Vin';
+        font-weight: 550;
+        font-size: 30px;
+    }
+}
+
+#game_field{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 500px;
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    line-height: 0;
+    #white_cover{
+        z-index: 1;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 500px;
+        height: 500px;
+        background-color: white;
+        opacity: 1;
+        visibility: visible;
+        transition: 0.4s;
+        color: rgb(19, 19, 19);
+        font-family: 'Montserrat', sans-serif;
+        text-align: left;
+        #sumTab{
+            opacity: 0;
+        }
+        h1{
+            font-size: 50px;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 20px;
+        }
+        table.text  {
+            width:  100%; /* Ширина таблицы */
+            border-spacing: 0; /* Расстояние между ячейками */
+        }
+        table.text td {
+            width: 50%; /* Ширина ячеек */
+            vertical-align: top; /* Выравнивание по верхнему краю */
+            height: 30px;
+            padding-left: 3px;
+        }
+        td.rightcol { /* Правая ячейка */ 
+            text-align: right; /* Выравнивание по правому краю */
+        }
+    }
+}
+#settings{
+    position: relative;
+    .settings{
+        display: inline-block;
+        cursor: pointer;
+        width: 120px;
+        padding: 8px 20px;
+        padding-bottom: 11px;
+        font-size: 20px;
+        background-color: #fff;
+        border: 1px solid rgb(99, 99, 99);
+        color: rgb(99, 99, 99);
+        margin: 0 20px;
+        border-radius: 100px;
+        transition: 0.2s;
+        &:hover{
+            color: #FF6600;
+            border-color: #FF6600;
+        }
+    }
+}
+#button{
+    &_start{
+        position: absolute;
+        left: 50%;
+        transition: 0.4s;
+        transform: translateX(-50%);
+        top: 400px;
+        font-size: 30px;
+        width: 200px;
+        padding-top: 20px;
+        padding-bottom: 23px;
+        border: 2px solid gray;
+        cursor: pointer;
+        background-color: #fff;
+        border-radius: 100px;
+        visibility: visible;
+        opacity: 1;
+        z-index: 1;
+        &:hover{
+            color: #FF6600;
+            border-color: #FF6600;
+        }
+    }
+    &_stop{
+        cursor: pointer;
+        display: inline-block;
+        transition: 0.4s;
+        font-size: 24px;
+        width: 150px;
+        padding-top: 5px;
+        padding-bottom: 8px;
+        border: 2px solid gray;
+        background-color: #fff;
+        border-radius: 100px;
+        &:hover{
+            color: red;
+            border-color: red;
+        }
+        
+    }
+
+}
+
+#timer{
+    position: absolute;
+    left: 50%;
+    top: 350px;
+    transform: translateX(-50%);
+    height: 200px;
+    opacity: 0;
+    font-size: 24px;
+    transition: 0.3s;
+    span{
+        font-size: 40px;
+        position: relative;
+        #plustwo{
+            position: absolute;
+            display: inline-block;
+            font-size: 38px;
+            color: rgb(136, 226, 0);
+            top: 0;
+            left: 30px;
+            transition: 0.5s;
+            opacity: 0;
+
+        }
+        #minustwo{
+            position: absolute;
+            display: inline-block;
+            font-size: 38px;
+            color: red;
+            top: 0;
+            left: 30px;
+            transition: 0.5s;
+            opacity: 0;
+        }
+    }
+
+}
+
+.active{
+    border-color: red !important;
+    color: red !important;
+    transform: scale(1.05);
+}
+.square{
+    background-color: #fff;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.4s;
+}
+

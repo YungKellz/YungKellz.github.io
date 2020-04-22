@@ -1,0 +1,95 @@
+main {
+  padding-top: 70px;
+  color: #2B2B2B;
+}
+main h1 {
+  color: black;
+}
+main h2 {
+  font-family: "Montserrat", sans-serif;
+}
+main .head {
+  margin-bottom: 60px;
+}
+main .head .ava {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+main .head #ava_pic {
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+  margin: auto;
+  -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+}
+main .head .info {
+  margin: auto;
+}
+main .head .info img {
+  height: 30px;
+  margin-right: 10px;
+}
+main .head .info img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+main .blocks_sphere h2 {
+  position: relative;
+  margin-bottom: 60px;
+}
+main .blocks_sphere h2:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  z-index: -1;
+  width: 50%;
+  height: 5px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: red;
+}
+main .blocks_sphere .gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main .blocks_sphere .gallery img {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+}
+main .blocks_sphere .gallery_draw img {
+  height: 200px;
+  margin-bottom: 70px;
+}
+main .blocks_sphere .gallery_logo img {
+  height: 300px;
+  margin: 0 auto 70px auto;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+main .blocks_sphere .gallery_web img {
+  height: 420px;
+  margin: 0 auto 70px auto;
+}
+.modal {
+  text-align: center;
+}
+.modal img {
+  width: 100%;
+}
+.modal .modal-dialog-portfolio {
+  min-width: 50%;
+}
+.modal h3 {
+  margin: 30px 0 1rem 0;
+}
