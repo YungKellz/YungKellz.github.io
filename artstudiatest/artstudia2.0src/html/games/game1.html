@@ -7,13 +7,13 @@
 	<link rel="stylesheet" type="text/css" href="../../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../../css/game1.css">
 </head>
-<body>
+<body id="body">
 	<!-- //////////////////////NAV///////////////////////// -->
 	<div id="nav_dropdown_white_bg"></div>
 	<nav>	
 		<div id="nav_gradient"></div>
 		<div id="nav_white"></div>
-		<div id="nav_logo"><img src='../../img/logo.svg'/></div>
+		<div id="nav_logo"><a href="../../index.html"><img src='../../img/logo.svg'/></a></div>
 		<div id="nav_menu">
 			<a href="../../index.html">главная</a>
 			<div id="nav_menu_works">
@@ -29,7 +29,7 @@
 			</div>
 			<a href="../../ourlive.html">наша жизнь</a>
 			<a href="../../portfolio.html" >портфолио</a>
-			<a href="../../games.html"  class="active_page">тренажеры</a>
+			<a href="../../games.html" style="cursor: pointer;" class="active_page">тренажеры</a>
 		</div>
 	</nav>
 	<!-- //////////////////////MAIN///////////////////////// -->
@@ -38,8 +38,8 @@
 			<h2>оттенки</h2>
 			<!-- <p>Тренажер позволяющий прокачать свой скилл в распозновании оттенков, вам придется находить плашки с цветом отличным от остальных</p> -->
 			<div id="settings">
-				<div id="easy"class="settings active">легко</div>
-				<div id="normal" class="settings">средне</div>
+				<div id="easy"class="settings">легко</div>
+				<div id="normal" class="settings active">средне</div>
 				<div id="hard" class="settings">сложно</div>
 			</div>
 			<div id="button_start"> начать</div>
@@ -82,8 +82,28 @@
     </main>
 	
 	<!-- ///////////////////////FOOTER//////////////// -->
-	
+	<footer>
+		<div class="container">
+			<div class="row">
+				<h2 class="col-md-6">Направления</h2>
+				<h2 class="col-md-3">Контакты</h2>
+				<h2 class="col-md-3">Адрес</h2>
+			</div>
+			<div class="row">
+				<h4 class="col-md-6">
+					<a href="../../html/works/zhivopis.html">Живопись</a>
+					<a href="../../html/works/modeling.html">Моделирование</a>
+					<a href="../../html/works/grafika.html">Графика</a>
+					<a href="../../html/works/photografika.html">Фотографика</a>
+					<a href="../../html/works/design.html">Дизайн</a>
+				</h4>
+				<h4 class="col-md-3">naumencko.ol2015@yandex.ru<br>+7 961 068-72-77</h4>
+				<h4 class="col-md-3">Ленинский просп., 6, Г-612</h4>
+			</div>
+		</div>
+	</footer>
 	<!-- //////////////////Скрипты////////////// -->
+	<script src="../../js/nav.js"></script>
     <!--ДжС для игры-->
     <script src="../../js/games/game1.js"></script>
 </body>

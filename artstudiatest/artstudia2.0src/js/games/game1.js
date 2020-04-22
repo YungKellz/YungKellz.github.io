@@ -2,12 +2,14 @@ var gameField = document.getElementById('game_field'),
     settings_easy = document.getElementById('easy'),
     settings_normal = document.getElementById('normal'),
     settings_hard = document.getElementById('hard'),
+    widthField = gameField.offsetWidth,
     summaryTime = 0,
     summaryMistakes = 0,
     squareline = 4,
     squareNumber = 4 * 4,
     level = 0,
-    d = 15;
+    d = 10;
+    console.log(gameField.offsetWidth)
 /*help functions*/
 function rgb(r, g, b){
   return "rgb("+r+","+g+","+b+")";
@@ -25,6 +27,8 @@ settings_hard.addEventListener("click", settings);
 button_stop.addEventListener("click", endGame);
 
 button_start.addEventListener("click", Play);
+
+/*Play*/
 function Play() {
     summaryMistakes = 0;
     summaryTime = 0;
@@ -32,19 +36,22 @@ function Play() {
 
     button_start.style.opacity="0";
     button_start.style.visibility="hidden";
+    button_start.removeEventListener("click", Play);
+
     setTimeout(() => {
         timer.style.visibility="visible";
         timer.style.opacity="1";
+        button_start.addEventListener("click", Play);
     }, 400);
     white_cover.style.opacity="0";
     white_cover.style.visibility="hidden";
 
     checkLevel();
-    playTimer(30);
+    playTimer(15);
     fillField(squareNumber);
 }
 
-/*Play*/
+/*afterPlay*/
 
 function settings(){
     if (this.className === "settings") {
@@ -55,7 +62,7 @@ function settings(){
     }
     if (this.id === "easy") d = 15;
     else if (this.id === "normal") d = 10;
-    else d = 5;
+    else d = 6;
 }
 
 function squareClick(){
@@ -71,6 +78,8 @@ function squareClick(){
             plustwo.style.opacity = "0";
         }, 500);
     } else {
+        this.removeEventListener("click", squareClick);
+        this.style.cursor = "default";
         summaryMistakes++;
         seconds -=  2;
         minustwo.style.opacity = "1";
@@ -123,8 +132,9 @@ function fillField(squareNumber){
 function addSquare(){
     let square = document.createElement("div");
     square.className = "square";
-    square.style.width = 500 / squareline - 2 +"px";
-    square.style.height = 500 / squareline - 2 +"px";
+    square.style.width = widthField / squareline - 2 +"px";
+    square.style.height = widthField / squareline - 2 +"px";
+    console.log(square.style.width);
     square.addEventListener("click", squareClick);
     gameField.appendChild(square);
 }
@@ -133,26 +143,26 @@ function playTimer(a){
     seconds = a;     
     var idInt = setInterval(function() {
         
-        if (seconds > 20){
+        if (Math.floor(seconds) > 10){
             time.style.color = "black";
         }
-        if (seconds <= 20) {
+        if (Math.floor(seconds) <= 10) {
             time.style.color = "orange";
         }
-        if (seconds <= 10) {
+        if (Math.floor(seconds) <= 5) {
             time.style.color = "red";
         }
-        if (seconds <= 0) {
+        if (Math.floor(seconds) <= 0) {
             clearInterval(idInt);
             endGame();
         } else {
-            time.innerHTML = Math.round(seconds);
+            time.innerHTML = Math.floor(seconds);
             summaryTime += 0.01;
             seconds -= 0.01;
         }
     }, 10);
 }
-
+/* end game */
 function endGame(){
     if (Math.floor(summaryTime / 60) > 0) {
         if (Math.floor(summaryTime % 60) < 10) {
@@ -174,14 +184,16 @@ function endGame(){
 
     white_cover.style.opacity="1";
     white_cover.style.visibility="visible";
-
-    setTimeout(clearField, 400);
+    button_stop.removeEventListener("click", endGame);
     timer.style.opacity="0";
     timer.style.visibility="hidden";
-  
+    
+    
     setTimeout(() => {
         button_start.style.opacity="1";
         button_start.style.visibility="visible";
-    }, 400);
+        button_stop.addEventListener("click", endGame);
+        clearField();
+    }, 500);
 }
 

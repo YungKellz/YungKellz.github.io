@@ -23,8 +23,7 @@ nav #nav_gradient {
   position: absolute;
   width: inherit;
   height: 115px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(9%, #ff0000), to(#ffc800));
-  background: linear-gradient(90deg, #ff0000 9%, #ffc800 100%);
+  background: radial-gradient(circle farthest-corner at 400px 50px, #ff0000, #ffc800);
   z-index: -1;
 }
 nav #nav_white {
