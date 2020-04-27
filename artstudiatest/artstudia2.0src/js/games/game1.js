@@ -1,3 +1,8 @@
+game_field.style.maxHeight = document.documentElement.clientHeight*0.6 + "px";
+game_field.style.maxWidth  = document.documentElement.clientHeight*0.6 + "px";
+white_cover.style.maxHeight = document.documentElement.clientHeight*0.6 + "px";
+white_cover.style.maxWidth  = document.documentElement.clientHeight*0.6 + "px";
+
 var gameField = document.getElementById('game_field'),
     settings_easy = document.getElementById('easy'),
     settings_normal = document.getElementById('normal'),
@@ -35,8 +40,10 @@ function openDesc(){
     button_desc.addEventListener("click", closeDesc);
     button_desc.src="../../img/icons/question_close.svg";
     button_desc.style.top = 17 + descriptionOfGame.offsetHeight/2 + "px";
+    setTimeout(() => {
+        descriptionOfGame.style.opacity = "1";
+    }, 300);
     nameOfGame.style.height = descriptionOfGame.offsetHeight + 33 + "px";
-    descriptionOfGame.style.opacity = "1";
 }
 
 function closeDesc(){
@@ -49,6 +56,9 @@ function closeDesc(){
     }, 300);
     descriptionOfGame.style.opacity = "0";
 }
+
+openDesc();
+
 /*Play*/
 function Play() {
     summaryMistakes = 0;
@@ -71,7 +81,6 @@ function Play() {
     playTimer(15);
     fillField(squareNumber);
 }
-
 /*afterPlay*/
 
 function settings(){

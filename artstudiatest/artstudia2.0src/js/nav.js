@@ -1,14 +1,14 @@
-var white = document.getElementById('nav_dropdown_white_bg');
+var whiteDrop = document.getElementById('nav_dropdown_white_bg');
 
 nav_menu_works.addEventListener("mouseout",function(){
-	white.style.visibility = "hidden";
-	white.style.opacity = "0";
-	white.style.height = "300px";
+	whiteDrop.style.visibility = "hidden";
+	whiteDrop.style.opacity = "0";
+	whiteDrop.style.height = "300px";
 });
 nav_menu_works.addEventListener("mouseover",function(){
-	white.style.visibility = "visible";
-	white.style.opacity = "1";
-	white.style.height = "400px";
+	whiteDrop.style.visibility = "visible";
+	whiteDrop.style.opacity = "1";
+	whiteDrop.style.height = "400px";
 });
 
 var p1 = "radial-gradient(circle farthest-corner at ",
@@ -29,9 +29,6 @@ function toRight() {
 			toLeft();
 		}
 	}, 1);
-
-	
-	
 }
 function toLeft() {
 	var idInt = setInterval(function() {
@@ -45,4 +42,4 @@ function toLeft() {
 	}, 1);
 }
 
-document.body.style.minHeight=screen.height; 
+nav_white.style.width = document.getElementsByClassName('container')[0].offsetWidth + "px";
