@@ -3,21 +3,170 @@ main {
   text-align: center;
   min-height: 900px;
 }
-main h2 {
-  margin-bottom: 30px;
+#nameOfGame {
+  margin-bottom: 20px;
+  height: 33px;
   font-family: 'Vin';
   font-weight: 550;
   font-size: 30px;
+  position: relative;
+  display: inline-block;
+  width: 445px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
-#game_field {
+#nameOfGame #button_desc {
+  opacity: 0.5;
+  position: absolute;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  width: 22px;
+  top: 5px;
+  right: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+#nameOfGame #button_desc:hover #descriptionOfGame {
+  opacity: 1;
+}
+#nameOfGame #descriptionOfGame {
+  opacity: 0;
+  position: absolute;
+  font-weight: 400;
+  font-family: 'Montserrat';
+  font-size: 15px;
+  text-align: left;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: #575757;
+  width: inherit;
+  padding: 15px 30px;
+}
+#settings {
+  position: relative;
+}
+#settings .settings {
+  display: inline-block;
+  cursor: pointer;
+  width: 120px;
+  padding: 8px 20px;
+  padding-bottom: 11px;
+  font-size: 20px;
+  background-color: #fff;
+  border: 1px solid #636363;
+  color: #636363;
+  margin: 0 20px;
+  border-radius: 100px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+#settings .settings:hover {
+  color: #FF6600;
+  border-color: #FF6600;
+}
+#switcher {
+  position: relative;
+  height: 200px;
+}
+#button_start {
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  top: 500px;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 30px;
+  width: 200px;
+  padding-top: 20px;
+  padding-bottom: 23px;
+  border: 2px solid gray;
+  color: #555555;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 100px;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+}
+#button_start:hover {
+  color: #FF6600;
+  border-color: #FF6600;
+}
+#button_stop {
+  cursor: pointer;
+  display: inline-block;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 24px;
+  width: 150px;
+  padding-top: 5px;
+  padding-bottom: 8px;
+  border: 2px solid gray;
+  color: #555555;
+  background-color: #fff;
+  border-radius: 100px;
+}
+#button_stop:hover {
+  color: red;
+  border-color: red;
+}
+#timer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 150px;
+  opacity: 0;
+  font-size: 24px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#timer span {
+  font-size: 40px;
+  position: relative;
+}
+#timer span #plustwo {
+  position: absolute;
+  display: inline-block;
+  font-size: 38px;
+  color: #88e200;
+  top: 0;
+  left: 30px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+}
+#timer span #minustwo {
+  position: absolute;
+  display: inline-block;
+  font-size: 38px;
+  color: red;
+  top: 0;
+  left: 30px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+}
+.active {
+  border-color: red !important;
+  color: red !important;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.square {
+  background-color: #fff;
+  margin: 1px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+#game_field {
   width: 500px;
   height: 500px;
-  margin: 50px auto;
+  margin: 10px auto;
   line-height: 0;
 }
 #game_field #white_cover {
@@ -63,120 +212,4 @@ main h2 {
   /* Правая ячейка */
   text-align: right;
   /* Выравнивание по правому краю */
-}
-#settings {
-  position: relative;
-}
-#settings .settings {
-  display: inline-block;
-  cursor: pointer;
-  width: 120px;
-  padding: 8px 20px;
-  padding-bottom: 11px;
-  font-size: 20px;
-  background-color: #fff;
-  border: 1px solid #636363;
-  color: #636363;
-  margin: 0 20px;
-  border-radius: 100px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-#settings .settings:hover {
-  color: #FF6600;
-  border-color: #FF6600;
-}
-#button_start {
-  position: absolute;
-  left: 50%;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  top: 400px;
-  font-size: 30px;
-  width: 200px;
-  padding-top: 20px;
-  padding-bottom: 23px;
-  border: 2px solid gray;
-  cursor: pointer;
-  background-color: #fff;
-  border-radius: 100px;
-  visibility: visible;
-  opacity: 1;
-  z-index: 1;
-}
-#button_start:hover {
-  color: #FF6600;
-  border-color: #FF6600;
-}
-#button_stop {
-  cursor: pointer;
-  display: inline-block;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  font-size: 24px;
-  width: 150px;
-  padding-top: 5px;
-  padding-bottom: 8px;
-  border: 2px solid gray;
-  background-color: #fff;
-  border-radius: 100px;
-}
-#button_stop:hover {
-  color: red;
-  border-color: red;
-}
-#timer {
-  position: absolute;
-  left: 50%;
-  top: 350px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  height: 200px;
-  opacity: 0;
-  font-size: 24px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-#timer span {
-  font-size: 40px;
-  position: relative;
-}
-#timer span #plustwo {
-  position: absolute;
-  display: inline-block;
-  font-size: 38px;
-  color: #88e200;
-  top: 0;
-  left: 30px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  opacity: 0;
-}
-#timer span #minustwo {
-  position: absolute;
-  display: inline-block;
-  font-size: 38px;
-  color: red;
-  top: 0;
-  left: 30px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  opacity: 0;
-}
-.active {
-  border-color: red !important;
-  color: red !important;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-.square {
-  background-color: #fff;
-  margin-right: 2px;
-  margin-bottom: 2px;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
 }

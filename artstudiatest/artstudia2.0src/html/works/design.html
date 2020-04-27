@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8">
-		<title>ДизайнСтудия МИСиС</title>
-		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" >
-		<link rel="stylesheet" type="text/css" href="../../css/style.css">
-		<link rel="stylesheet" type="text/css" href="../../css/portfolio_user.css">
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<title>ДизайнСтудия МИСиС</title>
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" >
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../css/portfolio_user.css">
+</head>
 <body>
 	<!-- //////////////////////NAV///////////////////////// -->
 	<div id="nav_dropdown_white_bg"></div>
@@ -35,6 +35,7 @@
 	<!-- //////////////////////MAIN///////////////////////// -->
 	<main>
 		<div class="container">
+			
 			<div class="blocks_sphere">
 				<!--Логотипирование -->
 				<h2>Логотипирование</h2>
@@ -79,8 +80,8 @@
 		</div>
   	</div>
 	<!-- ///////////////////////FOOTER//////////////// -->
-	<footer>
-		<div class="container">
+	<footer id="footer">
+		<div class="container" style="z-index: 1;">
 			<div class="row">
 				<h2 class="col-md-6">Направления</h2>
 				<h2 class="col-md-3">Контакты</h2>
@@ -99,8 +100,14 @@
 			</div>
 		</div>
 	</footer>
-
 	<!-- //////////////////Скрипты////////////// -->
-	<script src="../../js/nav_works_dropdown.js"></script>
+	<script src="../../js/nav.js"></script>
+
+	<!--JQuery-->
+	<script src="../../js/jquery.min.js"></script>
+	<!-- Бутстрап JS -->
+	<script src="../../js/bootstrap.min.js" ></script>
+	<!-- Скрипт для модального окна -->
+	<script src="../../js/modalWindowGallery.js"></script>
 </body>
-</html> 
+</html>

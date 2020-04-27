@@ -23,6 +23,7 @@ function toRight() {
 	var idInt = setInterval(function() {
 		pos++;
 		nav_gradient.style.background = p1 + pos + p2;
+		footer.style.background = p1 + pos + p2;
 		if (pos > width) {
 			clearInterval(idInt);
 			toLeft();
@@ -36,10 +37,12 @@ function toLeft() {
 	var idInt = setInterval(function() {
 		pos--;
 		nav_gradient.style.background = p1 + pos + p2;
+		footer.style.background = p1 + pos + p2;
 		if (pos < 0) {
 			clearInterval(idInt);
 			toRight();
 		}
 	}, 1);
-	
 }
+
+document.body.style.minHeight=screen.height; 

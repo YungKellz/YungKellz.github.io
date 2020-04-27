@@ -35,24 +35,33 @@
 	<!-- //////////////////////MAIN///////////////////////// -->
 	<main>
         <div class="container">
-			<h2>оттенки</h2>
+			<h2 id="nameOfGame">оттенки
+					<img id="button_desc" src="../../img/icons/question.svg" alt="">
+					<div id="descriptionOfGame">
+						Находите квадрат, который темнее или светлее других, пока не выйдет время.<br><br>  
+						За правильно обнаруженный квадрат вы получаете 2 секунды и теряете 2 в 
+						обратном&nbsp;случае.<br><br> 
+						Выберите уровень сложности и нажмите&nbsp;"Начать".
+						Сложность можно менять по ходу игры.
+					</div>
+			</h2>
 			<!-- <p>Тренажер позволяющий прокачать свой скилл в распозновании оттенков, вам придется находить плашки с цветом отличным от остальных</p> -->
 			<div id="settings">
 				<div id="easy"class="settings">легко</div>
 				<div id="normal" class="settings active">средне</div>
 				<div id="hard" class="settings">сложно</div>
 			</div>
-			<div id="button_start"> начать</div>
-			<div id="timer">осталось секунд<br>
-				<span>
-					<div id="time">30</div>
-					<div id="plustwo">+2</div>
-					<div id="minustwo">−2</div>
-				</span>
-				<div id="button_stop">закончить</div>
+			<div id="switcher">
+				<div id="button_start"> начать</div>
+				<div id="timer">осталось секунд<br>
+					<span>
+						<div id="time">30</div>
+						<div id="plustwo">+2</div>
+						<div id="minustwo">−2</div>
+					</span>
+					<div id="button_stop">закончить</div>
+				</div>
 			</div>
-            <div id="counter_right"></div>
-            <div id="counter_wrong"></div>
 			
             <div id="game_field">
 				<div id="white_cover">
@@ -82,7 +91,7 @@
     </main>
 	
 	<!-- ///////////////////////FOOTER//////////////// -->
-	<footer>
+	<footer id="footer">
 		<div class="container">
 			<div class="row">
 				<h2 class="col-md-6">Направления</h2>

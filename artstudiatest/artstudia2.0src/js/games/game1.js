@@ -9,7 +9,6 @@ var gameField = document.getElementById('game_field'),
     squareNumber = 4 * 4,
     level = 0,
     d = 10;
-    console.log(gameField.offsetWidth)
 /*help functions*/
 function rgb(r, g, b){
   return "rgb("+r+","+g+","+b+")";
@@ -20,6 +19,8 @@ function rndInt(min, max) {
 }
 
 /*Pregame states*/
+button_desc.addEventListener("click", openDesc);
+
 settings_easy.addEventListener("click", settings);
 settings_normal.addEventListener("click", settings);
 settings_hard.addEventListener("click", settings);
@@ -28,6 +29,26 @@ button_stop.addEventListener("click", endGame);
 
 button_start.addEventListener("click", Play);
 
+
+function openDesc(){
+    button_desc.removeEventListener("click", openDesc);
+    button_desc.addEventListener("click", closeDesc);
+    button_desc.src="../../img/icons/question_close.svg";
+    button_desc.style.top = 17 + descriptionOfGame.offsetHeight/2 + "px";
+    nameOfGame.style.height = descriptionOfGame.offsetHeight + 33 + "px";
+    descriptionOfGame.style.opacity = "1";
+}
+
+function closeDesc(){
+    button_desc.removeEventListener("click", closeDesc);
+    button_desc.addEventListener("click", openDesc);
+    button_desc.src="../../img/icons/question.svg";
+    button_desc.style.top = "5px";
+    setTimeout(() => {
+        nameOfGame.style.height = "33px";
+    }, 300);
+    descriptionOfGame.style.opacity = "0";
+}
 /*Play*/
 function Play() {
     summaryMistakes = 0;
@@ -56,7 +77,7 @@ function Play() {
 function settings(){
     if (this.className === "settings") {
         var a = document.getElementsByClassName('active');
-        console.log(a[0]);
+        console.log("изменилась сложность на " + a[0].id);
         a[0].classList.remove("active");
         this.classList.add("active");
     }
@@ -122,7 +143,6 @@ function fillField(squareNumber){
     /*aim square*/
     let f = rndInt(1,2),
         j = rndInt(0,squares.length-1);
-        console.log(d);
     squares[j].className = "square aim"
     if (f===1) {
         squares[j].style.backgroundColor = rgb(r + d, g + d, b + d)
@@ -134,7 +154,6 @@ function addSquare(){
     square.className = "square";
     square.style.width = widthField / squareline - 2 +"px";
     square.style.height = widthField / squareline - 2 +"px";
-    console.log(square.style.width);
     square.addEventListener("click", squareClick);
     gameField.appendChild(square);
 }

@@ -2,23 +2,169 @@ main{
     margin-top: 60px;
     text-align: center;
     min-height: 900px;
-    
-    h2{
-        margin-bottom: 30px;
-        font-family: 'Vin';
-        font-weight: 550;
-        font-size: 30px;
+}
+
+#nameOfGame{
+    margin-bottom: 20px;
+    height: 33px;
+    font-family: 'Vin';
+    font-weight: 550;
+    font-size: 30px;
+    position: relative;
+    display: inline-block;
+    width: 445px;
+    transition: 0.4s;
+    #button_desc{
+        opacity: 0.5;
+        position: absolute;
+        transition: 0.4s;
+        width: 22px;
+        top: 5px;
+        //transform: translateY(-50%);
+        right: 0;
+        cursor: pointer;
+        z-index: 1;
+        &:hover #descriptionOfGame{
+            opacity: 1;
+        }
+    }
+    #descriptionOfGame{
+        opacity: 0;
+        position: absolute;
+        font-weight: 400;
+        font-family: 'Montserrat';
+        font-size: 15px;
+        //background-color: red;
+        text-align: left;
+        transition: 0.4s;
+        color: rgb(87, 87, 87);
+        width: inherit;
+        padding: 15px 30px;
     }
 }
 
-#game_field{
+#settings{
+    position: relative;
+    .settings{
+        display: inline-block;
+        cursor: pointer;
+        width: 120px;
+        padding: 8px 20px;
+        padding-bottom: 11px;
+        font-size: 20px;
+        background-color: #fff;
+        border: 1px solid rgb(99, 99, 99);
+        color: rgb(99, 99, 99);
+        margin: 0 20px;
+        border-radius: 100px;
+        transition: 0.2s;
+        &:hover{
+            color: #FF6600;
+            border-color: #FF6600;
+        }
+    }
+}
+
+#switcher{
+    position: relative;
+    height: 200px;
+}
+#button{
+    &_start{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.4s;
+        font-size: 30px;
+        width: 200px;
+        padding-top: 20px;
+        padding-bottom: 23px;
+        border: 2px solid gray;
+        color: rgb(85, 85, 85);
+        cursor: pointer;
+        background-color: #fff;
+        border-radius: 100px;
+        visibility: visible;
+        opacity: 1;
+        z-index: 1;
+        &:hover{
+            color: #FF6600;
+            border-color: #FF6600;
+        }
+    }
+    &_stop{
+        cursor: pointer;
+        display: inline-block;
+        transition: 0.4s;
+        font-size: 24px;
+        width: 150px;
+        padding-top: 5px;
+        padding-bottom: 8px;
+        border: 2px solid gray;
+        color: rgb(85, 85, 85);
+        background-color: #fff;
+        border-radius: 100px;
+        &:hover{
+            color: red;
+            border-color: red;
+        }
+    }
+}
+
+#timer{
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    top: 500px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    opacity: 0;
+    font-size: 24px;
+    transition: 0.3s;
+    span{
+        font-size: 40px;
+        position: relative;
+        #plustwo{
+            position: absolute;
+            display: inline-block;
+            font-size: 38px;
+            color: rgb(136, 226, 0);
+            top: 0;
+            left: 30px;
+            transition: 0.5s;
+            opacity: 0;
+        }
+        #minustwo{
+            position: absolute;
+            display: inline-block;
+            font-size: 38px;
+            color: red;
+            top: 0;
+            left: 30px;
+            transition: 0.5s;
+            opacity: 0;
+        }
+    }
+
+}
+
+.active{
+    border-color: red !important;
+    color: red !important;
+    transform: scale(1.05);
+}
+.square{
+    background-color: #fff;
+    margin: 1px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#game_field{
     width: 500px;
     height: 500px;
-    margin: 50px auto;
+    margin: 10px auto;
     line-height: 0;
     #white_cover{
         z-index: 1;
@@ -57,118 +203,3 @@ main{
         }
     }
 }
-#settings{
-    position: relative;
-    .settings{
-        display: inline-block;
-        cursor: pointer;
-        width: 120px;
-        padding: 8px 20px;
-        padding-bottom: 11px;
-        font-size: 20px;
-        background-color: #fff;
-        border: 1px solid rgb(99, 99, 99);
-        color: rgb(99, 99, 99);
-        margin: 0 20px;
-        border-radius: 100px;
-        transition: 0.2s;
-        &:hover{
-            color: #FF6600;
-            border-color: #FF6600;
-        }
-    }
-}
-#button{
-    &_start{
-        position: absolute;
-        left: 50%;
-        transition: 0.4s;
-        transform: translateX(-50%);
-        top: 400px;
-        font-size: 30px;
-        width: 200px;
-        padding-top: 20px;
-        padding-bottom: 23px;
-        border: 2px solid gray;
-        cursor: pointer;
-        background-color: #fff;
-        border-radius: 100px;
-        visibility: visible;
-        opacity: 1;
-        z-index: 1;
-        &:hover{
-            color: #FF6600;
-            border-color: #FF6600;
-        }
-    }
-    &_stop{
-        cursor: pointer;
-        display: inline-block;
-        transition: 0.4s;
-        font-size: 24px;
-        width: 150px;
-        padding-top: 5px;
-        padding-bottom: 8px;
-        border: 2px solid gray;
-        background-color: #fff;
-        border-radius: 100px;
-        &:hover{
-            color: red;
-            border-color: red;
-        }
-        
-    }
-
-}
-
-#timer{
-    position: absolute;
-    left: 50%;
-    top: 350px;
-    transform: translateX(-50%);
-    height: 200px;
-    opacity: 0;
-    font-size: 24px;
-    transition: 0.3s;
-    span{
-        font-size: 40px;
-        position: relative;
-        #plustwo{
-            position: absolute;
-            display: inline-block;
-            font-size: 38px;
-            color: rgb(136, 226, 0);
-            top: 0;
-            left: 30px;
-            transition: 0.5s;
-            opacity: 0;
-
-        }
-        #minustwo{
-            position: absolute;
-            display: inline-block;
-            font-size: 38px;
-            color: red;
-            top: 0;
-            left: 30px;
-            transition: 0.5s;
-            opacity: 0;
-        }
-    }
-
-}
-
-.active{
-    border-color: red !important;
-    color: red !important;
-    transform: scale(1.05);
-}
-.square{
-    background-color: #fff;
-    margin-right: 2px;
-    margin-bottom: 2px;
-    display: inline-block;
-    cursor: pointer;
-    transition: 0.4s;
-}
-
