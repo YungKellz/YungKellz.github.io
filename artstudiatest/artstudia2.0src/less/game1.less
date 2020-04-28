@@ -15,12 +15,13 @@ main{
     width: 445px;
     transition: 0.4s;
     #button_desc{
-        opacity: 0.5;
+        opacity: 0;
+        visibility: hidden;
         position: absolute;
         transition: 0.4s;
         width: 22px;
         top: 5px;
-        //transform: translateY(-50%);
+        user-select: none;
         right: 0;
         cursor: pointer;
         z-index: 1;
@@ -29,12 +30,12 @@ main{
         }
     }
     #descriptionOfGame{
+        z-index: -1;
         opacity: 0;
         position: absolute;
         font-weight: 400;
         font-family: 'Montserrat';
         font-size: 15px;
-        //background-color: red;
         text-align: left;
         transition: 0.4s;
         color: rgb(87, 87, 87);
@@ -42,9 +43,31 @@ main{
         padding: 15px 30px;
     }
 }
+#questionAboutDesc{
+    margin-top: 30px;
+    transition: 0.4s;
+    font-family: 'Vin';
+    font-size: 20px;
+    span{
+        display: inline-block;
+        font-size: 22px;
+        margin: 25px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover{
+            color: #FF6600;
+            border-color: #FF6600;
+        }
+    }
+}
 
-#settings{
+#settingsOfGame{
     position: relative;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+    user-select: none;
     .settings{
         display: inline-block;
         cursor: pointer;
@@ -68,6 +91,10 @@ main{
 #switcher{
     position: relative;
     height: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+    user-select: none;
 }
 #button{
     &_start{

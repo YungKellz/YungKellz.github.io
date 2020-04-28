@@ -14,6 +14,7 @@ var gameField = document.getElementById('game_field'),
     squareNumber = 4 * 4,
     level = 0,
     d = 10;
+    flagForCloseDescAnimation = false;
 /*help functions*/
 function rgb(r, g, b){
   return "rgb("+r+","+g+","+b+")";
@@ -34,6 +35,39 @@ button_stop.addEventListener("click", endGame);
 
 button_start.addEventListener("click", Play);
 
+questionAboutDesc_yes.addEventListener('click', function() {
+    questionAboutDescFun(true);
+  });
+questionAboutDesc_no.addEventListener('click', function() {
+    questionAboutDescFun(false);
+  });
+
+function questionAboutDescFun(a){
+    questionAboutDesc.style.opacity = "0";
+    setTimeout(() => {
+        questionAboutDesc.style.display = "none";
+
+        settingsOfGame.style.opacity = "1";
+        settingsOfGame.style.visibility = "visible";
+
+        switcher.style.opacity = "1";
+        switcher.style.visibility = "visible";
+
+        button_desc.style.opacity = "0.5";
+        button_desc.style.visibility = "visible";
+        if (!a) {
+            openDesc();
+            setTimeout(() => {
+                if(!flagForCloseDescAnimation){
+                    button_desc.style.transform = "scale(1.5)";
+                    setTimeout(() => {
+                        button_desc.style.transform = "scale(1)";
+                    }, 400);
+                }
+            }, 5500);
+        }
+    }, 400);
+}
 
 function openDesc(){
     button_desc.removeEventListener("click", openDesc);
@@ -55,9 +89,9 @@ function closeDesc(){
         nameOfGame.style.height = "33px";
     }, 300);
     descriptionOfGame.style.opacity = "0";
+    flagForCloseDescAnimation = true;
 }
 
-openDesc();
 
 /*Play*/
 function Play() {
@@ -213,6 +247,7 @@ function endGame(){
     white_cover.style.opacity="1";
     white_cover.style.visibility="visible";
     button_stop.removeEventListener("click", endGame);
+    button_start.removeEventListener("click", Play);
     timer.style.opacity="0";
     timer.style.visibility="hidden";
     
@@ -220,6 +255,7 @@ function endGame(){
     setTimeout(() => {
         button_start.style.opacity="1";
         button_start.style.visibility="visible";
+        button_start.addEventListener("click", Play);
         button_stop.addEventListener("click", endGame);
         clearField();
     }, 500);

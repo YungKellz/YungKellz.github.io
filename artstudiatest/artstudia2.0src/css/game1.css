@@ -16,12 +16,17 @@ main {
   transition: 0.4s;
 }
 #nameOfGame #button_desc {
-  opacity: 0.5;
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   width: 22px;
   top: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   right: 0;
   cursor: pointer;
   z-index: 1;
@@ -30,6 +35,7 @@ main {
   opacity: 1;
 }
 #nameOfGame #descriptionOfGame {
+  z-index: -1;
   opacity: 0;
   position: absolute;
   font-weight: 400;
@@ -42,10 +48,38 @@ main {
   width: inherit;
   padding: 15px 30px;
 }
-#settings {
-  position: relative;
+#questionAboutDesc {
+  margin-top: 30px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-family: 'Vin';
+  font-size: 20px;
 }
-#settings .settings {
+#questionAboutDesc span {
+  display: inline-block;
+  font-size: 22px;
+  margin: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#questionAboutDesc span:hover {
+  color: #FF6600;
+  border-color: #FF6600;
+}
+#settingsOfGame {
+  position: relative;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#settingsOfGame .settings {
   display: inline-block;
   cursor: pointer;
   width: 120px;
@@ -60,13 +94,21 @@ main {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-#settings .settings:hover {
+#settingsOfGame .settings:hover {
   color: #FF6600;
   border-color: #FF6600;
 }
 #switcher {
   position: relative;
   height: 200px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 #button_start {
   position: absolute;
