@@ -1,7 +1,17 @@
 main{
     margin-top: 60px;
     text-align: center;
-    min-height: 900px;
+    h4{
+        margin-top: 30px;
+        a{
+            color: black;
+            font-weight: 600;
+            text-decoration: underline;
+            &:hover{
+                color: #FF6600;
+            }
+        }
+    }
 }
 
 #nameOfGame{
@@ -24,7 +34,6 @@ main{
         user-select: none;
         right: 0;
         cursor: pointer;
-        z-index: 1;
         &:hover #descriptionOfGame{
             opacity: 1;
         }

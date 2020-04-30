@@ -1,7 +1,17 @@
 main {
   margin-top: 60px;
   text-align: center;
-  min-height: 900px;
+}
+main h4 {
+  margin-top: 30px;
+}
+main h4 a {
+  color: black;
+  font-weight: 600;
+  text-decoration: underline;
+}
+main h4 a:hover {
+  color: #FF6600;
 }
 #nameOfGame {
   margin-bottom: 20px;
@@ -29,7 +39,6 @@ main {
           user-select: none;
   right: 0;
   cursor: pointer;
-  z-index: 1;
 }
 #nameOfGame #button_desc:hover #descriptionOfGame {
   opacity: 1;
