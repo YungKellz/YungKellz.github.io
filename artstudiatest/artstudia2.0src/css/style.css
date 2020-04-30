@@ -1,17 +1,3 @@
-#nav_dropdown_white_bg {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 300px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(75%, #ffffff), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(#ffffff 75%, rgba(255, 255, 255, 0) 100%);
-  z-index: 1;
-  opacity: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  visibility: hidden;
-}
 #preloader {
   background-color: #fff;
   position: fixed;
@@ -42,7 +28,6 @@ nav #nav_white {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 1150px;
   height: 128px;
   background-color: #fff;
   -webkit-transition: 0.2s;
@@ -126,30 +111,52 @@ footer {
   margin-top: 60px;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: red;
   position: relative;
 }
-footer::before {
-  content: "";
+footer #foot_menu {
+  z-index: 1;
+}
+footer #foot_gradient {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
-  height: 145px;
-  top: 5px;
-  z-index: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: radial-gradient(circle farthest-corner at 400px 50px, #ff0000, #ffc800);
+  z-index: -1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+footer #foot_white {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 footer a {
   text-decoration: none;
-  color: black;
+  color: #575757;
   margin-right: 20px;
+}
+footer a:hover {
+  color: #FF6600;
 }
 footer h4 {
   font-weight: 400;
   line-height: 1.4;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
 }
 /* FONTS */
 h1 {
   font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
   font-size: 24px;
 }
 h2 {

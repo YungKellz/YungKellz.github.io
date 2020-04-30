@@ -1,15 +1,4 @@
-#nav_dropdown_white_bg{
-  position: fixed;
-  left: 0;
-  top : 0;
-  width :100%;
-  height:300px;
-  background: linear-gradient( rgba(255, 255, 255, 255) 75%, rgba(255, 255, 255, 0) 100%);
-  z-index: 1;
-  opacity: 0;
-  transition: 0.3s;
-  visibility: hidden;
-}
+
 #preloader{
   background-color: #fff;
   position: fixed;
@@ -38,7 +27,6 @@ nav{
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      width: 1150px;
       height: 128px;
       background-color: #fff;
       transition: 0.2s;
@@ -122,31 +110,50 @@ footer{
   margin-top: 60px;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: red;
   position: relative;
-  &::before{
-    content:"";
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.8);
-    width: 100%;
-    height: 145px;
-    top: 5px;
-    z-index: 0;
+  #foot_{
+    &menu{
+      z-index: 1;
+    }
+    &gradient{
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      background: radial-gradient(circle farthest-corner at 400px 50px,rgb(255, 0, 0), rgb(255, 200, 0));
+      z-index: -1;
+      transition: 0.4s;
+    }
+    &white{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      transition: 0.2s;
+    } 
   }
   a{
     text-decoration: none;
-    color: black;
+    color: rgb(87, 87, 87);
     margin-right: 20px;
+    &:hover{
+      color: #FF6600;
+    }
   }
   h4{
     font-weight: 400;
     line-height: 1.4;
+    margin-block-end: 0;
   }
 }
 
 /* FONTS */
 h1{
   font-family: 'Montserrat Alternates',sans-serif;
+  font-weight: 600;
   font-size: 24px;
 }
 h2{

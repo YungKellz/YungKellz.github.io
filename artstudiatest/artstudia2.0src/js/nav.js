@@ -13,9 +13,15 @@ function rndInt(min, max) {
 // 	preloader.style.visibility = "hidden";
 // }, 400);
 
-/*белый фон нава*/
+/*белый фон нава и футера*/
 	nav_white.style.width = document.getElementsByClassName('container')[0].offsetWidth + "px";
-
+	foot_white.style.width = document.getElementsByClassName('container')[0].offsetWidth + "px";
+	foot_gradient.style.height = footer.offsetHeight - 80 + "px";
+	foot_white.style.height = footer.offsetHeight - 80 + "px";
+	footer.addEventListener('change', () => {
+		foot_gradient.style.height = footer.offsetHeight - 80 + "px";
+		foot_white.style.height = footer.offsetHeight - 80 + "px";
+	});
 /*выпадающее "работа"*/
 var whiteDrop = document.getElementById('nav_dropdown_white_bg');
 
@@ -94,3 +100,4 @@ function toLeft(id, width, pos) {
 }
 
 gradientTo(nav_gradient);
+gradientTo(foot_gradient);
