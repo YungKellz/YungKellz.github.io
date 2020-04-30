@@ -10,6 +10,14 @@
   transition: 0.3s;
   visibility: hidden;
 }
+#preloader{
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: 1.5s;
+}
 
 nav{
   z-index: 10;
@@ -24,6 +32,7 @@ nav{
       height: 115px;
       background: radial-gradient(circle farthest-corner at 400px 50px,rgb(255, 0, 0), rgb(255, 200, 0));
       z-index: -1;
+      transition: 0.4s;
     }
     &white{
       position: absolute;
@@ -32,6 +41,7 @@ nav{
       width: 1150px;
       height: 128px;
       background-color: #fff;
+      transition: 0.2s;
     } 
     &logo img{
       position: absolute;
@@ -68,12 +78,12 @@ nav{
       &_works{
         position: relative;
         #nav_menu_works_head{ 
-          transition: 0.4s;
+          //transition: 0.4s;
           cursor: default;
         }
         ul{
           z-index: 9;
-          transition: 0.4s;
+          //transition: 0.4s;
           visibility: hidden;
           opacity: 0;
           color: black;
@@ -102,6 +112,10 @@ nav{
       }
     }
   }
+}
+
+main{
+  transition: 0.6s;
 }
 
 footer{
