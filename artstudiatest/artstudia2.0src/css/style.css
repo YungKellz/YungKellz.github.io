@@ -104,8 +104,8 @@ nav #nav_menu_works:hover ul {
   opacity: 1;
 }
 main {
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 footer {
   margin-top: 60px;
@@ -147,6 +147,10 @@ footer a {
 footer a:hover {
   color: #FF6600;
 }
+footer h2 {
+  font-family: 'Vin', sans-serif;
+  font-weight: 500;
+}
 footer h4 {
   font-weight: 400;
   line-height: 1.4;
@@ -155,12 +159,12 @@ footer h4 {
 }
 /* FONTS */
 h1 {
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 24px;
 }
 h2 {
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 3px;

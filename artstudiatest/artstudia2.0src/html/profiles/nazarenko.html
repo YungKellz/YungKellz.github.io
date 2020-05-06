@@ -3,176 +3,132 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ДизайнСтудия МИСиС</title>
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" >
-	<!-- <link rel="stylesheet" type="text/css" href="css/animate.css"> -->
-	<link rel="stylesheet" type="text/css" href="../slick/slick.css">
-	<link rel="stylesheet" type="text/css" href="../slick/slick-theme.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/BeerSlider.css"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="css/beforeAfterSlider.css"> -->
-	<link rel="stylesheet" type="text/css" href="../css/fonts.css">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<link rel="stylesheet" type="text/css" href="../css/profile.css">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" >
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../css/portfolio_user.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates&amp;subset=cyrillic" rel="stylesheet">
-	<!-- <script src="js/wow.min.js"></script> -->
 </head>
 <body>
 	<!-- //////////////////////NAV///////////////////////// -->
-	<nav class="fixed-top">	
-		<div class="gradientfornav3"></div>
-		<div class="gradientfornav1" id="gradientfornav1"></div>
-		<div class="gradientfornav2" id="gradientfornav2"></div>
-		<div class="nav-bar">
-			<div class="container">
-				<div class="row align-items-center">	
-					<div class="col-lg-4 logo-pic"><a class="nav-bar-logo"href="../index.html">/DesignStudio/ </a></div>
-					<div class="col-12 col-lg-8 text-uppercase menu-line">							
-						<ul>
-						    <li><a href="../index.html"><div>Главная</div></a></li>
-						    <li>
-								<div  class="dropdown">
-									<a href="../works.html"><div>Работы</div></a>
-									<div class="list">
-									    <a href="../htmlworks/zhivopis.html"><div class="point point-f">Живопись</div></a>
-									    <a href="../htmlworks/grafika.html"><div class="point">Графика</div></a>
-									    <a href="../htmlworks/disign.html"><div class="point">Дизайн</div></a>
-									    <a href="../htmlworks/photografika.html"><div class="point">Фотографика</div></a>
-									    <a href="../htmlworks/modeling.html"><div class="point">Моделирование</div></a>
-									</div>
-								</div>
-						    </li>
-						    <li><a href="../ourlive.html"><div>Наша жизнь</div></a></li>
-						    <li class="active-page"><a href="../portfolio.html"><div>Портфолио</div></a></li>
-						</ul>
-					</div>
-				</div>
+	<nav>	
+		<div id="nav_gradient"></div>
+		<div id="nav_white"></div>
+		<div id="nav_logo"><a href="../../index.html"><img src='../../img/logo.svg'/></a></div>
+		<div id="nav_menu">
+			<a href="../../index.html">главная</a>
+			<div id="nav_menu_works">
+				<a href="#" id="nav_menu_works_head">работы</a>
+				<ul>
+					<a href="../../html/works/design.html"><li>дизайн</li></a>
+					<a href="../../html/works/grafika.html"><li>графика</li></a>
+					<a href="../../html/works/zhivopis.html"><li>живопись</li></a>
+					<a href="../../html/works/photografika.html"><li>фотографика</li></a>
+					<a href="../../html/works/modeling.html"><li>моделирование</li></a>
+				</ul>
 			</div>
+			<a href="../../ourlive.html">наша жизнь</a>
+			<a href="../../portfolio.html" class="active_page active_page_portf">портфолио</a>
+			<a href="../../games.html">тренажеры</a>
 		</div>
-		<!-- <div class="gradient-stripe"></div> -->
 	</nav>
 	<!-- //////////////////////MAIN///////////////////////// -->
 	<main>
 		<div class="container">
-
+			<!--Информационный блок-->
 			<div class="head">
 				<div class="row">
-					<div class="col-md-4">
-						<div class="mask">
-							<img src="../img/avatars/nazarenko.png" alt="">
-						</div>
+					<div class="col-md-4 ava">
+						<img src="../../img/avatars/nazarenko.png" alt="Аватарка" id="ava_pic">
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-8 info">
 						<h1>Назаренко Андрей Михайлович</h1>
-						<h2>Студент БПИ-17-1</h2>
+						<h2>БПИ-17-1</h2>
 						<br>
-						<h3>Веб-дизайнер, UI/UX дизайнер, графический дизайнер</h3>
+						<h3>Веб-дизайнер, UI/UX дизайнер, графический дизайнер<!--по типу UI/UX, дизайн ландшафта и тд--></h3>
 						<br>
-						<h3>
-							<a href="https://vk.me/kellzzz"><img src="../img/icons/vk_color.png" alt=""></a> merdisst@gmail.com</h3>
+						<h3>   <!--Ссылки/ Вместо решеток поставить ссылки, ненужные соцсети стереть-->
+							<a href="https://vk.com/kellzzz"><img src="../../img/icons/vk.svg" alt="Ссылка ВКонтакте"></a>
+							
+							<!-- Задать почту/телефон -->
+							 <!-- <a href="#">moy-site.com</a> -->
+							 <br><br>
+							 a.nazarenko.m@gmail.com
+						</h3>
 					</div>
 				</div>
 			</div>
-			<div class="mine_divider">
-			</div>
-
-			<div class="about">
-				<h3>Обо мне</h3>
-				<br>
-				<h3>Я стилист, учу своих клиентов управлять впечатлением, которое они производят. Как не просто „одеться красиво“, а создать хорошо продуманный образ. Как финансовому консультанту не походить на красивую секретаршу</h3>
-			</div>
-			<div class="mine_divider">
-			</div>
-
-			<div class="logotyping">
-				<h3>Логотипирование</h3>
-				<br>
-				<img src="../img/works/design_logotyping_nazarenko_2_skb.png" alt="">
-				<br>
-				<img src="../img/works/design_logotyping_nazarenko_1_volunteer-misis.png" alt="">
-			</div>
-			<div class="mine_divider">
-			</div>
-			
-
-			<div class="web-disign">
-				<h3>Сайтостроение / Веб-дизайн</h3>
-				<div class="kostina">
-					<!-- Слайды примеров -->
-					<div class="example-pic">
-						<img src="../img/works/design_web_nazarenko_web1_1.png" class="stat-icon" alt="">
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/design_web_nazarenko_web1_2.png" class="stat-icon" alt="">
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/design_web_nazarenko_web1_3.png" class="stat-icon" alt="">
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/design_web_nazarenko_web1_4.png" class="stat-icon" alt="">
-					</div>
-					<!-- Конец слайдов -->
-				</div>
-				<!-- Конец слайдера -->
-				<button class="btn" onclick="window.open('https://yungkellz.github.io/v.0.1.9/','_blank')">Открыть</button>
-			</div>
-			<div class="mine_divider"></div>
-
-			<div class="logotyping">
-				<h3>Фотографика</h3>
-				<br>
-				<img src="../img/works/photografika_nazarenko-andrey_scriptonit.jpg" alt="">
-			</div>	
-		</div>
-	</main>
-	<!-- BUTTON BACK -->
-	<button id="back_to_portfolio" class="back_to_portfolio" onclick="location.href='../portfolio.html'"><span>Назад</span></button>
-	<!-- ///////////////////////FOOTER//////////////// -->
-	<div class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-6 col-md-6">
-					Разделы
-					<div class="row links">
-
-						<div class="col-12 col-md-12">
-							<a href="../htmlworks/zhivopis.html">Живопись</a><a href="../htmlworks/modeling.html">Моделирование</a><a href="../htmlworks/grafika.html">Графика</a><a href="../htmlworks/photografika.html">Фотографика</a><a href="../htmlworks/disign.html">Дизайн</a>
+			<div class="blocks_sphere">
+				<!--Логотипирование -->
+				<h2>Логотипирование</h2>
+				<div class="row">
+					<div class="col-12">
+						<div class="gallery gallery_logo">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/design_logotyping_nazarenko_2_skb.png" alt='СКБ НИТУ "МИСиС" / Назаренко Андрей'>
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/design_logotyping_nazarenko_1_volunteer-misis.png" alt="Волонтёрский клуб НИТУ «МИСиС» / Назаренко Андрей">
 						</div>
 					</div>
 				</div>
-				<div class="col-3 col-md-3">
-					Контакты
-					<div class="row links">
-						<div class="col-md-12">+7 (961) 068-72-77<br>naumencko.ol2015@yandex.ru</div>
+				
+				<!--Сайты -->
+				<h2>Дизайн сайтов</h2>
+				<div class="row">
+					<div class="col-12">
+						<div class="gallery gallery_web">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/design_web_nazarenko_web1_1.png" alt="Сайт-визитка для проффесионального фотографа / Назаренко Андрей">
+						</div>
 					</div>
 				</div>
-				<div class="col-3 col-md-3">
-					Адрес
-					<div class="row links">
-						<div class="col-md-12">Ленинский просп., 6, Г-612</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
+				<!--Фотографика -->
+				
+				<!--Выставки -->
 				
 			</div>
 		</div>
-	</div>
-					<!-- //////////////////Скрипты////////////// -->
-	<script src="../js/jquery.min.js"></script>
-	<!-- Скрипт для Меню -->
-	<script src="../js/menu_dropdown.js"></script>
-	<!-- Слик слайдер -->
-	<script src="../slick/slick.min.js"></script>
-	<script src="../js/slickForProfile.js"></script>
-	<!-- Градиент плавающий -->
-	<script src="../js/gradientStripe.js"></script>
-	<!-- Cкрипт для кнопки назад -->
-	<script>
-			var btn = document.getElementById('back_to_portfolio');
-			window.setTimeout(function(){
-				console.log('sad');
-				btn.style.left="5%";
-				btn.style.opacity="1";
-		    },550);
-	</script>
+	</main>
+	<!-- MODAL WINDOW -->
+	<div class="modal fade" id="modalWin" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-portfolio modal-dialog-centered" role="document">
+		  <div class="modal-content content-portfolio">
+				<div class="modal-body">
+					  <img id="img-of-modal" src="../../img/works/zhivopis_naumenko_4_messeyn.jpg" alt="">
+					  <h3 id="text-of-modal">Науменко О. М.</h3>
+				  </div>
+				</div>
+		  </div>
+		</div>
+  	</div>
+	<!-- ///////////////////////FOOTER//////////////// -->
+	<footer id="footer">
+		<div id="foot_gradient"></div>
+		<div id="foot_white"></div>
+		
+		<div id="foot_menu" class="container">
+			<div class="row">
+				<h2 class="col-md-5 offset-md-1">Направления</h2>
+				<h2 class="col-md-3">Контакты</h2>
+				<h2 class="col-md-2">Адрес</h2>
+			</div>
+			<div class="row">
+				<h4 class="col-md-5 offset-md-1">
+					<a href="../../html/works/zhivopis.html">Живопись</a>
+					<a href="../../html/works/modeling.html">Моделирование</a>
+					<a href="../../html/works/grafika.html">Графика</a>
+					<a href="../../html/works/photografika.html">Фотографика</a>
+					<a href="../../html/works/design.html">Дизайн</a>
+				</h4>
+				<h4 class="col-md-3">naumencko.ol2015@yandex.ru<br>+7 961 068-72-77</h4>
+				<h4 class="col-md-2">Ленинский просп., 6, Г-612</h4>
+			</div>
+		</div>
+	</footer>
+	<!-- //////////////////Скрипты////////////// -->
+	<script src="../../js/nav.js"></script>
+
+	<!--JQuery-->
+	<script src="../../js/jquery.min.js"></script>
+	<!-- Бутстрап JS -->
+	<script src="../../js/bootstrap.min.js" ></script>
+	<!-- Скрипт для модального окна -->
+	<script src="../../js/modalWindowGallery.js"></script>
 </body>
 </html>

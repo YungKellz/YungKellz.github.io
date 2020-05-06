@@ -3,235 +3,136 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ДизайнСтудия МИСиС</title>
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" >
-	<!-- <link rel="stylesheet" type="text/css" href="css/animate.css"> -->
-	<link rel="stylesheet" type="text/css" href="../slick/slick.css">
-	<link rel="stylesheet" type="text/css" href="../slick/slick-theme.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/BeerSlider.css"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="css/beforeAfterSlider.css"> -->
-	<link rel="stylesheet" type="text/css" href="../css/fonts.css">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<link rel="stylesheet" type="text/css" href="../css/profile.css">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" >
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../css/portfolio_user.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates&amp;subset=cyrillic" rel="stylesheet">
-	<!-- <script src="js/wow.min.js"></script> -->
 </head>
 <body>
 	<!-- //////////////////////NAV///////////////////////// -->
-	<nav class="fixed-top">	
-		<div class="gradientfornav3"></div>
-		<div class="gradientfornav1" id="gradientfornav1"></div>
-		<div class="gradientfornav2" id="gradientfornav2"></div>
-		<div class="nav-bar">
-			<div class="container">
-				<div class="row align-items-center">	
-					<div class="col-lg-4 logo-pic"><a class="nav-bar-logo"href="../index.html">/DesignStudio/ </a></div>
-					<div class="col-12 col-lg-8 text-uppercase menu-line">							
-						<ul>
-						    <li><a href="../index.html"><div>Главная</div></a></li>
-						    <li>
-								<div  class="dropdown">
-									<a href="../works.html"><div>Работы</div></a>
-									<div class="list">
-									    <a href="../htmlworks/zhivopis.html"><div class="point point-f">Живопись</div></a>
-									    <a href="../htmlworks/grafika.html"><div class="point">Графика</div></a>
-									    <a href="../htmlworks/disign.html"><div class="point">Дизайн</div></a>
-									    <a href="../htmlworks/photografika.html"><div class="point">Фотографика</div></a>
-									    <a href="../htmlworks/modeling.html"><div class="point">Моделирование</div></a>
-									</div>
-								</div>
-						    </li>
-						    <li><a href="../ourlive.html"><div>Наша жизнь</div></a></li>
-						    <li class="active-page"><a href="../portfolio.html"><div>Портфолио</div></a></li>
-						</ul>
-					</div>
-				</div>
+	<nav>	
+		<div id="nav_gradient"></div>
+		<div id="nav_white"></div>
+		<div id="nav_logo"><a href="../../index.html"><img src='../../img/logo.svg'/></a></div>
+		<div id="nav_menu">
+			<a href="../../index.html">главная</a>
+			<div id="nav_menu_works">
+				<a href="#" id="nav_menu_works_head">работы</a>
+				<ul>
+					<a href="../../html/works/design.html"><li>дизайн</li></a>
+					<a href="../../html/works/grafika.html"><li>графика</li></a>
+					<a href="../../html/works/zhivopis.html"><li>живопись</li></a>
+					<a href="../../html/works/photografika.html"><li>фотографика</li></a>
+					<a href="../../html/works/modeling.html"><li>моделирование</li></a>
+				</ul>
 			</div>
+			<a href="../../ourlive.html">наша жизнь</a>
+			<a href="../../portfolio.html" class="active_page active_page_portf">портфолио</a>
+			<a href="../../games.html">тренажеры</a>
 		</div>
-		<!-- <div class="gradient-stripe"></div> -->
 	</nav>
 	<!-- //////////////////////MAIN///////////////////////// -->
 	<main>
 		<div class="container">
+			<!--Информационный блок-->
 			<div class="head">
 				<div class="row">
-					<div class="col-md-4">
-						<div class="mask">
-							<img src="../img/avatars/naumenko.png" alt="">
-						</div>
+					<div class="col-md-4 ava">
+						<img src="../../img/avatars/naumenko.png" alt="Аватарка" id="ava_pic">
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-8 info">
 						<h1>Науменко Ольга Михайловна</h1>
 						<h2>Преподаватель</h2>
 						<br>
-						<h3>Художник, скульптор, дизайнер</h3>
+						<h3>Художник, скульптор, дизайнер<!--по типу UI/UX, дизайн ландшафта и тд--></h3>
 						<br>
-						<h3>
-						 naumencko.ol2015@yandex.ru</h3>
+						<h3>   <!--Ссылки/ Вместо решеток поставить ссылки, ненужные соцсети стереть-->
+							<a href="https://wa.me/79855245617"><img src="../../img/icons/whatsapp.svg" alt="Ссылка Вотсапп"></a>
+							<!-- Задать почту/телефон -->
+							 <!-- <a href="#">moy-site.com</a> -->
+							 <br><br>
+							 naumencko.ol2015@yandex.ru
+						</h3>
 					</div>
 				</div>
 			</div>
-			<div class="mine_divider">
-			</div>
-			<div class="about">
-				<h3>Обо мне</h3>
-				<br>
-				<h3>Я стилист, учу своих клиентов управлять впечатлением, которое они производят. Как не просто „одеться красиво“, а создать хорошо продуманный образ. Как финансовому консультанту не походить на красивую секретаршу</h3>
-			</div>
-			<div class="mine_divider">
-			</div>
-
-			<div class="paint">
-				<h3>Рисунок</h3>
-					<!-- Рисунки слайдер -->
-				<div class="work-examples">
-					<!-- Слайды примеров -->
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_1_alps.jpg" class="stat-icon" alt="">
-						<br>
-						<h3>В Альпах</h3>
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_2_monastyr.JPG" class="stat-icon" alt="">
-						<br>
-						<h3>В дворике Соловецкого монастыря</h3>
-
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_3_venecia.jpg" class="stat-icon" alt="">
-						<br>
-						<h3>Венеция</h3>
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_4_messeyn.jpg" class="stat-icon" alt="">
-						<br>
-						<h3>Германия. Мейссен.</h3>
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_5_zima-podmosko.jpg" class="stat-icon" alt="">
-						<br>
-						<h3>Зима. Подмосковье.</h3>
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_6_letnya.jpg" class="stat-icon" alt="">
-						<br>
-						<h3>Летняя пора</h3>
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_7_moskovskiy_dvor.jpg" class="stat-icon" alt="">
-						<br>
-						<h3>Московский дворик</h3>
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_8_na_beregu.jpg" class="stat-icon" alt="">
-						<br>
-						<h3>На берегу</h3>
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_9_park_kuskogo.jpg" class="stat-icon" alt="">
-						<br>
-						<h3>Парк Кусково</h3>
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_10_ottepel.jpg" class="stat-icon" alt="">
-						<br>
-						<h3>Оттепель</h3>
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_11_starayapraga.jpg" class="stat-icon" alt="">
-						<br>
-						<h3>Старая Прага</h3>
-					</div>
-					<div class="example-pic">
-						<img src="../img/works/zhivopis_naumenko_12_metamorfozy.jpg" class="stat-icon" alt="">
-						<br>
-						<h3>Метаморфозы</h3>
-					</div>
-
-					
-					<!-- Конец слайдов -->
-				</div>
-				<!-- Конец слайдера -->
-			</div>
-			<div class="mine_divider">
-			</div>
-
-			<div class="exhibition">
-				<h3>Выставки / Мероприятия</h3>
-				<br>
-				<p>
-					Ежегодное участие в  российских и международных художественных выставках. Более 20 персональных выставок в России и за рубежом. Её картины с успехом  выставлялась во Франции, Германии, Бельгии, Италии, Австрии и других странах, находятся в Музее М. Цветаевой, в Музее М.Булгакова, в Музее Человека г. Москвы, Музее г. Петушки Владимирской области, в частных коллекциях в России, Швейцарии, Германии, Италиии др. стран. Команда студентов НИТУ МИСиС под руководством Науменко О.М. успешно выступает в   российских и международных художественных выставках. Студенты Е.Ребрин, М.Ганьшина, Д.Плотникова, В.Рязанова, В.Колина и другие под руководством Науменко О.М.  стали дипломантами и призерами российских и международных художественных выставок и конкурсов. 
-
-				</p>
-			</div>
-			<div class="mine_divider">
-			</div>
-
-			<div class="exhibition">
-				<h3>Награды и другие достижения</h3>
-				<br>
-				<ul>
-					<li>Диплом «Золотая кисть» 1999</li>
-					<li>Диплом «За вклад в развитие российского искусства и высокий художественный уровень творческих работ» издательства «Наш Изограф» 2004</li>
-					<li>Звание “Человек Года 2009” Межрегионального общественного объединения “Музей Человека” 2009</li>
-					<li>Диплом победителя конкурса творческих работ НИТУ МИСиС 2011</li>
-					<li>Золотая медаль “За вклад в развитие изобразительного искусства” ТСПХ 2017</li>
-					<li>Дипломант выставки “Пространство листа” Московского Союза художников 2018</li>
-					<li>Медаль “За безупречную службу МИСиС” 2018</li>
-				</ul>
-			</div>
-		</div>
-	</main>
-	<!-- BUTTON BACK -->
-	<button id="back_to_portfolio" class="back_to_portfolio" onclick="location.href='../portfolio.html'"><span>Назад</span></button>
-	<!-- ///////////////////////FOOTER//////////////// -->
-	<div class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-6 col-md-6">
-					Разделы
-					<div class="row links">
-
-						<div class="col-12 col-md-12">
-							<a href="../htmlworks/zhivopis.html">Живопись</a><a href="../htmlworks/modeling.html">Моделирование</a><a href="../htmlworks/grafika.html">Графика</a><a href="../htmlworks/photografika.html">Фотографика</a><a href="../htmlworks/disign.html">Дизайн</a>
+			<div class="blocks_sphere">
+	
+				<!--Живопись -->
+				<h2>Живопись</h2>
+				<div class="row">
+					<div class="col-12">
+						<div class="gallery gallery_draw">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/1_alps.jpg" alt='Альпы'>
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/2_monastyr.JPG" alt="Монастырь">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/3_venecia.jpg" alt="Венеция">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/4_messeyn.jpg" alt="Мессейн">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/5_zima-podmosko.jpg" alt="Зима в подмосковье">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/6_letnya.jpg" alt="Летняя">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/7_moskovskiy_dvor.jpg" alt="Московский двор">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/8_na_beregu.jpg" alt="На берегу">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/9_park_kuskogo.jpg" alt="Парк Кусково">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/10_ottepel.jpg" alt="Оттепель">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/11_starayapraga.jpg" alt="Старая Прага">
+							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/zhivopis/naumenko/12_metamorfozy.jpg" alt="Метаморфозы">
 						</div>
 					</div>
 				</div>
-				<div class="col-3 col-md-3">
-					Контакты
-					<div class="row links">
-						<div class="col-md-12">+7 (961) 068-72-77<br>naumencko.ol2015@yandex.ru</div>
-					</div>
-				</div>
-				<div class="col-3 col-md-3">
-					Адрес
-					<div class="row links">
-						<div class="col-md-12">Ленинский просп., 6, Г-612</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
+				<!--Логотипирование -->
+				
+				<!--Сайты -->
+				
+				<!--Фотографика -->
+				
+				<!--Выставки -->
 				
 			</div>
 		</div>
-	</div>
+	</main>
+	<!-- MODAL WINDOW -->
+	<div class="modal fade" id="modalWin" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-portfolio modal-dialog-centered" role="document">
+		  <div class="modal-content content-portfolio">
+				<div class="modal-body">
+					  <img id="img-of-modal" src="../../img/works/zhivopis_naumenko_4_messeyn.jpg" alt="">
+					  <h3 id="text-of-modal">Науменко О. М.</h3>
+				  </div>
+				</div>
+		  </div>
+		</div>
+  	</div>
+	<!-- ///////////////////////FOOTER//////////////// -->
+	<footer id="footer">
+		<div id="foot_gradient"></div>
+		<div id="foot_white"></div>
+		
+		<div id="foot_menu" class="container">
+			<div class="row">
+				<h2 class="col-md-5 offset-md-1">Направления</h2>
+				<h2 class="col-md-3">Контакты</h2>
+				<h2 class="col-md-2">Адрес</h2>
+			</div>
+			<div class="row">
+				<h4 class="col-md-5 offset-md-1">
+					<a href="../../html/works/zhivopis.html">Живопись</a>
+					<a href="../../html/works/modeling.html">Моделирование</a>
+					<a href="../../html/works/grafika.html">Графика</a>
+					<a href="../../html/works/photografika.html">Фотографика</a>
+					<a href="../../html/works/design.html">Дизайн</a>
+				</h4>
+				<h4 class="col-md-3">naumencko.ol2015@yandex.ru<br>+7 961 068-72-77</h4>
+				<h4 class="col-md-2">Ленинский просп., 6, Г-612</h4>
+			</div>
+		</div>
+	</footer>
+	<!-- //////////////////Скрипты////////////// -->
+	<script src="../../js/nav.js"></script>
 
-					<!-- //////////////////Скрипты////////////// -->
-	<script src="../js/jquery.min.js"></script>
-	<!-- Скрипт для Меню -->
-	<script src="../js/menu_dropdown.js"></script>
-	<!-- Слик слайдер -->
-	<script src="../slick/slick.min.js"></script>
-	<script src="../js/slickForProfile.js"></script>
-	<!-- Градиент плавающий -->
-	<script src="../js/gradientStripe.js"></script>
-	<!-- Cкрипт для кнопки назад -->
-	<script>
-			var btn = document.getElementById('back_to_portfolio');
-			window.setTimeout(function(){
-				console.log('sad');
-				btn.style.left="5%";
-				btn.style.opacity="1";
-		    },550);
-	</script>
+	<!--JQuery-->
+	<script src="../../js/jquery.min.js"></script>
+	<!-- Бутстрап JS -->
+	<script src="../../js/bootstrap.min.js" ></script>
+	<!-- Скрипт для модального окна -->
+	<script src="../../js/modalWindowGallery.js"></script>
 </body>
-</html> 
+</html>
