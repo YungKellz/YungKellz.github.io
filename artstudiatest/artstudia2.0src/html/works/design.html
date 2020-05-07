@@ -6,7 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" >
 	<link rel="stylesheet" type="text/css" href="../../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../../css/portfolio_user.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../../slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="../../slick/slick-theme.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=cyrillic" rel="stylesheet">
 </head>
 <body>
 	<!-- //////////////////////NAV///////////////////////// -->
@@ -33,7 +35,7 @@
 		</div>
 	</nav>
 	<!-- //////////////////////MAIN///////////////////////// -->
-	<main>
+	<main> 	<!--Набор классов для img которые вставляют текст из альтa в описание: name toPort bord toWeb list-->
 		<div class="container">
 			<div class="blocks_sphere">
 				<!--Логотипирование -->
@@ -41,9 +43,9 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="gallery gallery_logo">
-							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/design_logotyping_nazarenko_2_skb.png" alt='СКБ НИТУ "МИСиС" / Назаренко Андрей'>
-							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/design_logotyping_nazarenko_1_volunteer-misis.png" alt="Волонтёрский клуб НИТУ «МИСиС» / Назаренко Андрей">
-							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/design_logotyping_cvetkova-stanislava_1_dublin2020.jpg" alt="2020 World Irish Dancing Championships / Цветкова Станислава">
+							<img data-toggle="modal" data-target="#modalWin" class="imgCover name toPort" src="../../img/works/design/logotyping/nazarenko-andrey/2_skb.png" alt='СКБ НИТУ "МИСиС" ^ Назаренко&nbsp;Андрей ^ ../profiles/nazarenko.html'>
+							<img data-toggle="modal" data-target="#modalWin" class="imgCover name toPort" src="../../img/works/design/logotyping/nazarenko-andrey/1_volunteer-misis.png" alt="Волонтёрский клуб НИТУ «МИСиС» ^ Назаренко&nbsp;Андрей ^ ../profiles/nazarenko.html">
+							<img data-toggle="modal" data-target="#modalWin" class="imgCover name" src="../../img/works/design/logotyping/cvetkova-stanislava/1_dublin2020.jpg" alt="2020 World Irish Dancing Championships ^ Цветкова&nbsp;Станислава">
 						</div>
 					</div>
 				</div>
@@ -53,26 +55,41 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="gallery gallery_web">
-							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/design_web_nazarenko_web1_1.png" alt="Сайт-визитка для проффесионального фотографа / Назаренко Андрей">
-							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/design_web_kakovkina-natalya_web1_1.png" alt="Сайт-визитка / Кaковкина Наталья">
-							<img data-toggle="modal" data-target="#modalWin" src="../../img/works/design_print_kakovkina-natalya_buklet-apd.jpg" alt="Буклет кафедры АПД / Кaковкина Наталья">
+							<img data-toggle="modal" data-target="#modalWin" class="imgCover name toPort toWeb bord list" src="../../img/works/design/websites/nazarenko-andrey/kostina_1.png" alt="Сайт-визитка для проффесионального фотографа ^ Назаренко&nbsp;Андрей ^ ../profiles/nazarenko.html ^ https://yungkellz.github.io/v.0.1.9/ ^ 4">
+							<img data-toggle="modal" data-target="#modalWin" class="imgCover name toPort bord list" src="../../img/works/design/websites/nezgovorova-kristina/shonus_1.png" alt="Сайт для дизайнера интерьеров ^ Незговорова&nbsp;Кристина ^ ../profiles/nezgovorova.html ^ toWeb ^ 3">
 						</div>
 					</div>
 				</div>
-				<!--Фотографика -->
+				<!--Типографика -->
+				<h2>Типографика</h2>
+				<div class="row">
+					<div class="col-12">
+						<div class="gallery gallery_web">
+							<img data-toggle="modal" data-target="#modalWin" class="imgCover name toPort list" src="../../img/works/design/typografika/nezgovorova-kristina/quest_1.png" alt="Типографика для Linguistic Center Quest ^ Незговорова&nbsp;Кристина ^ ../profiles/nezgovorova.html ^ toWeb ^ 4">
+							<img data-toggle="modal" data-target="#modalWin" class="imgCover name" src="../../img/works/design/typografika/kakovkina-natalya/buklet-apd.jpg" alt="Буклет кафедры АПД ^ Кaковкина&nbsp;Наталья">
+						</div>
+					</div>
+				</div>
 				
-				<!--Выставки -->
 				
 			</div>
 		</div>
 	</main>
 	<!-- MODAL WINDOW -->
 	<div class="modal fade" id="modalWin" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-portfolio modal-dialog-centered" role="document">
+		<div class="modal-dialog modal-dialog-centered" role="document">
 		  <div class="modal-content content-portfolio">
 				<div class="modal-body">
-					  <img id="img-of-modal" src="../../img/works/zhivopis_naumenko_4_messeyn.jpg" alt="">
-					  <h3 id="text-of-modal">Науменко О. М.</h3>
+
+					<!-- Слайды примеров -->
+					<div id="slider" class="work-examples">
+						<img src="" class="stat-icon" alt="">
+					</div>
+					<!-- Конец слайдов -->
+
+					<h3 id="text-of-modal"></h3>
+					<br id="brModal"><div id="buttonModalLink">Открыть</div>
+
 				  </div>
 				</div>
 		  </div>
@@ -104,12 +121,13 @@
 	</footer>
 	<!-- //////////////////Скрипты////////////// -->
 	<script src="../../js/nav.js"></script>
-
 	<!--JQuery-->
 	<script src="../../js/jquery.min.js"></script>
 	<!-- Бутстрап JS -->
 	<script src="../../js/bootstrap.min.js" ></script>
 	<!-- Скрипт для модального окна -->
 	<script src="../../js/modalWindowGallery.js"></script>
+	<!-- Слик слайдер -->
+	<script src="../../slick/slick.min.js"></script>
 </body>
 </html>

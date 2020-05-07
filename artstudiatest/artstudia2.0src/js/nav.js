@@ -39,34 +39,37 @@ nav_menu_works.addEventListener("mouseout",function(){
 
 /*Градиент*/
 var p1 = "radial-gradient(circle farthest-corner at ",
-	p2 = "px 50px,rgb(255, 0, 0) 0%, rgb(255, 200, 0) 100%)";
+	p2 = "px 10px, rgba(255, 0, 0, ",
+	p3 = ") 0%, rgba(255, 200, 0, ",
+	p4 = ") 100%)";
 
-function gradientTo(idEl){
+function gradientTo(idEl, alpha){
 	widthEl = idEl.offsetWidth;
 	posGrad  = rndInt(0, widthEl - 1);
-	toRight(idEl, widthEl, posGrad);
+	toRight(idEl, widthEl, posGrad, alpha);
 }
 
-function toRight(id, width, pos) {
-	var idInt = setInterval(function() {
+function toRight(id, width, pos, alpha) {
+	let idInt = setInterval(function() {
 		pos++;
-		id.style.background = p1 + pos + p2;
+		id.style.background = p1 + pos + p2 + alpha + p3 + alpha + p4;
 		if (pos > width) {
 			clearInterval(idInt);
-			toLeft(id, width, pos);
+			toLeft(id, width, pos, alpha);
 		}
 	}, 1);
 }
-function toLeft(id, width, pos) {
-	var idInt = setInterval(function() {
+function toLeft(id, width, pos, alpha) {
+	let idInt = setInterval(function() {
 		pos--;
-		id.style.background = p1 + pos + p2;
+		id.style.background = p1 + pos + p2 + alpha + p3 + alpha + p4;
 		if (pos < 0) {
 			clearInterval(idInt);
-			toRight(id, width, pos);
+			toRight(id, width, pos, alpha);
 		}
 	}, 1);
 }
 
-gradientTo(nav_gradient);
-gradientTo(foot_gradient);
+gradientTo(nav_gradient, 1);
+gradientTo(foot_gradient, 1);
+

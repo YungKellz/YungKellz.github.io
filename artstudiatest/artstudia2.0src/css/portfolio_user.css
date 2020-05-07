@@ -45,6 +45,9 @@ main .head .info a {
 main .head .info a:hover {
   color: #FF6600;
 }
+main .head .info h3 {
+  margin-bottom: 0;
+}
 main .blocks_sphere h2 {
   position: relative;
   margin-bottom: 60px;
@@ -77,6 +80,7 @@ main .blocks_sphere .gallery img {
           box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  margin-right: 20px;
 }
 main .blocks_sphere .gallery img:hover {
   -webkit-transform: scale(1.03);
@@ -102,9 +106,59 @@ main .blocks_sphere .gallery_web img {
 .modal img {
   width: 100%;
 }
-.modal .modal-dialog-portfolio {
+.modal .modal-dialog {
   min-width: 50%;
 }
 .modal h3 {
   margin: 30px 0 1rem 0;
+  font-weight: 500;
+  width: 70%;
+}
+.modal #buttonModalLink {
+  display: none;
+  border-radius: 20px;
+  padding: 5px 20px;
+  cursor: pointer;
+  color: #383838;
+  border: 1px solid #383838;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin-bottom: 10px;
+}
+.modal #buttonModalLink:hover {
+  color: #FF6600;
+  border-color: #FF6600;
+}
+.modal .slick-prev:before,
+.modal .slick-next:before {
+  opacity: 0.75;
+  color: #FF6600;
+}
+.modal .slick-prev {
+  top: auto;
+  bottom: -50px;
+  left: 0;
+}
+.modal .slick-next {
+  top: auto;
+  bottom: -50px;
+  right: 0;
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+}
+.modal a {
+  text-decoration: underline;
+  color: black;
+  font-weight: 600;
+}
+.modal a:hover {
+  color: #FF6600;
+}
+.fade {
+  -webkit-transition: none;
+  transition: none;
 }
