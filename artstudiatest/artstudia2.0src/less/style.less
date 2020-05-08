@@ -27,7 +27,9 @@ nav{
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      height: 128px;
+      top: 50%;
+      
+      transform: translate(-50%, -50%);
       background-color: #fff;
       transition: 0.2s;
     } 
@@ -66,12 +68,10 @@ nav{
       &_works{
         position: relative;
         #nav_menu_works_head{ 
-          //transition: 0.4s;
           cursor: default;
         }
         ul{
           z-index: 9;
-          //transition: 0.4s;
           visibility: hidden;
           opacity: 0;
           color: black;
@@ -87,16 +87,16 @@ nav{
           }
         }
         /*при наведении на "работы"*/
-        &:hover{
-          #nav_menu_works_head{
-            visibility: hidden;
-            opacity: 0;
-          }
-          ul{
-            visibility: visible;
-            opacity: 1;
-          }
-        }
+        // &:hover{
+        //   #nav_menu_works_head{
+        //     visibility: hidden;
+        //     opacity: 0;
+        //   }
+        //   ul{
+        //     visibility: visible;
+        //     opacity: 1;
+        //   }
+        // }
       }
     }
   }
@@ -186,4 +186,42 @@ h4{
   
   font-style: normal;
   
+}
+
+
+@media (max-width: 1200px) {
+  #nav_gradient{
+    display: none;
+  }
+  #foot_gradient{
+    display: none;
+  }
+  .flex-con{
+    display: block;
+  }
+  .person-block{
+    margin: 40px auto;
+  }
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+ 
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+ 
+  
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+
 }

@@ -28,7 +28,9 @@ nav #nav_white {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  height: 128px;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-color: #fff;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -94,14 +96,6 @@ nav #nav_menu_works ul {
 }
 nav #nav_menu_works ul li {
   margin-bottom: 0px;
-}
-nav #nav_menu_works:hover #nav_menu_works_head {
-  visibility: hidden;
-  opacity: 0;
-}
-nav #nav_menu_works:hover ul {
-  visibility: visible;
-  opacity: 1;
 }
 main {
   -webkit-transition: 0.3s;
@@ -184,3 +178,21 @@ h4 {
   font-weight: normal;
   font-style: normal;
 }
+@media (max-width: 1200px) {
+  #nav_gradient {
+    display: none;
+  }
+  #foot_gradient {
+    display: none;
+  }
+  .flex-con {
+    display: block;
+  }
+  .person-block {
+    margin: 40px auto;
+  }
+}
+/* Portrait tablets and medium desktops */
+/* Portrait tablets and small desktops */
+/* Landscape phones and portrait tablets */
+/* Landscape phones and smaller */

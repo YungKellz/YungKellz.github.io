@@ -15,6 +15,7 @@ function rndInt(min, max) {
 
 /*белый фон нава и футера*/
 	nav_white.style.width = document.getElementsByClassName('container')[0].offsetWidth + "px";
+	nav_white.style.height = nav_gradient.offsetHeight + 20 + "px";
 	foot_white.style.width = document.getElementsByClassName('container')[0].offsetWidth + "px";
 	foot_gradient.style.height = footer.offsetHeight - 80 + "px";
 	foot_white.style.height = footer.offsetHeight + "px";
@@ -23,19 +24,72 @@ function rndInt(min, max) {
 		foot_white.style.height = footer.offsetHeight - 80 + "px";
 	});
 /*выпадающее "работа"*/
-var whiteDrop = document.getElementById('nav_dropdown_white_bg');
+var whiteDrop = document.getElementById('nav_dropdown_white_bg'),
+	mainTag = document.getElementsByTagName("main")[0],
+	ulWorks = document.getElementsByTagName("ul")[0];
 
-nav_menu_works.addEventListener("mouseover",function(){
-	document.getElementsByTagName("main")[0].style.filter = "blur(3px)";
-	document.getElementsByTagName("main")[0].style.opacity = "0.3";
-});
-nav_menu_works.addEventListener("mouseout",function(){
-	document.getElementsByTagName("main")[0].style.filter = "blur(0px)";
-	document.getElementsByTagName("main")[0].style.opacity = "1";
-	nav_white.style.height = "128px";
-	nav_white.style.borderRadius = "0px";
-	nav_white.style.boxShadow = "0 10px 10px rgba(255,255,255,0)";
-});
+
+
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+
+    nav_menu_works.addEventListener("click",function(){
+		mainTag.style.filter = "blur(3px)";
+		mainTag.style.opacity = "0.3";
+		nav_white.style.position = "fixed";
+		nav_white.style.height = "100%";
+		nav_white.style.width = "100%";
+		nav_white.style.transition = "none";
+		nav_white.style.opacity = "0";
+
+
+		nav_menu_works_head.style.visibility = "hidden";
+		nav_menu_works_head.style.opacity = "0";
+		ulWorks.style.visibility = "visible";
+		ulWorks.style.opacity = "1";
+	});
+
+	nav_white.addEventListener("click",function(){
+		mainTag.style.filter = "blur(0px)";
+		mainTag.style.opacity = "1";
+		nav_white.style.position = "absolute";
+		nav_white.style.height = "100%";
+		nav_white.style.width = "100%";
+		nav_white.style.transition = "none";
+		nav_white.style.opacity = "0";
+
+
+		nav_menu_works_head.style.visibility = "visible";
+		nav_menu_works_head.style.opacity = "1";
+		ulWorks.style.visibility = "hidden";
+		ulWorks.style.opacity = "0";
+	});
+	// nav_menu_works.addEventListener("click",function(){
+	// 	mainTag.style.filter = "blur(0px)";
+	// 	mainTag.style.opacity = "1";
+	// });
+
+  } else {
+    nav_menu_works.addEventListener("mouseover",function(){
+		mainTag.style.filter = "blur(3px)";
+		mainTag.style.opacity = "0.3";
+		nav_menu_works_head.style.visibility = "hidden";
+		nav_menu_works_head.style.opacity = "0";
+		ulWorks.style.visibility = "visible";
+		ulWorks.style.opacity = "1";
+	});
+	nav_menu_works.addEventListener("mouseout",function(){
+		mainTag.style.filter = "blur(0px)";
+		mainTag.style.opacity = "1";
+		nav_menu_works_head.style.visibility = "visible";
+		nav_menu_works_head.style.opacity = "1";
+		ulWorks.style.visibility = "hidden";
+		ulWorks.style.opacity = "0";
+	});
+	gradientTo(nav_gradient, 1);
+	gradientTo(foot_gradient, 1);
+}
+
+
 
 /*Градиент*/
 var p1 = "radial-gradient(circle farthest-corner at ",
@@ -70,6 +124,4 @@ function toLeft(id, width, pos, alpha) {
 	}, 1);
 }
 
-gradientTo(nav_gradient, 1);
-gradientTo(foot_gradient, 1);
 

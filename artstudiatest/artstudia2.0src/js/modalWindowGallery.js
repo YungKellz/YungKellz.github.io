@@ -3,8 +3,7 @@ var images = document.getElementsByClassName('imgCover'),
     modal_content = document.getElementsByClassName("modal-content")[0],
     modal_dialog = document.getElementsByClassName("modal-dialog")[0],
     modal_txt = document.getElementById("text-of-modal"),
-    work_examples = document.getElementsByClassName('work-examples')[0],
-    flagForSlick = false;
+    work_examples = document.getElementsByClassName('work-examples')[0];
 
 
 function changePic(e){
