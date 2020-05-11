@@ -59,10 +59,7 @@ function questionAboutDescFun(a){
             openDesc();
             setTimeout(() => {
                 if(!flagForCloseDescAnimation){
-                    button_desc.style.transform = "scale(1.5)";
-                    setTimeout(() => {
-                        button_desc.style.transform = "scale(1)";
-                    }, 400);
+                    button_desc.style.transform = "rotate(360deg)";
                 }
             }, 5500);
         }
