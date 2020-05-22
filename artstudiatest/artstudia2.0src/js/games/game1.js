@@ -13,7 +13,8 @@ var gameField = document.getElementById('game_field'),
     squareline = 4,
     squareNumber = 4 * 4,
     level = 0,
-    d = 10;
+    d = 8,
+    n = 4,
     flagForCloseDescAnimation = false;
 /*help functions*/
 function rgb(r, g, b){
@@ -115,15 +116,17 @@ function Play() {
 /*afterPlay*/
 
 function settings(){
-    if (this.className === "settings") {
+    console.clear();
+    if (this.className !== "settings active") {
         var a = document.getElementsByClassName('active');
-        console.log("изменилась сложность на " + a[0].id);
+        console.log("изменилась сложность на " + this.id);
         a[0].classList.remove("active");
         this.classList.add("active");
     }
-    if (this.id === "easy") d = 15;
-    else if (this.id === "normal") d = 10;
+    if (this.id === "easy") d = 12;
+    else if (this.id === "normal") d = 8;
     else d = 6;
+    console.log("Разница равна " + d);
 }
 
 function squareClick(){
@@ -150,15 +153,21 @@ function squareClick(){
     }
 }
 function checkLevel(){
-    if (level < 6) {squareNumber = 4 * 4; squareline = 4;}
-    else if (level < 11) {squareNumber = 5 * 5; squareline = 5;}
-    else if (level < 16) {squareNumber = 6 * 6; squareline = 6;}
-    else if (level < 21) {squareNumber = 7 * 7; squareline = 7;}
-    else if (level < 31) {squareNumber = 8 * 8; squareline = 8;}
-    else if (level < 41) {squareNumber = 9 * 9; squareline = 9;}
-    else if (level < 51) {squareNumber = 10 * 10; squareline = 10;}
-    else if (level < 61) {squareNumber = 11 * 11; squareline = 11;}
-    else if (level < 71) {squareNumber = 12 * 12; squareline = 12;}
+    if (level < 6) {n = 4;}
+    else if (level < 11) {n = 5;}
+    else if (level < 16) {n = 6;}
+    else if (level < 21) {n = 7;}
+    else if (level < 26) {n = 8;}
+    else if (level < 31) {n = 9;}
+    else if (level < 36) {n = 10;}
+    else if (level < 41) {n = 11;}
+    else if (level < 46) {n = 12;}
+    // else if (level < 51) {n = 13;}
+    // else if (level < 56) {n = 14;}
+    // else if (level < 61) {n = 15;}
+    // else if (level < 66) {n = 16;}
+    squareNumber = n * n;
+    squareline = n;
 }
 
 function clearField(){
