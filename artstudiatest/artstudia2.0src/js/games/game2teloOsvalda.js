@@ -12,6 +12,7 @@ var
     seconds = 0,
     gameOn = false,
     cell_width = 0,
+    squaresOnField = 4,
     gameSquares;
 
 //////////////////////*help functions*/
@@ -227,8 +228,8 @@ function Play(){
     /**Обнуляем статистику */
     numOfTry = numOfTry + 1;
     checkRights();
-    currentScore.innerHTML = "0";
-    maxScore.innerHTML     = gameFieldNum - 4;
+    currentScore.innerHTML = squaresOnField;
+    maxScore.innerHTML     = gameFieldNum;
     tryCount.innerHTML     = numOfTry;
 
 };
@@ -316,6 +317,7 @@ const dragLeave = function () {
     this.style.border = "1px solid rgba(228, 228, 228,0.3)";
 };
 const dragDrop = function () {
+    let changeNumOnField = 0;
 
     if(this.id !== "pull_field"){
         if (this.children.length == 0) {
@@ -329,11 +331,14 @@ const dragDrop = function () {
             sameWH(DragItm, cell_width);
             DragItm.parentElement.prepend(this.children[0]);
             this.prepend(DragItm);
-        }           
+        }   
+        changeNumOnField += 1;
     }else{
         this.prepend(DragItm);
+        changeNumOnField -= 1;
     }
     this.style.border = "1px solid rgba(228, 228, 228,0.3)";
+    plusMinus(changeNumOnField);
     console.log('drop');
 };
 /**ГЛАВНОЕ */
@@ -360,7 +365,7 @@ function dragAndDrop() {
 ////////////////////////////////////////////////////         ПРОВЕРКА
 button_check.addEventListener('click', checkRights);
 function checkRights() {
-    var tryGood=0, tryBad=0;
+    var tryBad=0;
     console.log('asd');
     //game_field.style.backgroundColor = "red";
     numOfTry--;
@@ -372,7 +377,7 @@ function checkRights() {
         tryCountTxt.innerHTML = 'проверок не осталось';
     } else {
         if (numOfTry == 1) {
-            tryCountTxt.innerHTML = 'осталась <b>последняя</b> проверка';
+            tryCountTxt.innerHTML = 'осталась последняя проверка';
         } else {tryCount.innerHTML = numOfTry;}
     }
     game_field.style.boxShadow = "0px 0px 26px rgba(0, 0, 0, 0.3)";
@@ -385,7 +390,6 @@ function checkRights() {
         console.log(suspectSquares[i].alt,suspectSquares[i].parentElement.alt)
         if (suspectSquares[i].parentElement.alt == suspectSquares[i].alt) {
             console.log('yes');
-            tryGood = tryGood + 1;
             let img = document.createElement("img");
                 img.src    = "../../img/icons/lock.svg";
             suspectSquares[i].parentElement.removeEventListener('dragover',dragOver);
@@ -399,7 +403,7 @@ function checkRights() {
 
             //cell.removeEventListener('dragover',dragOver);
         } else {
-            tryBad = tryBad + 1;
+            tryBad = tryBad - 1;
             suspectSquares[i].style.transition = "0.9s";
             setTimeout(() => {
                 sameWH(suspectSquares[i], cell_width*0.1);
@@ -416,13 +420,35 @@ function checkRights() {
             }, 1200 );
 
         }
-    }
-    console.log(tryGood,tryBad);
+    } 
+    plusMinus(tryBad);
+    console.log(tryBad);
     
 }
 
 
-
+function plusMinus (n){
+    if (n > 0) {
+        plusN.style.color      = rgb(136, 226, 0);
+        plusN.innerHTML        = "+" + n;
+        plusN.style.opacity    = 1;
+        squaresOnField        += n;
+        currentScore.innerHTML = squaresOnField;
+        setTimeout(() => {
+            plusN.style.opacity = 0;
+        }, 500);
+    }else if (n < 0){
+        plusN.style.color      = rgb(226, 8, 0);
+        plusN.innerHTML        = n;
+        plusN.style.opacity    = 1;
+        squaresOnField         = squaresOnField + n;
+        currentScore.innerHTML = squaresOnField;
+        setTimeout(() => {
+            plusN.style.opacity = 0;
+        }, 500);
+    }
+    console.log(n, squaresOnField, currentScore.innerHTML)
+}
 
 
 /*Play*/
