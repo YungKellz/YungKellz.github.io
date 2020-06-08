@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>ДизайнСтудия МИСиС</title>
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../css/game1naytiOttenok.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=cyrillic" rel="stylesheet">
+</head>
+<body id="body">
+	<!-- //////////////////////NAV///////////////////////// -->
+	
+	<!-- <div id="preloader"></div> -->
+	<nav id="navigationOn">	
+		<div id="nav_gradient"></div>
+		<div id="nav_white"></div>
+		<div id="nav_logo"><a href="../../index.html"><img src='../../img/logo.svg'/></a></div>
+		<div id="nav_menu">
+			<a href="../../index.html">главная</a>
+			<div id="nav_menu_works">
+				<a href="#" id="nav_menu_works_head">работы</a>
+				<ul>
+					<a href="../../html/works/design.html"><li>дизайн</li></a>
+					<a href="../../html/works/grafika.html"><li>графика</li></a>
+					<a href="../../html/works/zhivopis.html"><li>живопись</li></a>
+					<a href="../../html/works/photografika.html"><li>фотографика</li></a>
+					<a href="../../html/works/modeling.html"><li>моделирование</li></a>
+				</ul>
+				
+			</div>
+			<a href="../../ourlive.html">наша жизнь</a>
+			<a href="../../portfolio.html" >портфолио</a>
+			<a href="../../games.html" style="cursor: pointer;" class="active_page">тренажеры</a>
+		</div>
+	</nav>
+	<!-- //////////////////////MAIN///////////////////////// -->
+	<main>
+        <div class="container">
+		<h2 id="nameOfGame">найди оттенок
+			<img id="button_desc" src="../../img/icons/question.svg" alt="">
+			<div id="descriptionOfGame">
+				Находите квадрат, который темнее или светлее остальных, пока не выйдет время.<br><br>  
+				
+				За правильно обнаруженный квадрат вы получаете 2 секунды, в обратном случае вы теряете 2.<br><br> 
+				
+				Через каждые 5 пройденных уровней количество элементов увеличивается. <br><br>
+
+				Выберите уровень сложности и нажмите&nbsp;"Начать".
+				Сложность можно менять даже во время игры.
+			</div>
+		</h2>
+		<div id="questionAboutDesc">
+			Вы знаете правила?<br>
+			<span id="questionAboutDesc_yes">да</span>
+			<span id="questionAboutDesc_no">нет</span>
+		</div>
+		<!-- <p>Тренажер позволяющий прокачать свой скилл в распозновании оттенков, вам придется находить плашки с цветом отличным от остальных</p> -->
+		<div id="settingsOfGame">
+			<div id="easy"class="settings">легко</div>
+			<div id="normal" class="settings active">средне</div>
+			<div id="hard" class="settings">сложно</div>
+		</div>
+		<div id="switcher">
+			<div id="button_start"> начать</div>
+			<div id="timer">осталось секунд<br>
+				<span>
+					<div id="time">30</div>
+					<div id="plustwo">+2</div>
+					<div id="minustwo">−2</div>
+				</span>
+				<div id="button_stop">закончить</div>
+			</div>
+		</div>
+		
+		<div id="game_field">
+			<div id="white_cover">
+				<div id="sumTab">
+					<h1>
+						ИТОГО
+					</h1> 
+					<table class="text">
+						<tr>
+							<td>затрачено времени</td>
+							<td class="rightcol" id="sumTime"></td>
+						</tr>
+						<tr>
+							<td>пройдено уровней</td>
+							<td class="rightcol" id="sumLevels"></td>
+						</tr>
+						<tr>
+							<td>допущено ошибок</td>
+							<td class="rightcol" id="sumMistakes"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<h4>разработал <a href="../profiles/nazarenko.html" >Назаренко Андрей</a></h4>
+        </div>
+    </main>
+	
+	<!-- ///////////////////////FOOTER//////////////// -->
+	<footer id="footer">
+		<div id="foot_gradient"></div>
+		<div id="foot_white"></div>
+		
+		<div id="foot_menu" class="container">
+			<div class="row">
+				<h2 class="col-xs-5 col-lg-5 offset-xs-0 offset-lg-1">Направления</h2>
+				<h2 class="col-xs-3 col-lg-3">Контакты</h2>
+				<h2 class="col-xs-3 col-lg-2 offset-xs-1 offset-lg-0">Адрес</h2>
+			</div>
+			<div class="row">
+				<h4 class="col-xs-5 col-lg-5 offset-xs-0 offset-lg-1">
+					<a href="../../html/works/zhivopis.html">Живопись</a>
+					<a href="../../html/works/modeling.html">Моделирование</a>
+					<a href="../../html/works/grafika.html">Графика</a>
+					<a href="../../html/works/photografika.html">Фотографика</a>
+					<a href="../../html/works/design.html">Дизайн</a>
+				</h4>
+				<h4 class="col-xs-3 col-lg-3">naumencko.ol2015@yandex.ru<br>+7 961 068-72-77</h4>
+				<h4 class="col-xs-3 col-lg-2 offset-xs-1 offset-lg-0">Ленинский просп., 6, Г-612</h4>
+			</div>
+		</div>
+	</footer>
+	<!-- //////////////////Скрипты////////////// -->
+	<script src="../../js/nav.js"></script>
+    <!--ДжС для игры-->
+    <script src="../../js/games/game1naytiOttenok.js"></script>
+</body>
+</html>

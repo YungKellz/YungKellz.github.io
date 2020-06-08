@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>ДизайнСтудия МИСиС</title>
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../css/game2teloOsvalda.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=cyrillic" rel="stylesheet">
+</head>
+<body id="body">
+	<!-- //////////////////////NAV///////////////////////// -->
+	
+	<!-- <div id="preloader"></div> -->
+	<nav id="navigationOn">	
+		<div id="nav_gradient"></div>
+		<div id="nav_white"></div>
+		<div id="nav_logo"><a href="../../index.html"><img src='../../img/logo.svg'/></a></div>
+		<div id="nav_menu">
+			<a href="../../index.html">главная</a>
+			<div id="nav_menu_works">
+				<a href="#" id="nav_menu_works_head">работы</a>
+				<ul>
+					<a href="../../html/works/design.html"><li>дизайн</li></a>
+					<a href="../../html/works/grafika.html"><li>графика</li></a>
+					<a href="../../html/works/zhivopis.html"><li>живопись</li></a>
+					<a href="../../html/works/photografika.html"><li>фотографика</li></a>
+					<a href="../../html/works/modeling.html"><li>моделирование</li></a>
+				</ul>
+				
+			</div>
+			<a href="../../ourlive.html">наша жизнь</a>
+			<a href="../../portfolio.html" >портфолио</a>
+			<a href="../../games.html" style="cursor: pointer;" class="active_page">тренажеры</a>
+		</div>
+	</nav>
+	<!-- //////////////////////MAIN///////////////////////// -->
+	<main>
+        <!--Название и описание-->
+        <div class="container">
+		<h2 id="nameOfGame">тело освальда
+			<img id="button_desc" src="../../img/icons/question.svg" alt="">
+			<div id="descriptionOfGame">
+                Вам необходимо заполнить пропуски в разрезе тела Освальда, перетаскивая квадраты на поле.<br><br> 
+
+                Чтобы закрепить текщий результат и проверить правильность своих предположений нажмите «проверить». Не правильные элементы 
+                будут возвращены в пул. Правильные будут закреплены.<br><br> 
+
+                Выберите уровень сложности и нажмите&nbsp;«начать».
+			</div>
+		</h2>
+		<div id="questionAboutDesc">
+			Вы знаете правила?<br>
+			<span id="questionAboutDesc_yes">да</span>
+			<span id="questionAboutDesc_no">нет</span>
+        </div>
+        
+        <!-- Сама игра-->
+		<div id="app_field">
+            <!--Настройки-->
+            <div id="settings_field">
+                <div id="easy"class="btn settings">легко</div>
+                <div id="normal" class="btn settings active">средне</div>
+                <div id="hard" class="btn settings">сложно</div> <br>
+                <table class="text">
+                    <tr>
+                        <td>игровое поле</td>
+                        <td class="rightcol" id="fieldSizeTxt">4х4</td>
+                    </tr>
+                    <tr>
+                        <td>проверок</td>
+                        <td class="rightcol"id="numOfTryTxt">5</td>
+                    </tr>
+                </table>
+                <div id="button_start" class="btn"> начать</div>
+            </div>
+            <!--Поле игровое-->
+            <div id="play_field">
+                <div id="time">0</div>
+                <div id="action_field">
+                    <div id="game_field">
+						<!-- <div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div>			 -->
+					</div>
+                    <div id="stat_field">
+                        <p id="tryCountTxt">осталось <span id="tryCount">2</span> проверки</p>
+                        <div id="button_check" class="btn">проверить</div>
+                        <p>
+                            <b><span id="currentScore">2</span><span id="plusN">+2</span></b><br>
+                            из<br>
+                            <span id="maxScore">12</span>                    
+                        </p>
+                        
+                        <div id="button_stop" class="btn">закончить</div>
+                    </div>
+                </div>
+                <div id="pull_field" class="cell">
+					<!-- <div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div> -->
+				</div>
+            </div>
+        </div>
+        <!--Поле итогов-->
+        <table id="sum_field">
+            <tr>
+                <th>ИТОГО</th>
+            </tr>
+            <tr>
+                <td>уровень сложности</td>
+                <td class="rightcol" id="sumLevels">средне</td>
+            </tr>
+            <tr>
+                <td>затрачено времени</td>
+                <td class="rightcol" id="sumTime">26</td>
+            </tr>
+            <tr>
+                <td>правильно расставлено</td>
+                <td class="rightcol" id="sumMistakes">10 из 12</td>
+            </tr>
+        </table>
+		<div>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<br>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<br>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<br>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<div class="cubik" draggable="true"></div>
+			<br>
+			<hr>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<br>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<br>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<br>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<br>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<div class="cubicoff"></div>
+			<br>
+		</div>
+		<h4>разработал Дьяков Данила</h4>
+        </div>
+    </main>
+	
+	<!-- ///////////////////////FOOTER//////////////// -->
+	<footer id="footer">
+		<div id="foot_gradient"></div>
+		<div id="foot_white"></div>
+		
+		<div id="foot_menu" class="container">
+			<div class="row">
+				<h2 class="col-xs-5 col-lg-5 offset-xs-0 offset-lg-1">Направления</h2>
+				<h2 class="col-xs-3 col-lg-3">Контакты</h2>
+				<h2 class="col-xs-3 col-lg-2 offset-xs-1 offset-lg-0">Адрес</h2>
+			</div>
+			<div class="row">
+				<h4 class="col-xs-5 col-lg-5 offset-xs-0 offset-lg-1">
+					<a href="../../html/works/zhivopis.html">Живопись</a>
+					<a href="../../html/works/modeling.html">Моделирование</a>
+					<a href="../../html/works/grafika.html">Графика</a>
+					<a href="../../html/works/photografika.html">Фотографика</a>
+					<a href="../../html/works/design.html">Дизайн</a>
+				</h4>
+				<h4 class="col-xs-3 col-lg-3">naumencko.ol2015@yandex.ru<br>+7 961 068-72-77</h4>
+				<h4 class="col-xs-3 col-lg-2 offset-xs-1 offset-lg-0">Ленинский просп., 6, Г-612</h4>
+			</div>
+		</div>
+	</footer>
+	<!-- //////////////////Скрипты////////////// -->
+	<script src="../../js/nav.js"></script>
+    <!--Джquery-->
+	<script src="../../js/jquery.min.js"></script>
+    <!--ДжС для игры-->
+    <script src="../../js/games/game2teloOsvalda.js"></script>
+</body>
+</html>

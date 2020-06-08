@@ -1,0 +1,340 @@
+main{
+    margin-top: 60px;
+    text-align: center;
+    h4{
+        margin-top: 68px;
+        a{
+            color: black;
+            font-weight: 600;
+            text-decoration: underline;
+            &:hover{
+                color: #FF6600;
+            }
+        }
+    }
+    .btn{
+        cursor: pointer;
+        border: 1px solid rgb(99, 99, 99);
+        color: rgb(99, 99, 99);
+        border-radius: 100px;
+        transition: 0.2s;
+        &:hover{
+            color: #FF6600;
+            border-color: #FF6600;
+        }
+    }
+}
+
+#nameOfGame{
+    margin-bottom: 40px;
+    height: 33px;
+    font-family: 'Vin';
+    font-weight: 550;
+    font-size: 30px;
+    position: relative;
+    display: inline-block;
+    width: 445px;
+    transition: 0.4s;
+    #button_desc{
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        transition: 0.4s;
+        width: 22px;
+        top: 5px;
+        user-select: none;
+        right: 0;
+        cursor: pointer;
+        &:hover #descriptionOfGame{
+            opacity: 1;
+        }
+    }
+    #descriptionOfGame{
+        z-index: -1;
+        opacity: 0;
+        position: absolute;
+        font-weight: 400;
+        font-family: 'Montserrat';
+        font-size: 15px;
+        text-align: left;
+        transition: 0.4s;
+        color: rgb(87, 87, 87);
+        width: inherit;
+        padding: 15px 30px;
+    }
+}
+#questionAboutDesc{
+    margin-top: 30px;
+    transition: 0.4s;
+    font-family: 'Vin';
+    font-size: 20px;
+    span{
+        display: inline-block;
+        font-size: 22px;
+        margin: 25px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover{
+            color: #FF6600;
+            border-color: #FF6600;
+        }
+    }
+}
+#app_field{
+    min-height: 80vh;
+}
+#settings_field{
+    position: relative;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+    user-select: none;
+    .settings{
+        display: inline-block;
+        width: 120px;
+        padding: 8px 20px;
+        padding-bottom: 11px;
+        font-size: 20px;
+        margin: 0 20px;
+    }
+    .active{
+        border-color: red !important;
+        color: red !important;
+        transform: scale(1.05);
+    }
+    .text{
+        margin: auto;
+        margin-top: 30px;
+        width: 445px;
+        font-family: 'Montserrat';
+        td {
+            width: 50%; 
+            height: 30px;
+            vertical-align: center; 
+            text-align: right;
+            font-size: 18px;
+            padding: 0;
+            padding-right: 10px;
+        }
+        td.rightcol { /* Правая ячейка со значениями*/ 
+            text-align: left; /* Выравнивание по правому краю */
+            padding-left: 10px;
+            font-weight: 600;
+        }
+    }
+
+    #button_start{
+        margin: auto;
+        margin-top: 30px;
+        transition: 0.4s;
+        font-size: 30px;
+        width: 200px;
+        padding-top: 20px;
+        padding-bottom: 23px;
+        border-width: 2px;
+    }
+}
+
+
+
+#play_field{
+    opacity: 0;
+    display: none;
+    transition: 1s;
+    #time{
+        display: block;
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+    #action_field{
+        display: flex;
+        justify-content: space-around;
+        
+        #game_field{
+            width: 500px;
+            height: 500px;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.05);
+            display: inline-block;
+            font-size: 0;
+            transition: 0.5s;
+            &:hover .cell img{
+                opacity: 0.5;
+            }
+            .cell{
+                display: inline-block;
+                width: 125px;
+                height: 125px;
+                border: 1px solid rgba(228, 228, 228,0.3);
+                transition: 0.4s;
+                font-size: 0;
+                overflow: hidden;
+                .hovered-cell{
+                    border: 2px solid rgba(228, 228, 228,1)!important;
+                }
+                .blocked-cell{
+                    border: none !important;
+                }
+                img{
+                    pointer-events: none;
+                    user-select: none;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    transition: 0.6s;
+                }
+            }
+        }
+        #stat_field{
+            display: inline-block;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 500px;
+            p{
+                position: relative;
+                font-size: 24px;
+                font-family: 'Montserrat';
+                #currentScore{
+                    font-size: 40px;
+                    margin-top: 30px;
+                    display: inline-block;
+                }
+                b{position: relative;}
+                #plusN{
+                    position: absolute;
+                    display: inline-block;
+                    font-size: 40px;
+                    color: rgb(136, 226, 0);
+                    top: 0;
+                    left: 40px;
+                    transition: 0.5s;
+                    opacity: 0;
+                }
+                #maxScore{
+                    display: inline-block;
+                    font-size: 26px;
+                    margin-top: 9px;
+                }
+            }
+            #button_stop, #button_check{
+                display: inline-block;
+                transition: 0.4s;
+                font-size: 24px;
+                width: 150px;
+                padding-top: 2px;
+                padding-bottom: 8px;
+                border-width: 2px;
+                &:hover{
+                    color: red;
+                    border-color: red;
+                }
+            }
+            #button_stop{
+                margin-top: 30px;
+                padding-top: 7px;
+                padding-bottom: 13px;
+                width: 180px;
+                font-size: 28px;
+            }
+            #button_check:hover{
+                color: #FF6600;
+                border-color: #FF6600;
+            }
+        }
+    } 
+    #pull_field.cell{
+        width: 90%;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 30px auto;
+        border: 1px solid rgb(201, 201, 201);
+        border-radius: 20px;
+        .square{
+            display: flex;
+            margin: 10px;
+        }
+    }
+}
+// #timer{
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     height: 150px;
+//     opacity: 0;
+//     font-size: 24px;
+//     transition: 0.3s;
+//     span{
+//         font-size: 40px;
+//         position: relative;
+//         #plustwo{
+//             position: absolute;
+//             display: inline-block;
+//             font-size: 38px;
+//             color: rgb(136, 226, 0);
+//             top: 0;
+//             left: 30px;
+//             transition: 0.5s;
+//             opacity: 0;
+//         }
+//         #minustwo{
+//             position: absolute;
+//             display: inline-block;
+//             font-size: 38px;
+//             color: red;
+//             top: 0;
+//             left: 30px;
+//             transition: 0.5s;
+//             opacity: 0;
+//         }
+//     }
+
+// }
+
+
+
+
+/*ПОЛЕ ИТОГОВ*/
+#sum_field {
+    opacity: 0;
+    display: none;
+
+    width:  500px; /* Ширина таблицы */
+    border-spacing: 0; /* Расстояние между ячейками */
+    margin: auto;
+    background-color: yellow;
+    margin-top: 30px;
+    margin-bottom: 333px;
+    th{
+        font-size: 50px;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 20px;
+    }
+    td {
+        width: 50%; /* Ширина ячеек */
+        height: 30px;
+        padding-left: 3px;
+        text-align: left;
+    }
+    td.rightcol { /* Правая ячейка */ 
+        text-align: right; /* Выравнивание по правому краю */
+    }
+}
+
+////////////////////////////////////////////////
+//////////////////////test//////////////////////
+////////////////////////////////////////////////
+
+.cubik, .cubicoff{
+    display: inline-block;
+    border: 1px solid grey;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    transition: 0.2s;
+    margin: 1px;
+    
+    opacity: 0;
+}

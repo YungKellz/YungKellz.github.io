@@ -97,8 +97,7 @@ nav #nav_menu_works ul li {
   margin-bottom: 0px;
 }
 main {
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
+  min-height: 90vh;
 }
 footer {
   margin-top: 60px;

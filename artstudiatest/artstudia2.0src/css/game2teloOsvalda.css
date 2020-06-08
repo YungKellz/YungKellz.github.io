@@ -1,0 +1,335 @@
+main {
+  margin-top: 60px;
+  text-align: center;
+}
+main h4 {
+  margin-top: 68px;
+}
+main h4 a {
+  color: black;
+  font-weight: 600;
+  text-decoration: underline;
+}
+main h4 a:hover {
+  color: #FF6600;
+}
+main .btn {
+  cursor: pointer;
+  border: 1px solid #636363;
+  color: #636363;
+  border-radius: 100px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+main .btn:hover {
+  color: #FF6600;
+  border-color: #FF6600;
+}
+#nameOfGame {
+  margin-bottom: 40px;
+  height: 33px;
+  font-family: 'Vin';
+  font-weight: 550;
+  font-size: 30px;
+  position: relative;
+  display: inline-block;
+  width: 445px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+#nameOfGame #button_desc {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  width: 22px;
+  top: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  right: 0;
+  cursor: pointer;
+}
+#nameOfGame #button_desc:hover #descriptionOfGame {
+  opacity: 1;
+}
+#nameOfGame #descriptionOfGame {
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  font-weight: 400;
+  font-family: 'Montserrat';
+  font-size: 15px;
+  text-align: left;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: #575757;
+  width: inherit;
+  padding: 15px 30px;
+}
+#questionAboutDesc {
+  margin-top: 30px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-family: 'Vin';
+  font-size: 20px;
+}
+#questionAboutDesc span {
+  display: inline-block;
+  font-size: 22px;
+  margin: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#questionAboutDesc span:hover {
+  color: #FF6600;
+  border-color: #FF6600;
+}
+#app_field {
+  min-height: 80vh;
+}
+#settings_field {
+  position: relative;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#settings_field .settings {
+  display: inline-block;
+  width: 120px;
+  padding: 8px 20px;
+  padding-bottom: 11px;
+  font-size: 20px;
+  margin: 0 20px;
+}
+#settings_field .active {
+  border-color: red !important;
+  color: red !important;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+#settings_field .text {
+  margin: auto;
+  margin-top: 30px;
+  width: 445px;
+  font-family: 'Montserrat';
+}
+#settings_field .text td {
+  width: 50%;
+  height: 30px;
+  vertical-align: center;
+  text-align: right;
+  font-size: 18px;
+  padding: 0;
+  padding-right: 10px;
+}
+#settings_field .text td.rightcol {
+  /* Правая ячейка со значениями*/
+  text-align: left;
+  /* Выравнивание по правому краю */
+  padding-left: 10px;
+  font-weight: 600;
+}
+#settings_field #button_start {
+  margin: auto;
+  margin-top: 30px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 30px;
+  width: 200px;
+  padding-top: 20px;
+  padding-bottom: 23px;
+  border-width: 2px;
+}
+#play_field {
+  opacity: 0;
+  display: none;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+#play_field #time {
+  display: block;
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+#play_field #action_field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+#play_field #action_field #game_field {
+  width: 500px;
+  height: 500px;
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  font-size: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#play_field #action_field #game_field:hover .cell img {
+  opacity: 0.5;
+}
+#play_field #action_field #game_field .cell {
+  display: inline-block;
+  width: 125px;
+  height: 125px;
+  border: 1px solid rgba(228, 228, 228, 0.3);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 0;
+  overflow: hidden;
+}
+#play_field #action_field #game_field .cell .hovered-cell {
+  border: 2px solid #e4e4e4 !important;
+}
+#play_field #action_field #game_field .cell .blocked-cell {
+  border: none !important;
+}
+#play_field #action_field #game_field .cell img {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+#play_field #action_field #stat_field {
+  display: inline-block;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 500px;
+}
+#play_field #action_field #stat_field p {
+  position: relative;
+  font-size: 24px;
+  font-family: 'Montserrat';
+}
+#play_field #action_field #stat_field p #currentScore {
+  font-size: 40px;
+  margin-top: 30px;
+  display: inline-block;
+}
+#play_field #action_field #stat_field p b {
+  position: relative;
+}
+#play_field #action_field #stat_field p #plusN {
+  position: absolute;
+  display: inline-block;
+  font-size: 40px;
+  color: #88e200;
+  top: 0;
+  left: 40px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+}
+#play_field #action_field #stat_field p #maxScore {
+  display: inline-block;
+  font-size: 26px;
+  margin-top: 9px;
+}
+#play_field #action_field #stat_field #button_stop,
+#play_field #action_field #stat_field #button_check {
+  display: inline-block;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 24px;
+  width: 150px;
+  padding-top: 2px;
+  padding-bottom: 8px;
+  border-width: 2px;
+}
+#play_field #action_field #stat_field #button_stop:hover,
+#play_field #action_field #stat_field #button_check:hover {
+  color: red;
+  border-color: red;
+}
+#play_field #action_field #stat_field #button_stop {
+  margin-top: 30px;
+  padding-top: 7px;
+  padding-bottom: 13px;
+  width: 180px;
+  font-size: 28px;
+}
+#play_field #action_field #stat_field #button_check:hover {
+  color: #FF6600;
+  border-color: #FF6600;
+}
+#play_field #pull_field.cell {
+  width: 90%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 30px auto;
+  border: 1px solid #c9c9c9;
+  border-radius: 20px;
+}
+#play_field #pull_field.cell .square {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+}
+/*ПОЛЕ ИТОГОВ*/
+#sum_field {
+  opacity: 0;
+  display: none;
+  width: 500px;
+  /* Ширина таблицы */
+  border-spacing: 0;
+  /* Расстояние между ячейками */
+  margin: auto;
+  background-color: yellow;
+  margin-top: 30px;
+  margin-bottom: 333px;
+}
+#sum_field th {
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+}
+#sum_field td {
+  width: 50%;
+  /* Ширина ячеек */
+  height: 30px;
+  padding-left: 3px;
+  text-align: left;
+}
+#sum_field td.rightcol {
+  /* Правая ячейка */
+  text-align: right;
+  /* Выравнивание по правому краю */
+}
+.cubik,
+.cubicoff {
+  display: inline-block;
+  border: 1px solid grey;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin: 1px;
+  opacity: 0;
+}
