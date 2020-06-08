@@ -281,13 +281,6 @@ function createSquares(gameFieldNum){
     dragAndDrop();
 };
 
-setTimeout(() => {
-    questionAboutDesc_yes.click();
-    setTimeout(() => {
-        button_start.click();
-    }, 500);
-}, 500);
-
 ///////////////////////////////////////         DRAG AND DROP
 /**для квадратов */
 const dragStart = function () {
