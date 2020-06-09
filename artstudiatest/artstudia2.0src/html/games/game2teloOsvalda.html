@@ -7,6 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="../../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../../css/game2teloOsvalda.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=cyrillic" rel="stylesheet">
+	<style type="text/css">
+		#pull_field .square {margin: 30px 30px;}
+	</style>
 </head>
 <body id="body">
 	<!-- //////////////////////NAV///////////////////////// -->
@@ -38,7 +41,7 @@
 	<main>
         <!--Название и описание-->
         <div class="container">
-		<h2 id="nameOfGame">тело освальда
+		<h2 id="nameOfGame">пазл освальда
 			<img id="button_desc" src="../../img/icons/question.svg" alt="">
 			<div id="descriptionOfGame">
                 Вам необходимо заполнить пропуски в разрезе тела Освальда, перетаскивая квадраты на поле.<br><br> 
@@ -60,8 +63,8 @@
             <!--Настройки-->
             <div id="settings_field">
                 <div id="easy"class="btn settings">легко</div>
-                <div id="normal" class="btn settings active">средне</div>
-                <div id="hard" class="btn settings">сложно</div> <br>
+                <div id="normal" class="btn settings ">средне</div>
+                <div id="hard" class="btn settings active">сложно</div> <br>
                 <table class="text">
                     <tr>
                         <td>игровое поле</td>
@@ -79,96 +82,48 @@
                 <div id="time">0</div>
                 <div id="action_field">
                     <div id="game_field">
-						<!-- <div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div>			 -->
+
 					</div>
                     <div id="stat_field">
                         <p id="tryCountTxt">осталось <span id="tryCount">2</span> проверки</p>
                         <div id="button_check" class="btn">проверить</div>
-                        <p>
+                        <p id=currentScoreBlock>
                             <b><span id="currentScore">2</span><span id="plusN">+2</span></b><br>
                             из<br>
                             <span id="maxScore">12</span>                    
                         </p>
                         
-                        <div id="button_stop" class="btn">закончить</div>
+						<div id="button_stop" class="btn">закончить</div>
+						<!--Поле итогов-->
+						
+						<table id="sum_field">
+							<tr>
+								<th>ИТОГО</th>
+								<th class="rightcol" id="sumScore">10 из 12</th>
+							</tr>
+							<tr>
+								<td>уровень сложности</td>
+								<td class="rightcol" id="sumLevel">средне</td>
+							</tr>
+							<tr>
+								<td>затрачено времени</td>
+								<td class="rightcol" id="sumTime">26</td>
+							</tr>
+							<tr>
+								<td>использовано проверок</td>
+								<td class="rightcol" id="sumTrys">10 из 12</td>
+							</tr>
+						</table> <br>
+						<div id="button_restart" class="btn">еще раз</div>
                     </div>
                 </div>
                 <div id="pull_field" class="cell">
-					<!-- <div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div><div class="cubic" draggable="true"></div> -->
+
 				</div>
             </div>
         </div>
-        <!--Поле итогов-->
-        <table id="sum_field">
-            <tr>
-                <th>ИТОГО</th>
-            </tr>
-            <tr>
-                <td>уровень сложности</td>
-                <td class="rightcol" id="sumLevels">средне</td>
-            </tr>
-            <tr>
-                <td>затрачено времени</td>
-                <td class="rightcol" id="sumTime">26</td>
-            </tr>
-            <tr>
-                <td>правильно расставлено</td>
-                <td class="rightcol" id="sumMistakes">10 из 12</td>
-            </tr>
-        </table>
-		<div>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<br>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<br>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<br>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<div class="cubik" draggable="true"></div>
-			<br>
-			<hr>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<br>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<br>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<br>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<br>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<div class="cubicoff"></div>
-			<br>
-		</div>
+        
+		
 		<h4>разработал Дьяков Данила</h4>
         </div>
     </main>
@@ -198,9 +153,10 @@
 		</div>
 	</footer>
 	<!-- //////////////////Скрипты////////////// -->
-	<script src="../../js/nav.js"></script>
     <!--Джquery-->
 	<script src="../../js/jquery.min.js"></script>
+    <!--nav-->
+	<script src="../../js/nav.js"></script>
     <!--ДжС для игры-->
     <script src="../../js/games/game2teloOsvalda.js"></script>
 </body>

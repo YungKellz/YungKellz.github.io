@@ -51,3 +51,7 @@ main {
 .game-block p {
   font-family: 'Montserrat';
 }
+.game-block:hover .game-pic {
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}

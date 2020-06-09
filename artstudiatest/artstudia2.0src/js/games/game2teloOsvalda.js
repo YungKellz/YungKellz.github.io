@@ -4,7 +4,7 @@ var game_field_width = 500;
 if (game_field_width > document.documentElement.clientHeight*0.6) game_field_width = document.documentElement.clientHeight*0.6;
 
 
-var 
+var numOfTryConst = 0,
     numOfTry = 0,
     flagForCloseDescAnimation = false,
     gameFieldLine = 0,
@@ -13,6 +13,7 @@ var
     gameOn = false,
     cell_width = 0,
     squaresOnField = 4,
+    triedNum = -1,
     gameSquares;
 
 //////////////////////*help functions*/
@@ -61,34 +62,19 @@ function LetsColor(a,color){
         w--;
     }
 };
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-};
-(function(jQuery){
-    jQuery.fn.shuffle = function(){
-        var allElems = this.get();
-
-        var getRandom = function(max){
-            return Math.floor(Math.random() * max);
-        }
-
-        var shuffled = jQuery.map(allElems, function(){
-            var random = getRandom(allElems.length),
-            randEl = jQuery(allElems[random]).clone(true)[0];
-            allElems.splice(random, 1);
-            return randEl;
-        });
-
-        this.each(function(i){
-            jQuery(this).replaceWith(jQuery(shuffled[i]));
-        });
-
-        return jQuery(shuffled);
-    };
-})(jQuery);
+function shuffle(arr){
+	var j, color, alt;
+	for(var i = arr.length - 1; i > 0; i--){
+		j = Math.floor(Math.random()*(i + 1));
+		color = arr[j].style.backgroundColor;
+		arr[j].style.backgroundColor = arr[i].style.backgroundColor;
+        arr[i].style.backgroundColor = color;
+		alt = arr[j].alt;
+		arr[j].alt = arr[i].alt;
+		arr[i].alt = alt;
+	}
+	return arr;
+}
 
 function sameWH(object, value){
     if (typeof value === 'number') {
@@ -164,10 +150,18 @@ DescAndQuest();
 function playTimer(){
     seconds = 0;     
     var idInt = setInterval(function() {
-        if (gameOn) {
+        if (!gameOn) {
             clearInterval(idInt);
         } else {
-            time.innerHTML = Math.floor(seconds);
+            if (Math.floor(seconds / 60) > 0) {
+                if (Math.floor(seconds % 60) < 10) {
+                    time.innerHTML = Math.floor(seconds / 60) + ':0' + Math.floor(seconds % 60);
+                } else{
+                    time.innerHTML = Math.floor(seconds / 60) + ':' + Math.floor(seconds % 60);
+                }
+            } else {
+                time.innerHTML = Math.floor(seconds);
+            }
             seconds += 0.01;
         }
     }, 10);
@@ -182,34 +176,49 @@ function settings(){
         this.classList.add("active");
     }
     if (this.id === "easy") {
-        numOfTry = 4; 
+        numOfTryConst = 4;
+        numOfTry      = numOfTryConst; 
         gameFieldLine = 5; 
-        gameFieldNum = gameFieldLine*gameFieldLine;
+        gameFieldNum  = gameFieldLine*gameFieldLine;
         fieldSizeTxt.innerHTML = gameFieldLine + "x" + gameFieldLine;
         numOfTryTxt.innerHTML = numOfTry;
     } else 
     if (this.id === "normal") {
-        numOfTry = 3; 
+        numOfTryConst = 3;
+        numOfTry      = numOfTryConst; 
         gameFieldLine = 8; 
-        gameFieldNum = gameFieldLine*gameFieldLine;
+        gameFieldNum  = gameFieldLine*gameFieldLine;
         fieldSizeTxt.innerHTML = gameFieldLine + "x" + gameFieldLine;
         numOfTryTxt.innerHTML = numOfTry;
     }
     else {
-        numOfTry = 2; 
+        numOfTryConst = 2;
+        numOfTry      = numOfTryConst; 
         gameFieldLine = 12; 
-        gameFieldNum = gameFieldLine*gameFieldLine;
+        gameFieldNum  = gameFieldLine*gameFieldLine;
         fieldSizeTxt.innerHTML = gameFieldLine + "x" + gameFieldLine;
         numOfTryTxt.innerHTML = numOfTry;
     }
     console.log("Размер поля " + gameFieldLine);
 };
 
-// button_stop.addEventListener("click", endGame);
+/*hover для button_check*/
+function button_check_mouseenter (){
+    button_check.style.color = '#FF6600';
+    button_check.style.borderColor = '#FF6600';
+}
+function button_check_mouseleave (){
+    button_check.style.color = '#636363';
+    button_check.style.borderColor = '#636363';
+}
 
-/////////////////////////////////////////////////////////////////**PLAY */
+button_check.addEventListener('mouseenter',button_check_mouseenter);
+button_check.addEventListener('mouseleave',button_check_mouseleave);
+
+                                            /////////////**PLAY */
 button_start.addEventListener("click", Play);
 function Play(){
+    gameOn = true;
     /**Запустили секундомер */
     playTimer();
     /**Спрятали настройки и показали игровое поле */
@@ -220,18 +229,21 @@ function Play(){
         play_field.style.opacity = "0";
         setTimeout(() => {
             play_field.style.opacity = "1";
-        }, 5);
+        }, 100);
     }, 500);
     /**Создаем cells и squares*/
     createCells(gameFieldNum);
     createSquares(gameFieldNum);
     /**Обнуляем статистику */
     numOfTry = numOfTry + 1;
-    checkRights();
+    checkRights(button_check);
+    
+    shuffle(pull_field.querySelectorAll('.square'));
     currentScore.innerHTML = squaresOnField;
     maxScore.innerHTML     = gameFieldNum;
     tryCount.innerHTML     = numOfTry;
-
+    /** Полупрозрачные замки */
+    
 };
 
 
@@ -257,7 +269,7 @@ function createSquares(gameFieldNum){
         square.draggable    = "true";
         square.alt          = i + 1;
         sameWH(square, cell_width*0.8);
-        
+        document.querySelector('head style').innerHTML = '#pull_field .square {margin:' + cell_width*0.2 + 'px;} #pull_field {border-radius:' + cell_width*0.3 + 'px; padding:' + cell_width*0.1 + 'px; min-width:' + cell_width*1.4 + 'px; min-height:' + cell_width*1.4 + 'px}';
         pull_field.appendChild(square);
     }
     const gameCells   = document.querySelectorAll('.cell');
@@ -281,18 +293,20 @@ function createSquares(gameFieldNum){
     dragAndDrop();
 };
 
+
+
 ///////////////////////////////////////         DRAG AND DROP
 /**для квадратов */
 const dragStart = function () {
+    game_field.querySelectorAll('img').forEach(element => {
+        element.style.opacity = "0.5";
+    });
     DragItm = this;
-    sameWH(DragItm, cell_width * 0.8);
     setTimeout(() => {
         this.style.display = "none";
     }, 0);
 };
 const dragEnd = function () {
-    if (DragItm.parentElement.id !== 'pull_field') sameWH(DragItm, cell_width);
-    else sameWH(DragItm, cell_width*0.8);
     this.style.display = "inline-block"; 
     DragItm = null;
 };
@@ -302,42 +316,83 @@ const dragOver = function (evt) {
     evt.preventDefault();
 };
 const dragEnter = function () {
-    if(this.id !== "pull_field")
-    this.style.border = "3px solid rgba(228, 228, 228,1)";
+    if(this.id !== "pull_field" && ((this.children.length == 0 && this.style.backgroundColor == '')||(this.children.length !== 0 && this.querySelectorAll('img').length == 0))){
+        this.style.border = "3px solid rgba(228, 228, 228,1)";
+    }
 };
 const dragLeave = function () {
-    if(this.id !== "pull_field")
-    this.style.border = "1px solid rgba(228, 228, 228,0.3)";
+    if(this.id !== "pull_field")if(this.id !== "pull_field" && this.children.length == 0 && this.style.backgroundColor == ''){
+        this.style.border = "1px solid rgba(228, 228, 228,0.3)";
+    }
+    if(this.id !== "pull_field" && this.children.length !== 0 && this.querySelectorAll('img').length == 0){
+        this.style.border = "none";
+    }
+    
 };
 const dragDrop = function () {
     let changeNumOnField = 0;
 
-    if(this.id !== "pull_field"){
-        if (this.children.length == 0) {
-            this.style.border = "1px solid rgba(228, 228, 228,0.3)";
-            sameWH(DragItm, cell_width);
-            this.prepend(DragItm);
-        } else {
-            if (DragItm.parentElement.id == "pull_field") {
-                //sameWH(this.children[0],cell_width*0.8)
+    if(this.className == "cell"){
+        let otkuda = DragItm.parentElement,
+                kuda = this;
+        if (otkuda.id == "pull_field") {
+            if (kuda.id == "pull_field") {
+                console.log('pp')
             }
-            sameWH(DragItm, cell_width);
-            DragItm.parentElement.prepend(this.children[0]);
-            this.prepend(DragItm);
-        }   
-        changeNumOnField += 1;
+            else {
+                console.log('pg');
+                kuda.style.border = "none";
+                
+                if (kuda.children.length == 0) {
+                    changeNumOnField = 1;
+                    sameWH(DragItm, cell_width);
+                    kuda.prepend(DragItm);
+                }
+                else{
+                    changeNumOnField = 0;
+                    sameWH(kuda.children[0], cell_width*0.8);
+                    sameWH(DragItm, cell_width);
+                    otkuda.prepend(kuda.children[0]);
+                    kuda.prepend(DragItm);
+                }
+            }
+        }
+        if (otkuda.id !== "pull_field") {
+            if (kuda.id == "pull_field") {
+                console.log('gp')
+                changeNumOnField = -1;
+                sameWH(DragItm, cell_width*0.8);
+                kuda.prepend(DragItm);                   
+            }
+            else {
+                console.log('gg');
+                kuda.style.border = "none";
+                changeNumOnField = 0;
+                if (kuda.children.length == 0) {
+                    sameWH(DragItm, cell_width);
+                    kuda.prepend(DragItm);
+                    otkuda.style.border = "1px solid rgba(228, 228, 228,0.3)";
+                }
+                else{
+                    sameWH(DragItm, cell_width);
+                    otkuda.prepend(kuda.children[0]);
+                    kuda.prepend(DragItm);
+                    otkuda.style.border = "none";
+                }
+            }
+        }
+        
     }else{
+        console.log('cs')
         this.prepend(DragItm);
-        changeNumOnField -= 1;
+        changeNumOnField = -1;
     }
-    this.style.border = "1px solid rgba(228, 228, 228,0.3)";
     plusMinus(changeNumOnField);
-    console.log('drop');
 };
 /**ГЛАВНОЕ */
 
 function dragAndDrop() {
-    const squares = document.querySelectorAll('.square');
+    var squares = document.querySelectorAll('.square');
     const cells   = document.querySelectorAll('.cell');
     let   DragItm = null;
 
@@ -355,32 +410,62 @@ function dragAndDrop() {
         cell.addEventListener('drop',dragDrop);
     });
 };
-////////////////////////////////////////////////////         ПРОВЕРКА
-button_check.addEventListener('click', checkRights);
-function checkRights() {
-    var tryBad=0;
-    console.log('asd');
+/////////////////////////////////////////............///////////         ПРОВЕРКА
+
+button_check.addEventListener('click', button_check_pressed);
+function button_check_pressed() {checkRights(button_check)};
+
+function checkRights(btn) {
+    console.log(numOfTry);
+    var tryBad = 0;
     //game_field.style.backgroundColor = "red";
     numOfTry--;
-    
-    if (numOfTry == 0) {
-        button_check.removeEventListener ('click', checkRights);
-        button_check.style.borderColor = "rgb(220, 220, 220)"
-        button_check.style.color = "rgb(220, 220, 220)";
-        tryCountTxt.innerHTML = 'проверок не осталось';
-    } else {
-        if (numOfTry == 1) {
-            tryCountTxt.innerHTML = 'осталась последняя проверка';
-        } else {tryCount.innerHTML = numOfTry;}
-    }
-    game_field.style.boxShadow = "0px 0px 26px rgba(0, 0, 0, 0.3)";
-    setTimeout(() => {game_field.style.boxShadow = "0px 0px 12px rgba(0, 0, 0, 0.05)"}, 400);
+    triedNum++;
 
+    game_field.addEventListener('mouseenter', function () {
+        game_field.querySelectorAll('img').forEach(element => {
+            element.style.opacity = "0.5";
+        });
+    })
+    game_field.addEventListener('mouseleave', function () {
+        game_field.querySelectorAll('img').forEach(element => {
+            element.style.opacity = "0";
+        });
+    })
+                                            /////////**ИЗМЕНЕНИЯ В STAT_FIELD */
+    if (triedNum >= 1) {
+        if (btn.id !== 'button_stop') {
+            btn.style.backgroundColor = "rgba(255, 102, 0, 0.2)";
+        }
+        setTimeout(() => {
+            btn.style.backgroundColor = "white";
+        }, 400);
+
+        setTimeout(() => {game_field.style.boxShadow = "0px 0px 36px rgba(0, 0, 0, 0.05)"}, 400);
+        if (numOfTry == 0) {
+            
+            button_check.removeEventListener('mouseenter',button_check_mouseenter);
+            button_check.removeEventListener('mouseleave',button_check_mouseleave);
+            button_check.removeEventListener ('click', button_check_pressed);
+            button_check.style.borderColor = "rgb(220, 220, 220)"
+            button_check.style.color = "rgb(220, 220, 220)";
+            tryCountTxt.innerHTML = 'проверок не осталось';
+        } else {
+            if (numOfTry == 1) {
+                tryCountTxt.innerHTML = 'осталась <span id="tryCount">одна</span> проверка';
+            } else {tryCount.innerHTML = numOfTry;}
+        }
+        if (btn.id !== 'button_stop') {
+            game_field.style.boxShadow = "0px 0px 50px rgba(0, 0, 0, 0.2)";
+        }
+        
+    }
+                                            /////////**ОТЛОВ ПОДОЗРЕВАЕМЫХ */
     const suspectSquares = document.querySelectorAll('#game_field .cell .square');
-    console.log(suspectSquares);
     for (let i = 0; i < suspectSquares.length; i++) {
 
         console.log(suspectSquares[i].alt,suspectSquares[i].parentElement.alt)
+                                            //////////**совпадение */
         if (suspectSquares[i].parentElement.alt == suspectSquares[i].alt) {
             console.log('yes');
             let img = document.createElement("img");
@@ -390,35 +475,39 @@ function checkRights() {
 
 
             suspectSquares[i].parentElement.style.backgroundColor = suspectSquares[i].style.backgroundColor;
+            suspectSquares[i].parentElement.style.border = "none";
             suspectSquares[i].remove();
-
-
-
-            //cell.removeEventListener('dragover',dragOver);
         } else {
+                                            //////////**не совпали */
+            suspectSquares[i].parentElement.style.border = "1px solid rgba(228, 228, 228,0.3)";
             tryBad = tryBad - 1;
             suspectSquares[i].style.transition = "0.9s";
             setTimeout(() => {
-                sameWH(suspectSquares[i], cell_width*0.1);
                 suspectSquares[i].style.opacity = 0;
                 setTimeout(() => {
 
                     pull_field.prepend(suspectSquares[i]);
                     
                 }, 900);
-            }, 300 + i*10);
+            }, 300 + i*50);
             setTimeout(() => {
                 sameWH(suspectSquares[i], cell_width*0.8);
                 suspectSquares[i].style.opacity = 1;
-            }, 1200 );
+            }, 1200 + i*50 );
 
         }
     } 
-    plusMinus(tryBad);
-    console.log(tryBad);
     
+    game_field.querySelectorAll('img').forEach(element => {
+        element.style.opacity = "0.5";
+    });
+    setTimeout(() => {
+        game_field.querySelectorAll('img').forEach(element => {
+            element.style.opacity = "0";
+        });
+    }, 400);
+    plusMinus(tryBad);
 }
-
 
 function plusMinus (n){
     if (n > 0) {
@@ -432,7 +521,7 @@ function plusMinus (n){
         }, 500);
     }else if (n < 0){
         plusN.style.color      = rgb(226, 8, 0);
-        plusN.innerHTML        = n;
+        plusN.innerHTML        = '−' + n*(-1);
         plusN.style.opacity    = 1;
         squaresOnField         = squaresOnField + n;
         currentScore.innerHTML = squaresOnField;
@@ -440,183 +529,130 @@ function plusMinus (n){
             plusN.style.opacity = 0;
         }, 500);
     }
-    console.log(n, squaresOnField, currentScore.innerHTML)
+}
+/////////////////////////////////////////............///////////         КОНЕЦ ИГРЫ
+button_stop.addEventListener('click', gameEnd);
+function gameEnd(){
+                                            //////////////// Подсчет резульататов
+    gameOn = false;
+    numOfTry = 1;
+    checkRights(this);
+    let summ_level_txt = document.getElementsByClassName('active')[0].textContent;
+    if (summ_level_txt === 'легко') {
+        sumLevel.innerHTML = 'легкий';
+    } else
+    if (summ_level_txt === 'средне') {
+        sumLevel.innerHTML = 'средний';
+    } else sumLevel.innerHTML = 'сложный';
+    sumScore.innerHTML = squaresOnField + ' из ' + gameFieldNum;
+    sumTime.innerHTML  = time.textContent; 
+    sumTrys.innerHTML  = triedNum-1 + ' из ' + numOfTryConst;
+                                                        ///////////////// Анимация
+    pull_field.style.opacity = '0';
+    game_field.querySelectorAll('img').forEach(Element => {Element.remove()});
+    setTimeout(() => {
+        pull_field.style.display   = 'none';
+        time.style.opacity  = '0';
+        tryCountTxt.style.opacity  = '0';
+        button_check.style.opacity = '0';
+        button_stop.style.opacity  = '0';
+        setTimeout(() => {
+            game_field.style.boxShadow = '0px 0px 50px rgba(0, 0, 0, 0.2)';
+            currentScoreBlock.style.transform = "scale(1.5)";
+
+            setTimeout(() => {
+                currentScoreBlock.style.opacity = "0";
+            }, 100);
+            setTimeout(() => {
+                currentScoreBlock.style.display = "none";
+                button_check.style.display = 'none';
+                button_stop.style.display  = 'none';
+                tryCountTxt.style.display  = 'none';
+                sum_field.style.display = "inline-block";
+                setTimeout(() => {
+                    sum_field.style.opacity = '1';
+                    sum_field.style.transform = 'translateY(0)';
+                    button_restart.style.display = "inline-block";
+                    setTimeout(() => {
+                        button_restart.style.opacity = '1';
+                    }, 500);
+                }, 500);
+            }, 600);
+        }, 800);
+    }, 400);
+}
+/////////////////////////////////////////.........../////////////       РЕСТАРТ
+button_restart.addEventListener('click', restart);
+function restart(){
+    game_field.style.boxShadow = "0px 0px 36px rgba(0, 0, 0, 0.05)";
+    seconds = 0;
+    triedNum = -1;
+
+    play_field.style.opacity = '0';
+    setTimeout(() => {
+        play_field.style.display = 'none';
+        ////////////////////////////////////////приводим в порядок игровое поле
+        document.querySelectorAll('#game_field .cell').forEach(el => {el.remove();})
+        document.querySelectorAll('#pull_field .square').forEach(el => {el.remove();})
+        sum_field.style.display = 'none';
+        sum_field.style.opacity = '0';
+        button_restart.style.display = 'none';
+        button_restart.style.opacity = '0';
+        
+        time.style.display = 'inline-block';
+        time.style.opacity = '1';
+
+        tryCountTxt.style.display = 'block';
+        tryCountTxt.style.opacity = '1';
+        tryCountTxt.innerHTML = 'осталось <span id="tryCount">2</span> проверки';
+
+        button_check.style.display = 'inline-block';
+        button_check.style.opacity = '1';
+        button_check.style.color   = 'rgb(99, 99, 99)'; 
+        button_check.style.borderColor   = 'rgb(99, 99, 99)';
+        button_check.addEventListener ('click', button_check_pressed);
+        button_check.addEventListener('mouseenter',button_check_mouseenter);
+        button_check.addEventListener('mouseleave',button_check_mouseleave);
+
+        currentScoreBlock.style.display = 'block';
+        currentScoreBlock.style.opacity = '1';
+        currentScoreBlock.style.transform = 'scale(1)';
+
+        button_stop.style.display = 'inline-block';
+        button_stop.style.opacity = '1';
+
+        pull_field.style.display = 'inline-block';
+        pull_field.style.opacity = '1';
+        /////////////////////////////////////// показываем настройки
+        settings_field.style.display = 'block';
+        settings_field.style.opacity = '0';
+        console.log(settings_field.style.opacity )
+        setTimeout(() => {
+            settings_field.style.opacity = '1';
+            console.log(settings_field.style.opacity )
+        }, 10);
+    }, 1000);
+
+    normal.click();
+
 }
 
-
-/*Play*/
-// function Play() {
-//     summaryMistakes = 0;
-//     summaryTime = 0;
-//     level = 0;
-
-//     settings_field.style.opacity="0";
-//     settings_field.style.visibility="hidden";
-//     button_start.removeEventListener("click", Play);
-
+// setTimeout(() => {
+//     questionAboutDesc_yes.click();
 //     setTimeout(() => {
-//         // timer.style.visibility="visible";
-//         // timer.style.opacity="1";
-//         button_start.addEventListener("click", Play);
-//         settings_field.style.display="none";
-//     }, 400);
-//     white_cover.style.opacity="0";
-//     white_cover.style.visibility="hidden";
-
-//     checkLevel();
-//     playTimer(15);
-//     fillField(gameFieldNum);
-// }
-/*afterPlay*/
-
-// function settings(){
-//     console.clear();
-//     if (this.className !== "settings active") {
-//         var a = document.getElementsByClassName('active');
-//         console.log("изменилась сложность на " + this.id);
-//         a[0].classList.remove("active");
-//         this.classList.add("active");
-//     }
-//     if (this.id === "easy") d = 12;
-//     else if (this.id === "normal") d = 8;
-//     else d = 6;
-//     console.log("Разница равна " + d);
-// }
-
-// function squareClick(){
-//     this.style.transform = "scale(0.9)";
-//     if (this.className === "square aim"){
-//         level++;
-//         checkLevel();
-//         clearField();
-//         fillField(gameFieldNum);
-//         seconds +=  2;
-//         plustwo.style.opacity = "1";
-//         setTimeout(function(){
-//             plustwo.style.opacity = "0";
+//         button_start.click();
+//         setTimeout(() => {
+//             button_stop.click();
+//             setTimeout(() => {
+//                 button_restart.click();
+//                 // setTimeout(() => {
+//                 //     button_start.click();
+//                 // }, 2000);
+//             },3500);
 //         }, 500);
-//     } else {
-//         this.removeEventListener("click", squareClick);
-//         this.style.cursor = "default";
-//         summaryMistakes++;
-//         seconds -=  2;
-//         minustwo.style.opacity = "1";
-//         setTimeout(function(){
-//             minustwo.style.opacity = "0";
-//         }, 500);
-//     }
-// }
-// function checkLevel(){
-//     if (level < 6) {n = 4;}
-//     else if (level < 11) {n = 5;}
-//     else if (level < 16) {n = 6;}
-//     else if (level < 21) {n = 7;}
-//     else if (level < 26) {n = 8;}
-//     else if (level < 31) {n = 9;}
-//     else if (level < 36) {n = 10;}
-//     else if (level < 41) {n = 11;}
-//     else if (level < 46) {n = 12;}
-//     // else if (level < 51) {n = 13;}
-//     // else if (level < 56) {n = 14;}
-//     // else if (level < 61) {n = 15;}
-//     // else if (level < 66) {n = 16;}
-//     gameFieldNum = n * n;
-//     gameFieldLine = n;
-// }
-
-// function clearField(){
-//     let squares = document.getElementsByClassName("square")
-//     for (let i = squares.length - 1; i >= 0; i--) {
-//         squares[i].parentNode.removeChild(squares[i]);        
-//     }
-// }
-
-// function fillField(gameFieldNum){
-//     for (let i = 0; i < gameFieldNum; i++) {
-//         addSquare();
-//     }
-//     let squares = document.getElementsByClassName("square"),
-//         r = rndInt(15,240),
-//         g = rndInt(15,240),
-//         b = rndInt(15,240),
-//         levelColor = rgb(r,g,b);
-//     for (let i = 0; i < squares.length; i++) {
-//         squares[i].style.backgroundColor = levelColor;
-//     }
-//     /*aim square*/
-//     let f = rndInt(1,2),
-//         j = rndInt(0,squares.length-1);
-//     squares[j].className = "square aim"
-//     if (f===1) {
-//         squares[j].style.backgroundColor = rgb(r + d, g + d, b + d)
-//     }else
-//     squares[j].style.backgroundColor = rgb(r - d, g - d, b - d)
-// }
-// function addSquare(){
-//     let square = document.createElement("div");
-//     square.className = "square";
-//     square.style.width = widthField / gameFieldLine - 2 +"px";
-//     square.style.height = widthField / gameFieldLine - 2 +"px";
-//     square.addEventListener("click", squareClick);
-//     gameField.appendChild(square);
-// }
-
-// function playTimer(a){
-//     seconds = a;     
-//     var idInt = setInterval(function() {
-        
-//         if (Math.floor(seconds) > 10){
-//             time.style.color = "black";
-//         }
-//         if (Math.floor(seconds) <= 10) {
-//             time.style.color = "orange";
-//         }
-//         if (Math.floor(seconds) <= 5) {
-//             time.style.color = "red";
-//         }
-//         if (Math.floor(seconds) <= 0) {
-//             clearInterval(idInt);
-//             endGame();
-//         } else {
-//             time.innerHTML = Math.floor(seconds);
-//             summaryTime += 0.01;
-//             seconds -= 0.01;
-//         }
-//     }, 10);
-// }
-/* end game */
-// function endGame(){
-//     if (Math.floor(summaryTime / 60) > 0) {
-//         if (Math.floor(summaryTime % 60) < 10) {
-//             sumTime.innerHTML = Math.floor(summaryTime / 60) + ':0' + Math.floor(summaryTime % 60);
-//         } else{
-//             sumTime.innerHTML = Math.floor(summaryTime / 60) + ':' + Math.floor(summaryTime % 60);
-//         }
-//     } else {
-//         sumTime.innerHTML = Math.floor(summaryTime);
-//     }
-//     sumLevels.innerHTML = level;
-//     sumMistakes.innerHTML = summaryMistakes;
-//     sumTab.style.opacity = "1";
-
-    
-//     seconds = -1;
-//     time.style.color = "black";
-//     button_start.style.visibility="visible";
-
-//     white_cover.style.opacity="1";
-//     white_cover.style.visibility="visible";
-//     // button_stop.removeEventListener("click", endGame);
-//     button_start.removeEventListener("click", Play);
-//     // timer.style.opacity="0";
-//     // timer.style.visibility="hidden";
-    
-    
-//     setTimeout(() => {
-//         button_start.style.opacity="1";
-//         button_start.style.visibility="visible";
-//         button_start.addEventListener("click", Play);
-//         // button_stop.addEventListener("click", endGame);
-//         clearField();
 //     }, 500);
-// }
+// }, 500);
+
+
+
+

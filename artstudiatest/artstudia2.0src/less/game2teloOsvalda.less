@@ -26,7 +26,7 @@ main{
 }
 
 #nameOfGame{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     height: 33px;
     font-family: 'Vin';
     font-weight: 550;
@@ -144,8 +144,11 @@ main{
     transition: 1s;
     #time{
         display: block;
+        transition: 0.5s;
         font-size: 38px;
         margin-bottom: 30px;
+        user-select: none;
+        font-family: 'Montserrat';
     }
     #action_field{
         display: flex;
@@ -162,18 +165,15 @@ main{
                 opacity: 0.5;
             }
             .cell{
+                user-select: none;
                 display: inline-block;
                 width: 125px;
                 height: 125px;
                 border: 1px solid rgba(228, 228, 228,0.3);
-                transition: 0.4s;
                 font-size: 0;
                 overflow: hidden;
-                .hovered-cell{
-                    border: 2px solid rgba(228, 228, 228,1)!important;
-                }
-                .blocked-cell{
-                    border: none !important;
+                .square{
+                    cursor: grab;
                 }
                 img{
                     pointer-events: none;
@@ -190,7 +190,14 @@ main{
             margin-top: auto;
             margin-bottom: auto;
             width: 500px;
+            #currentScoreBlock{
+                user-select: none;
+                transition: 0.5s;
+                transform: scale(1);
+                opacity: 1;
+            }
             p{
+                user-select: none;
                 position: relative;
                 font-size: 24px;
                 font-family: 'Montserrat';
@@ -198,6 +205,7 @@ main{
                     font-size: 40px;
                     margin-top: 30px;
                     display: inline-block;
+                    transition: 0.5s;
                 }
                 b{position: relative;}
                 #plusN{
@@ -216,7 +224,8 @@ main{
                     margin-top: 9px;
                 }
             }
-            #button_stop, #button_check{
+            #button_stop, #button_check, #button_restart{
+                user-select: none;
                 display: inline-block;
                 transition: 0.4s;
                 font-size: 24px;
@@ -240,58 +249,32 @@ main{
                 color: #FF6600;
                 border-color: #FF6600;
             }
+            #button_restart{
+                display: none;
+                margin: 20px auto;
+                margin-bottom: auto;
+                opacity: 0;
+            }
         }
     } 
     #pull_field.cell{
-        width: 90%;
-        padding: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        margin: 30px auto;
-        border: 1px solid rgb(201, 201, 201);
-        border-radius: 20px;
+        transition: 0.4s;
+        display: inline-block;
+        width: auto;
+        max-width: 100%;
+        text-align: left;
+        margin: 50px auto;
+        box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.1);
+        font-size: 0;
         .square{
-            display: flex;
-            margin: 10px;
+            cursor: grab;
+            transition: 0.4s;
+            display: inline-block;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
         }
     }
 }
-// #timer{
-//     position: absolute;
-//     left: 50%;
-//     top: 50%;
-//     transform: translate(-50%, -50%);
-//     height: 150px;
-//     opacity: 0;
-//     font-size: 24px;
-//     transition: 0.3s;
-//     span{
-//         font-size: 40px;
-//         position: relative;
-//         #plustwo{
-//             position: absolute;
-//             display: inline-block;
-//             font-size: 38px;
-//             color: rgb(136, 226, 0);
-//             top: 0;
-//             left: 30px;
-//             transition: 0.5s;
-//             opacity: 0;
-//         }
-//         #minustwo{
-//             position: absolute;
-//             display: inline-block;
-//             font-size: 38px;
-//             color: red;
-//             top: 0;
-//             left: 30px;
-//             transition: 0.5s;
-//             opacity: 0;
-//         }
-//     }
 
-// }
 
 
 
@@ -300,26 +283,32 @@ main{
 #sum_field {
     opacity: 0;
     display: none;
+    transition: 0.5s;
+    transform: translateY(30px);
 
-    width:  500px; /* Ширина таблицы */
-    border-spacing: 0; /* Расстояние между ячейками */
+    /* Ширина таблицы */
+    border-spacing: 0;
     margin: auto;
-    background-color: yellow;
-    margin-top: 30px;
-    margin-bottom: 333px;
+    //background-color: yellow;
     th{
-        font-size: 50px;
+        font-size: 40px;
         font-family: 'Montserrat', sans-serif;
+        margin-left: auto;
         margin-bottom: 20px;
+        & .rightcol{
+            font-size: 35px;
+        } 
     }
     td {
-        width: 50%; /* Ширина ячеек */
+        width: 250px; /* Ширина ячеек */
         height: 30px;
         padding-left: 3px;
         text-align: left;
     }
-    td.rightcol { /* Правая ячейка */ 
+    .rightcol { /* Правая ячейка */ 
         text-align: right; /* Выравнивание по правому краю */
+        margin-right: auto;
+        width: 50%;
     }
 }
 

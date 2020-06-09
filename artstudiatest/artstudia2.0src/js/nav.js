@@ -14,7 +14,8 @@ function rndInt(min, max) {
 // }, 400);
 
 /*белый фон нава и футера*/
-	nav_white.style.width = document.getElementsByClassName('container')[0].offsetWidth + "px";
+	//nav_white.style.width = document.getElementsByClassName('container')[0].offsetWidth + "px";
+	nav_white.style.width  = document.documentElement.clientWidth + "px";
 	nav_white.style.height = nav_gradient.offsetHeight + 20 + "px";
 	foot_white.style.width = document.getElementsByClassName('container')[0].offsetWidth + "px";
 	foot_gradient.style.height = footer.offsetHeight - 80 + "px";
@@ -85,9 +86,52 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 		ulWorks.style.visibility = "hidden";
 		ulWorks.style.opacity = "0";
 	});
-	gradientTo(nav_gradient, 1);
-	gradientTo(foot_gradient, 1);
+	gradientTo(nav_gradient, 1, 1);
+	gradientTo(foot_gradient, 1, 1);
 }
+
+/*Эфект перехода по страницам*/
+document.body.onload = function (){
+	console.log('load')
+	setTimeout(() => {
+		//nav_menu.style.opacity = 1;
+		//nav_logo.style.opacity = 1;
+		nav_white.style.width = document.getElementsByClassName('container')[0].offsetWidth + "px";
+		setTimeout(() => {
+			mainTag.style.opacity = 1;
+			setTimeout(() => {
+				mainTag.transition = "0s";
+			}, 500);
+		}, 300);
+	}, 500);
+
+	var links = document.querySelectorAll('a');  
+	
+	links.forEach(function (link) {
+		link.addEventListener('click', onLinkClicked);
+		
+		function onLinkClicked(event) {
+			console.log(document.documentElement.clientWidth)
+			event.preventDefault();
+			//nav_menu.style.opacity = 0;
+			//nav_logo.style.opacity = 0;
+			mainTag.transition = "0.5s";
+			mainTag.style.opacity = 0;
+			setTimeout(() => {
+				nav_white.style.width = document.documentElement.clientWidth + "px";
+			}, 100);
+			onAnimationComplete();
+
+		}
+		
+		function onAnimationComplete() {
+			setTimeout(function() {
+				window.location = link.href;  
+			}, 800);
+		}
+	});
+}
+
 
 
 
@@ -97,13 +141,14 @@ var p1 = "radial-gradient(circle farthest-corner at ",
 	p3 = ") 0%, rgba(255, 200, 0, ",
 	p4 = ") 100%)";
 
-function gradientTo(idEl, alpha){
+function gradientTo(idEl, alpha, speed){
 	widthEl = idEl.offsetWidth;
 	posGrad  = rndInt(0, widthEl - 1);
-	toRight(idEl, widthEl, posGrad, alpha);
+	toRight(idEl, widthEl, posGrad, alpha, speed);
+    
 }
 
-function toRight(id, width, pos, alpha) {
+function toRight(id, width, pos, alpha, speed) {
 	let idInt = setInterval(function() {
 		pos++;
 		id.style.background = p1 + pos + p2 + alpha + p3 + alpha + p4;
@@ -111,9 +156,9 @@ function toRight(id, width, pos, alpha) {
 			clearInterval(idInt);
 			toLeft(id, width, pos, alpha);
 		}
-	}, 1);
+	}, speed);
 }
-function toLeft(id, width, pos, alpha) {
+function toLeft(id, width, pos, alpha, speed) {
 	let idInt = setInterval(function() {
 		pos--;
 		id.style.background = p1 + pos + p2 + alpha + p3 + alpha + p4;
@@ -121,7 +166,7 @@ function toLeft(id, width, pos, alpha) {
 			clearInterval(idInt);
 			toRight(id, width, pos, alpha);
 		}
-	}, 1);
+	}, speed);
 }
 
 

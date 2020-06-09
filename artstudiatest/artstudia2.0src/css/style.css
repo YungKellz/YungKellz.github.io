@@ -32,8 +32,13 @@ nav #nav_white {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background-color: #fff;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+nav #nav_logo {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 nav #nav_logo img {
   position: absolute;
@@ -43,11 +48,14 @@ nav #nav_logo img {
   width: 120px;
 }
 nav #nav_menu {
+  opacity: 1;
   position: absolute;
   left: 50%;
   top: 115px;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   width: 800px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,6 +106,9 @@ nav #nav_menu_works ul li {
 }
 main {
   min-height: 90vh;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 footer {
   margin-top: 60px;

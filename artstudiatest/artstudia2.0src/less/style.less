@@ -31,19 +31,25 @@ nav{
       
       transform: translate(-50%, -50%);
       background-color: #fff;
-      transition: 0.2s;
+      transition: 0.8s ease-in-out;
     } 
-    &logo img{
+    &logo {
+      opacity: 1;
+      transition: 0.5s;
+      & img{
       position: absolute;
       left: 50%;
       transform: translate(-50%);
       width: 120px;
+      }
     }
     &menu{
+      opacity: 1;
       position: absolute;
       left: 50%;
       top: 115px;
       transform: translate(-50%);
+      transition: 0.5s;
       width: 800px;
       display: flex;
       justify-content: space-between;
@@ -92,6 +98,8 @@ nav{
 }
 main{
   min-height: 90vh;
+  opacity: 0;
+  transition: 0.5s;
 }
 footer{
   margin-top: 60px;
