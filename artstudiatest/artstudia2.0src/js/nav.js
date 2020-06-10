@@ -86,8 +86,10 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 		ulWorks.style.visibility = "hidden";
 		ulWorks.style.opacity = "0";
 	});
-	gradientTo(nav_gradient, 1, 1);
-	gradientTo(foot_gradient, 1, 1);
+	setTimeout(() => {
+		gradientTo(nav_gradient, 1, 1);
+		gradientTo(foot_gradient, 1, 1);
+	}, 2);
 }
 
 /*Эфект перехода по страницам*/
