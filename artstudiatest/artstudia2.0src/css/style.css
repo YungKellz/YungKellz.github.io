@@ -125,7 +125,6 @@ footer #foot_gradient {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background: radial-gradient(circle farthest-corner at 400px 50px, #ff0000, #ffc800);
   z-index: -1;
   -webkit-transition: 0.4s;
   transition: 0.4s;
