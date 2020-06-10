@@ -18,7 +18,6 @@ nav #nav_gradient {
   position: absolute;
   width: inherit;
   height: 115px;
-  background: radial-gradient(circle farthest-corner at 400px 50px, #ff0000, #ffc800);
   z-index: -1;
   -webkit-transition: 0.4s;
   transition: 0.4s;
