@@ -52,11 +52,12 @@ function LetsColor(a,color){
     //console.log(pointsForS);
     pointsForS.reverse();
     w = l;
+    let secondColor = color + rndInt(60, 300);
     for (let i = 0; i < l; i++) {
         for (let j = l-1 ; j >= w-1; j--) {
             let S  = pointsForS[j + i - l + 1]*100,
                 L  = pointsForL[j + Math.round((w*2 - 1)/2) - 1]*100;
-            a[i*l + j].style.background = "hsl(" + (color + 180) +", " + S + "%, " + L + "%)";
+            a[i*l + j].style.background = "hsl(" + secondColor +", " + S + "%, " + L + "%)";
             //a[i*l + j].innerHTML = "(" + i + ", " + j + ")<br>S = " + S + "<br>Act = " + (j + i - l + 1) + "<br>L = " + L;
         };
         w--;
@@ -181,15 +182,15 @@ function settings(){
         gameFieldLine = 5; 
         gameFieldNum  = gameFieldLine*gameFieldLine;
         fieldSizeTxt.innerHTML = gameFieldLine + "x" + gameFieldLine;
-        numOfTryTxt.innerHTML = numOfTry;
+        numOfTryTxt.innerHTML = numOfTryConst;
     } else 
     if (this.id === "normal") {
         numOfTryConst = 3;
         numOfTry      = numOfTryConst; 
-        gameFieldLine = 8; 
+        gameFieldLine = 3; 
         gameFieldNum  = gameFieldLine*gameFieldLine;
         fieldSizeTxt.innerHTML = gameFieldLine + "x" + gameFieldLine;
-        numOfTryTxt.innerHTML = numOfTry;
+        numOfTryTxt.innerHTML = numOfTryConst;
     }
     else {
         numOfTryConst = 2;
@@ -197,7 +198,7 @@ function settings(){
         gameFieldLine = 12; 
         gameFieldNum  = gameFieldLine*gameFieldLine;
         fieldSizeTxt.innerHTML = gameFieldLine + "x" + gameFieldLine;
-        numOfTryTxt.innerHTML = numOfTry;
+        numOfTryTxt.innerHTML = numOfTryConst;
     }
     console.log("Размер поля " + gameFieldLine);
 };
@@ -214,6 +215,12 @@ function button_check_mouseleave (){
 
 button_check.addEventListener('mouseenter',button_check_mouseenter);
 button_check.addEventListener('mouseleave',button_check_mouseleave);
+
+/* максимальная ширина пула*/
+function pull_field_maxWidth(){
+    let currentWidth = pull_field.offsetWidth;
+    //console.log(currentWidth);
+}
 
                                             /////////////**PLAY */
 button_start.addEventListener("click", Play);
@@ -239,8 +246,10 @@ function Play(){
     checkRights(button_check);
     
     shuffle(pull_field.querySelectorAll('.square'));
+    pull_field_maxWidth();
     currentScore.innerHTML = squaresOnField;
     maxScore.innerHTML     = gameFieldNum;
+    tryCountTxt.innerHTML  = 'осталось <span id="tryCount">2</span> проверки';
     tryCount.innerHTML     = numOfTry;
     /** Полупрозрачные замки */
     
@@ -416,11 +425,14 @@ button_check.addEventListener('click', button_check_pressed);
 function button_check_pressed() {checkRights(button_check)};
 
 function checkRights(btn) {
-    console.log(numOfTry);
+    console.log('numOfTry',numOfTry);
     var tryBad = 0;
     //game_field.style.backgroundColor = "red";
     numOfTry--;
-    triedNum++;
+    if (btn.id !== 'button_stop') {
+        triedNum++;
+    }
+    
 
     game_field.addEventListener('mouseenter', function () {
         game_field.querySelectorAll('img').forEach(element => {
@@ -464,10 +476,10 @@ function checkRights(btn) {
     const suspectSquares = document.querySelectorAll('#game_field .cell .square');
     for (let i = 0; i < suspectSquares.length; i++) {
 
-        console.log(suspectSquares[i].alt,suspectSquares[i].parentElement.alt)
+        //console.log(suspectSquares[i].alt,suspectSquares[i].parentElement.alt)
                                             //////////**совпадение */
         if (suspectSquares[i].parentElement.alt == suspectSquares[i].alt) {
-            console.log('yes');
+            //console.log('yes');
             let img = document.createElement("img");
                 img.src    = "../../img/icons/lock.svg";
             suspectSquares[i].parentElement.removeEventListener('dragover',dragOver);
@@ -507,6 +519,11 @@ function checkRights(btn) {
         });
     }, 400);
     plusMinus(tryBad);
+
+    if (currentScore.innerHTML == squaresOnField) {
+        console.log('currentScore',currentScore.innerHTML,'gameFieldNum',gameFieldNum);
+        button_stop.click();
+    }
 }
 
 function plusMinus (n){
@@ -533,6 +550,7 @@ function plusMinus (n){
 /////////////////////////////////////////............///////////         КОНЕЦ ИГРЫ
 button_stop.addEventListener('click', gameEnd);
 function gameEnd(){
+    console.log('gameEnd');
                                             //////////////// Подсчет резульататов
     gameOn = false;
     numOfTry = 1;
@@ -584,9 +602,11 @@ function gameEnd(){
 /////////////////////////////////////////.........../////////////       РЕСТАРТ
 button_restart.addEventListener('click', restart);
 function restart(){
+    console.log('restart');
     game_field.style.boxShadow = "0px 0px 36px rgba(0, 0, 0, 0.05)";
     seconds = 0;
     triedNum = -1;
+    squaresOnField = 4;
 
     play_field.style.opacity = '0';
     setTimeout(() => {
@@ -626,33 +646,30 @@ function restart(){
         /////////////////////////////////////// показываем настройки
         settings_field.style.display = 'block';
         settings_field.style.opacity = '0';
-        console.log(settings_field.style.opacity )
         setTimeout(() => {
             settings_field.style.opacity = '1';
-            console.log(settings_field.style.opacity )
+            normal.click();
         }, 10);
     }, 1000);
 
-    normal.click();
-
 }
 
+setTimeout(() => {
+    questionAboutDesc_yes.click();
+    
+}, 500);
+
+
 // setTimeout(() => {
-//     questionAboutDesc_yes.click();
-//     setTimeout(() => {
-//         button_start.click();
-//         setTimeout(() => {
-//             button_stop.click();
+//             button_start.click();
 //             setTimeout(() => {
-//                 button_restart.click();
-//                 // setTimeout(() => {
-//                 //     button_start.click();
-//                 // }, 2000);
-//             },3500);
-//         }, 500);
-//     }, 500);
-// }, 500);
-
-
-
+//                 button_stop.click();
+//                 setTimeout(() => {
+//                     button_restart.click();
+//                     // setTimeout(() => {
+//                     //     button_start.click();
+//                     // }, 2000);
+//                 },3500);
+//             }, 500);
+//         }, 1000);
 

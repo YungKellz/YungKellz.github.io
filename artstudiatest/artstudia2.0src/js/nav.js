@@ -96,8 +96,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 document.body.onload = function (){
 	console.log('load')
 	setTimeout(() => {
-		//nav_menu.style.opacity = 1;
-		//nav_logo.style.opacity = 1;
 		nav_white.style.width = document.getElementsByClassName('container')[0].offsetWidth + "px";
 		setTimeout(() => {
 			mainTag.style.opacity = 1;
@@ -113,23 +111,22 @@ document.body.onload = function (){
 		link.addEventListener('click', onLinkClicked);
 		
 		function onLinkClicked(event) {
-			console.log(document.documentElement.clientWidth)
-			event.preventDefault();
-			//nav_menu.style.opacity = 0;
-			//nav_logo.style.opacity = 0;
-			mainTag.transition = "0.5s";
-			mainTag.style.opacity = 0;
-			setTimeout(() => {
-				nav_white.style.width = document.documentElement.clientWidth + "px";
-			}, 100);
-			onAnimationComplete();
-
+			if (link.href[link.href.length-1] !=='#') {
+				console.log(document.documentElement.clientWidth)
+				event.preventDefault();
+				mainTag.transition = "0.5s";
+				mainTag.style.opacity = 0;
+				setTimeout(() => {
+					nav_white.style.width = document.documentElement.clientWidth + "px";
+				}, 100);
+				onAnimationComplete();
+			}
 		}
 		
 		function onAnimationComplete() {
 			setTimeout(function() {
 				window.location = link.href;  
-			}, 800);
+			}, 500);
 		}
 	});
 }
