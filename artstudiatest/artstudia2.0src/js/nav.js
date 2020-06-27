@@ -100,7 +100,7 @@ document.body.onload = function (){
 		setTimeout(() => {
 			mainTag.style.opacity = 1;
 			setTimeout(() => {
-				mainTag.transition = "0s";
+				mainTag.style.transition = "0s";
 			}, 500);
 		}, 300);
 	}, 500);
@@ -114,7 +114,7 @@ document.body.onload = function (){
 			if (link.href[link.href.length-1] !=='#') {
 				console.log(document.documentElement.clientWidth)
 				event.preventDefault();
-				mainTag.transition = "0.5s";
+				mainTag.style.transition = "0.5s";
 				mainTag.style.opacity = 0;
 				setTimeout(() => {
 					nav_white.style.width = document.documentElement.clientWidth + "px";

@@ -31,8 +31,8 @@ nav #nav_white {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background-color: #fff;
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 nav #nav_logo {
   opacity: 1;
@@ -124,6 +124,7 @@ footer #foot_gradient {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  background: radial-gradient(circle farthest-corner at 400px 50px, #ff0000, #ffc800);
   z-index: -1;
   -webkit-transition: 0.4s;
   transition: 0.4s;
